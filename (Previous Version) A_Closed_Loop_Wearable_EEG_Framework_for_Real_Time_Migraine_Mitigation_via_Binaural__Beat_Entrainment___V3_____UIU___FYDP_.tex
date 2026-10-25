@@ -62,28 +62,28 @@
     \vspace*{0.5cm}
 
     {\LARGE \textbf{
-A Closed-Loop Wearable EEG Framework\[0.3cm]
-for Real-Time Migraine Mitigation\[0.4cm]
+A Closed-Loop Wearable EEG Framework\\[0.3cm]
+for Real-Time Migraine Mitigation\\[0.4cm]
 via Binaural Beat Entrainment
-}}\[1.8cm]
+}}\\[1.8cm]
 
-    {\large \textbf{By}}\[0.4cm]
-    {\large Abu Hurayra Mahbe -- 0112230043}\
-    {\large Md. Shakibul Hassan Prince -- 0112230048}\
-    {\large Jarin Tabassum -- 0112230836}\
-    {\large Anisa Azmi -- 0112230292}\
-    {\large Mahmudul Mashrafe -- 0112230115}\[1.8cm]
+    {\large \textbf{By}}\\[0.4cm]
+    {\large Abu Hurayra Mahbe -- 0112230043}\\
+    {\large Md. Shakibul Hassan Prince -- 0112230048}\\
+    {\large Jarin Tabassum -- 0112230836}\\
+    {\large Anisa Azmi -- 0112230292}\\
+    {\large Mahmudul Mashrafe -- 0112230115}\\[1.8cm]
 
-    {\large Submitted in partial fulfilment of the requirements of the\ degree of Bachelor of Science in Computer Science and Engineering}\[1.8cm]
+    {\large Submitted in partial fulfilment of the requirements of the\\ degree of Bachelor of Science in Computer Science and Engineering}\\[1.8cm]
 
-    {\large June 11, 2026}\[1.5cm]
+    {\large June 11, 2026}\\[1.5cm]
 
     \IfFileExists{Images/uiu_logo.png}{%
-        \includegraphics[width=0.25\textwidth]{Images/uiu_logo.png}\[0.5cm]
+        \includegraphics[width=0.25\textwidth]{Images/uiu_logo.png}\\[0.5cm]
     }{%
         \vspace{1.5cm}
     }
-    {\large Department of Computer Science and Engineering\
+    {\large Department of Computer Science and Engineering\\
     United International University}
 
     \vfill
@@ -98,9 +98,9 @@ via Binaural Beat Entrainment
 \addcontentsline{toc}{chapter}{Abstract}
 Migraine is a chronic, debilitating neurovascular disorder affecting approximately 15\% of the global population, characterized by cortical hyperexcitability, abnormal sensory gating, and thalamocortical dysrhythmia (TCD). Conventional pharmacological treatments often entail adverse side effects, medication overuse headaches, or incomplete efficacy. This Final Year Design Project introduces an end-to-end neuroengineering framework integrating electroencephalography (EEG) time-frequency computer vision classification with personalized acoustic neuromodulation for non-invasive, drug-free migraine management. 
 
-Using the Carnegie Mellon University (CMU) ultra-high-density EEG repository recorded across 128 scalp channels during resting-state and sensory stimulation (auditory SSAEP and visual SSVEP), we established a standardized preprocessing pipeline incorporating common average referencing (CAR), 1.0--50.0~Hz bandpass filtering, and 60~Hz notch filtering. Occipital channel \#80 recordings were transformed via Short-Time Fourier Transform (STFT) into calibrated time-frequency spectrogram images rendered with the Viridis colormap across a 30 dynamic range. For interictal migraine detection, deep convolutional transfer learning was evaluated across three distinct architectures: VGG16, ResNet50, and EfficientNetB7. EfficientNetB7 demonstrated superior diagnostic capability, achieving 93.75\% accuracy, 94.71\% weighted precision, 93.85\% weighted F1-score, and a Matthews Correlation Coefficient (MCC) of 0.8750, followed by VGG16 (90.63\% accuracy, 0.7985 MCC) and ResNet50 (87.50\% accuracy, 0.7410 MCC).
+Using the Carnegie Mellon University (CMU) ultra-high-density EEG repository recorded across 128 scalp channels during resting-state and sensory stimulation (auditory SSAEP and visual SSVEP), we established a standardized preprocessing pipeline incorporating common average referencing (CAR), 1.0--50.0~Hz bandpass filtering, and 60~Hz notch filtering. Occipital channel \#80 recordings were transformed via Short-Time Fourier Transform (STFT) into calibrated time-frequency spectrogram images rendered with the Viridis colormap across a $[-10, +30]$~dB dynamic range. For interictal migraine detection, deep convolutional transfer learning was evaluated across three distinct architectures: VGG16, ResNet50, and EfficientNetB7. EfficientNetB7 demonstrated superior diagnostic capability, achieving 93.75\% accuracy, 94.71\% weighted precision, 93.85\% weighted F1-score, and a Matthews Correlation Coefficient (MCC) of 0.8750, followed by VGG16 (90.63\% accuracy, 0.7985 MCC) and ResNet50 (87.50\% accuracy, 0.7410 MCC).
 
-To bridge automated detection with non-invasive intervention, an analytical colormap inversion engine was formulated. By projecting pixel RGB vectors onto a precomputed 256-color Viridis Look-Up Table (LUT) via Euclidean distance minimization, calibrated spectral power ($\mu\text{V}^2/\text{Hz}$) was accurately reconstructed directly from spectrogram images. This enabled the quantification of individual electrophysiological rhythm deficits, notably the Theta-to-Alpha Ratio (TAR) and the patient's exact Individual Alpha Frequency (IAF). Population cohort analytics across resting-state subjects revealed an elevated mean theta proportion (15.47\% in migraine vs. 13.17\% in controls) and marked alpha suppression. Using the patient-specific IAF, a digital audio synthesis engine generated customized dichotic pure-tone binaural beat prescriptions centered at a 216~Hz carrier frequency with 1.5-second squared half-cosine taper envelopes to prevent acoustic switching transients. For an exemplar migraine patient (M10), the system localized an IAF peak at 10.09~Hz, identified an alpha power deficit of 7.88\%, and synthesized an exact 10.09~Hz beat prescription ({\text{left}} = 210.96, {\text{right}} = 221.05) formatted as 16-bit 44.1~kHz stereo audio. This work establishes a closed-loop technological bridge between deep learning-based neural diagnostics and personalized auditory cortical entrainment, offering a scalable, reproducible digital therapeutic paradigm for migraine mitigation.
+To bridge automated detection with non-invasive intervention, an analytical colormap inversion engine was formulated. By projecting pixel RGB vectors onto a precomputed 256-color Viridis Look-Up Table (LUT) via Euclidean distance minimization, calibrated spectral power ($\mu\text{V}^2/\text{Hz}$) was accurately reconstructed directly from spectrogram images. This enabled the quantification of individual electrophysiological rhythm deficits, notably the Theta-to-Alpha Ratio (TAR) and the patient's exact Individual Alpha Frequency (IAF). Population cohort analytics across resting-state subjects revealed an elevated mean theta proportion (15.47\% in migraine vs. 13.17\% in controls) and marked alpha suppression. Using the patient-specific IAF, a digital audio synthesis engine generated customized dichotic pure-tone binaural beat prescriptions centered at a 216~Hz carrier frequency with 1.5-second squared half-cosine taper envelopes to prevent acoustic switching transients. For an exemplar migraine patient (M10), the system localized an IAF peak at 10.09~Hz, identified an alpha power deficit of 7.88\%, and synthesized an exact 10.09~Hz beat prescription ($f_{\text{left}} = 210.96$~Hz, $f_{\text{right}} = 221.05$~Hz) formatted as 16-bit 44.1~kHz stereo audio. This work establishes a closed-loop technological bridge between deep learning-based neural diagnostics and personalized auditory cortical entrainment, offering a scalable, reproducible digital therapeutic paradigm for migraine mitigation.
 
 \newpage
 
@@ -125,17 +125,17 @@ We are deeply appreciative of the authors of the open-access CMU Ultra-High-Dens
 
 \subsection*{Journal Articles (Prepared / Under Submission)}
 \begin{enumerate}
-    \item \textbf{A. H. Mahbe, M. S. H. Prince, J. Tabassum, A. Azmi, M. Mashrafe, and J. N. Mukta}, Spectrogram-Driven Deep Transfer Learning and Analytical Colormap Inversion for Personalized Binaural Beat Neuromodulation in Interictal Migraine,'' target venue: \textit{IEEE Transactions on Neural Systems and Rehabilitation Engineering} / \textit{Biomedical Signal Processing and Control}, 2026.
+    \item \textbf{A. H. Mahbe, M. S. H. Prince, J. Tabassum, A. Azmi, M. Mashrafe, and J. N. Mukta}, ``Spectrogram-Driven Deep Transfer Learning and Analytical Colormap Inversion for Personalized Binaural Beat Neuromodulation in Interictal Migraine,'' target venue: \textit{IEEE Transactions on Neural Systems and Rehabilitation Engineering} / \textit{Biomedical Signal Processing and Control}, 2026.
 \end{enumerate}
 
 \subsection*{Conference Papers (Prepared / Under Submission)}
 \begin{enumerate}
-    \item \textbf{M. Mashrafe, A. H. Mahbe, M. S. H. Prince, J. Tabassum, A. Azmi, and J. N. Mukta}, A Closed-Loop Framework for Interictal Migraine Classification via Convolutional Neural Networks and Individual Alpha Frequency Acoustic Entrainment,'' target venue: \textit{IEEE International Conference on Biomedical and Health Informatics (BHI)}, 2026.
+    \item \textbf{M. Mashrafe, A. H. Mahbe, M. S. H. Prince, J. Tabassum, A. Azmi, and J. N. Mukta}, ``A Closed-Loop Framework for Interictal Migraine Classification via Convolutional Neural Networks and Individual Alpha Frequency Acoustic Entrainment,'' target venue: \textit{IEEE International Conference on Biomedical and Health Informatics (BHI)}, 2026.
 \end{enumerate}
 
 \subsection*{Open-Source Deliverables and Data Artifacts}
 \begin{enumerate}
-    \item \textbf{FYDP-III Research Artifacts}: Complete Jupyter Notebook repository comprising raw EEG preprocessing (), deep transfer learning benchmarks (, , ), and the spectrogram inversion audio synthesis engine ().
+    \item \textbf{FYDP-III Research Artifacts}: Complete Jupyter Notebook repository comprising raw EEG preprocessing (\texttt{1\_EEG\_CMU.ipynb}), deep transfer learning benchmarks (\texttt{2\_Migraine\_VGG16\_Spectrogram.ipynb}, \texttt{3\_Migraine\_EfficientNetB7\_Spectrogram.ipynb}, \texttt{4\_Migraine\_ResNet50\_Spectrogram.ipynb}), and the spectrogram inversion audio synthesis engine (\texttt{5\_spectrogram\_binaural\_treatment.ipynb}).
     \item \textbf{Audio Prescription Repository}: Cohort-wide synthesized 16-bit 44.1~kHz stereo WAV binaural beat prescriptions tailored to individual alpha frequencies across all migraine subjects.
 \end{enumerate}
 
@@ -208,7 +208,7 @@ The methodological architecture of this project is structured into five tightly 
     \IfFileExists{Images/pipeline_diagram.png}{%
         \includegraphics[width=0.95\textwidth]{Images/pipeline_diagram.png}
     }{%
-        \fbox{\parbox{0.9\textwidth}{\centering \textbf{Figure 1.1: System Pipeline Diagram}\
+        \fbox{\parbox{0.9\textwidth}{\centering \textbf{Figure 1.1: System Pipeline Diagram}\\
         [UHD-EEG Acquisition $\rightarrow$ Preprocessing \& CAR $\rightarrow$ STFT Spectrograms $\rightarrow$ CNN Classification $\rightarrow$ Colormap Inversion \& Binaural Audio Synthesis]}}
     }
     \caption{End-to-End Closed-Loop System Pipeline: From 128-channel raw EEG acquisition to deep transfer learning classification and personalized binaural beat synthesis.}
@@ -217,10 +217,10 @@ The methodological architecture of this project is structured into five tightly 
 
 \begin{itemize}
     \item \textbf{Stage 1: Signal Preprocessing and Montage Standardisation}: Continuous raw EEG recordings acquired in BioSemi BDF format from the CMU ultra-high-density dataset are ingested using MNE-Python. Non-scalp channels are excluded, common average referencing is applied across 128 scalp electrodes, and zero-phase FIR filtering isolates 1.0--50.0~Hz activity while rejecting 60~Hz line interference. Channel \#80, located over the visual/occipital cortex, is selected due to its primary role in photophobia and migraine cortical hyperexcitability \cite{chamanzar2021uhd}.
-    \item \textbf{Stage 2: Time-Frequency Spectrogram Generation}: Signals are decomposed via Short-Time Fourier Transform (STFT) with Hann windowing into time-frequency power representations spanning 1.0 to 50.0~Hz. These representations are rendered into high-resolution PNG images using Matplotlib's Viridis colormap across a calibrated 30 display range.
-    \item \textbf{Stage 3: Deep Transfer Learning Classification}: Spectrogram images are resized to  \times 224$ pixels, normalized, and partitioned into training and testing sets. Three distinct CNN architectures---VGG16 \cite{Simonyan2014}, ResNet50 \cite{He2016}, and EfficientNetB7 \cite{Tan2019}---are instantiated with ImageNet pre-trained weights. A customized dense classification head with global average pooling, ReLU activation, dropout, and a two-neuron softmax layer is optimized using Adam ($\eta = 10^{-4}$) and Sparse Categorical Cross-Entropy loss.
+    \item \textbf{Stage 2: Time-Frequency Spectrogram Generation}: Signals are decomposed via Short-Time Fourier Transform (STFT) with Hann windowing into time-frequency power representations spanning 1.0 to 50.0~Hz. These representations are rendered into high-resolution PNG images using Matplotlib's Viridis colormap across a calibrated $[-10, +30]$~dB display range.
+    \item \textbf{Stage 3: Deep Transfer Learning Classification}: Spectrogram images are resized to $224 \times 224$ pixels, normalized, and partitioned into training and testing sets. Three distinct CNN architectures---VGG16 \cite{Simonyan2014}, ResNet50 \cite{He2016}, and EfficientNetB7 \cite{Tan2019}---are instantiated with ImageNet pre-trained weights. A customized dense classification head with global average pooling, ReLU activation, dropout, and a two-neuron softmax layer is optimized using Adam ($\eta = 10^{-4}$) and Sparse Categorical Cross-Entropy loss.
     \item \textbf{Stage 4: Mathematical Spectrogram Inversion}: To extract quantitative physiological indices from rendered images without requiring multi-gigabyte raw EEG arrays, an exact RGB lookup table (LUT) inversion algorithm is deployed. By computing the minimum Euclidean distance in sRGB color space between image pixels and a 256-color Viridis LUT, pixel intensities are translated into decibels and linear power spectral density ($\mu\text{V}^2/\text{Hz}$). Frequency rows are mapped from 50.0~Hz down to 1.0~Hz.
-    \item \textbf{Stage 5: Biomarker Quantification and Audio Prescription Synthesis}: From the reconstructed PSD, canonical band powers (Delta, Theta, Alpha, Beta, Gamma) are integrated. The Individual Alpha Frequency (IAF) is detected via peak search within 8.0--13.0~Hz, and the Theta-to-Alpha Ratio (TAR) is computed. Using the patient's IAF as the beat difference ({\text{beat}}$) and a soothing carrier frequency ( = 216.0), dichotic pure sine waves ({\text{left}} = f_c - f_{\text{beat}}/2$; {\text{right}} = f_c + f_{\text{beat}}/2$) are synthesized with squared half-cosine onset and offset tapers to generate click-free, 16-bit 44.1~kHz stereo audio files.
+    \item \textbf{Stage 5: Biomarker Quantification and Audio Prescription Synthesis}: From the reconstructed PSD, canonical band powers (Delta, Theta, Alpha, Beta, Gamma) are integrated. The Individual Alpha Frequency (IAF) is detected via peak search within 8.0--13.0~Hz, and the Theta-to-Alpha Ratio (TAR) is computed. Using the patient's IAF as the beat difference ($f_{\text{beat}}$) and a soothing carrier frequency ($f_c = 216.0$~Hz), dichotic pure sine waves ($f_{\text{left}} = f_c - f_{\text{beat}}/2$; $f_{\text{right}} = f_c + f_{\text{beat}}/2$) are synthesized with squared half-cosine onset and offset tapers to generate click-free, 16-bit 44.1~kHz stereo audio files.
 \end{itemize}
 
 \section{Project Outcome}
@@ -230,8 +230,8 @@ The primary deliverables and quantitative outcomes achieved by this project incl
     \item A reproducible, automated EEG preprocessing and STFT spectrogram rendering engine generating 106 standardized time-frequency images from the CMU ultra-high-density repository.
     \item A high-accuracy deep learning classification pipeline wherein \textbf{EfficientNetB7} achieved state-of-the-art interictal migraine detection with \textbf{93.75\% accuracy}, 94.71\% weighted precision, 93.85\% weighted F1-score, and an MCC of \textbf{0.8750}, significantly outperforming ResNet50 (87.50\% accuracy, 0.7410 MCC) and VGG16 (90.63\% accuracy, 0.7985 MCC).
     \item A closed-form RGB colormap inversion algorithm that accurately reconstructs linear power profiles from Viridis spectrogram images with sub-pixel spectral fidelity.
-    \item Empirical cohort-level quantification across 12 migraine and 22 healthy control resting-state subjects, demonstrating that migraineurs exhibit elevated theta oscillations (.47 \pm 8.48\%$ vs. .17 \pm 5.93\%$) and significant alpha band suppression (.41 \pm 5.03\%$ vs. .60 \pm 3.32\%$).
-    \item A patient-tailored audio synthesis engine that successfully generated customized 16-bit 44.1~kHz stereo binaural beat prescriptions for all migraine subjects, demonstrated in detail through a single-patient case study on patient M10 ($\text{IAF} = 10.09, {\text{left}} = 210.96, {\text{right}} = 221.05).
+    \item Empirical cohort-level quantification across 12 migraine and 22 healthy control resting-state subjects, demonstrating that migraineurs exhibit elevated theta oscillations ($15.47 \pm 8.48\%$ vs. $13.17 \pm 5.93\%$) and significant alpha band suppression ($9.41 \pm 5.03\%$ vs. $7.60 \pm 3.32\%$).
+    \item A patient-tailored audio synthesis engine that successfully generated customized 16-bit 44.1~kHz stereo binaural beat prescriptions for all migraine subjects, demonstrated in detail through a single-patient case study on patient M10 ($\text{IAF} = 10.09$~Hz, $f_{\text{left}} = 210.96$~Hz, $f_{\text{right}} = 221.05$~Hz).
 \end{enumerate}
 
 \section{Organization of the Report}
@@ -257,7 +257,7 @@ The remainder of this report is organized as follows:
 \subsection{Neurovascular Pathophysiology of Migraine}
 Migraine is increasingly recognized not merely as a vascular headache, but as a complex, familial neurovascular disorder characterized by widespread dysregulation of subcortical and cortical neural networks \cite{Puledda2024,Ashina2023}. At the physiological core of migraine susceptibility is \textit{cortical hyperexcitability} and a profound failure of habituation \cite{Coppola2023,VanDenHoek2024}. In healthy neural circuits, repetitive sensory stimulation (e.g., visual strobe flashes or auditory tone bursts) elicits initial cortical evoked potentials that progressively decrease in amplitude---a protective physiological process known as sensory gating or habituation \cite{Coppola2023}. In migraine patients, this habituation is deficient or absent during the interictal period, leading to cortical sensory overload, photophobia, and phonophobia \cite{chamanzar2021uhd,AbdulhusseinAldeen2024}.
 
-Underlying this habituation deficit is \textit{thalamocortical dysrhythmia} (TCD) \cite{chamanzar2021uhd}. TCD occurs when abnormal hyperpolarization of thalamic relay neurons de-inactivates low-threshold T-type calcium channels, causing thalamic neurons to shift from tonic firing into rhythmic burst firing in the low-frequency theta range (4.0--8.0~Hz). This aberrant low-frequency thalamic pacemaking disrupts normal corticothalamic feedback loops, producing a characteristic surrounding halo of high-frequency beta and gamma activation (the edge effect'') alongside a marked suppression of normal posterior alpha oscillations (8.0--13.0~Hz) \cite{chamanzar2021uhd,Coppola2023}. Restoring alpha rhythm synchronization is therefore hypothesized to normalize thalamocortical gating and attenuate sensory hyperexcitability.
+Underlying this habituation deficit is \textit{thalamocortical dysrhythmia} (TCD) \cite{chamanzar2021uhd}. TCD occurs when abnormal hyperpolarization of thalamic relay neurons de-inactivates low-threshold T-type calcium channels, causing thalamic neurons to shift from tonic firing into rhythmic burst firing in the low-frequency theta range (4.0--8.0~Hz). This aberrant low-frequency thalamic pacemaking disrupts normal corticothalamic feedback loops, producing a characteristic surrounding halo of high-frequency beta and gamma activation (the ``edge effect'') alongside a marked suppression of normal posterior alpha oscillations (8.0--13.0~Hz) \cite{chamanzar2021uhd,Coppola2023}. Restoring alpha rhythm synchronization is therefore hypothesized to normalize thalamocortical gating and attenuate sensory hyperexcitability.
 
 \subsection{EEG Frequency Bands and Their Clinical Significance}
 Electroencephalography measures post-synaptic dendritic potentials from large populations of pyramidal cortical neurons. In clinical neurophysiology, scalp EEG is decomposed into five canonical frequency bands:
@@ -270,7 +270,7 @@ Electroencephalography measures post-synaptic dendritic potentials from large po
 \end{itemize}
 
 \subsection{Biophysics and Physiology of Binaural Beat Entrainment}
-Binaural beats are an auditory perceptual illusion discovered by Heinrich Wilhelm Dove in 1839 and extensively characterized in human neurophysiology by Gerald Oster in 1973 \cite{Oster1973}. When two coherent pure sinusoidal acoustic tones of slightly differing frequencies, $ and $, are presented dichotically (one tone into each ear via stereo headphones), the acoustic waves do not mix physically in the air. Instead, neural signals from the cochleae travel along the auditory nerve to the \textit{superior olivary complex} (SOC) in the brainstem---the primary anatomical site for binaural sound localization and interaural phase disparity detection \cite{Oster1973,Wahbeh2007}.
+Binaural beats are an auditory perceptual illusion discovered by Heinrich Wilhelm Dove in 1839 and extensively characterized in human neurophysiology by Gerald Oster in 1973 \cite{Oster1973}. When two coherent pure sinusoidal acoustic tones of slightly differing frequencies, $f_1$ and $f_2$, are presented dichotically (one tone into each ear via stereo headphones), the acoustic waves do not mix physically in the air. Instead, neural signals from the cochleae travel along the auditory nerve to the \textit{superior olivary complex} (SOC) in the brainstem---the primary anatomical site for binaural sound localization and interaural phase disparity detection \cite{Oster1973,Wahbeh2007}.
 
 The medial superior olive (MSO) neurons act as coincidence detectors, measuring microsecond-level phase differences between the two ears. This neural phase comparison generates an amplitude-modulated neural discharge at the exact arithmetic difference frequency:
 \begin{equation}
@@ -279,10 +279,10 @@ The medial superior olive (MSO) neurons act as coincidence detectors, measuring 
 \end{equation}
 This beat frequency is propagated rostrally via the lateral lemniscus and inferior colliculus to the medial geniculate body of the thalamus and auditory cortex, eliciting a cortical \textit{Frequency-Following Response} (FFR) \cite{Oster1973,Wahbeh2007,Melnichuk2025}. For binaural beats to be perceived, two biophysical conditions must be met:
 \begin{enumerate}
-    \item The carrier frequency  = (f_1 + f_2)/2$ must lie below approximately 1000~Hz (with optimal phase-locking occurring between 200~Hz and 500~Hz), as auditory nerve fibers lose phase-locking capacity above 1.5~kHz \cite{Oster1973,Wahbeh2007}.
-    \item The beat frequency {\text{beat}}$ must be less than approximately 30--35~Hz; larger frequency separations are perceived as two distinct musical tones rather than a fused pulsating beat \cite{Oster1973}.
+    \item The carrier frequency $f_c = (f_1 + f_2)/2$ must lie below approximately 1000~Hz (with optimal phase-locking occurring between 200~Hz and 500~Hz), as auditory nerve fibers lose phase-locking capacity above 1.5~kHz \cite{Oster1973,Wahbeh2007}.
+    \item The beat frequency $f_{\text{beat}}$ must be less than approximately 30--35~Hz; larger frequency separations are perceived as two distinct musical tones rather than a fused pulsating beat \cite{Oster1973}.
 \end{enumerate}
-By tuning {\text{beat}}$ precisely to the alpha band (8.0--13.0~Hz), binaural beats promote thalamocortical synchronization, enhance parasympathetic vagal tone, and suppress stress-induced cortical hyper-arousal \cite{Wahbeh2007,KahathuduwaBlume2025,Hamid2025}.
+By tuning $f_{\text{beat}}$ precisely to the alpha band (8.0--13.0~Hz), binaural beats promote thalamocortical synchronization, enhance parasympathetic vagal tone, and suppress stress-induced cortical hyper-arousal \cite{Wahbeh2007,KahathuduwaBlume2025,Hamid2025}.
 
 \section{Literature Review}
 \label{sec:literature_review}
@@ -299,12 +299,12 @@ Zebhauser et al.~\cite{Zebhauser2024} performed a meta-analysis of 27 resting-st
 
 In clinical differentiation studies, Riederer et al.~\cite{Riederer2023} analyzed EEG and MRI signatures of migraine with aura, noting that while visual scotomas often preserve scalp EEG rhythms, complex prolonged auras produce focal acute-phase slowing that differentiates migraine from epileptic spikes or ischemic strokes. Göker~\cite{Goker2023} proposed an automated migraine detection framework using Welch PSD estimation (1--49~Hz) combined with a 128-channel Bidirectional LSTM network, achieving 95.99\% accuracy and an F1-score of 0.96. Kedgan et al.~\cite{Kedgan2025} performed a systematic pooled prevalence meta-analysis across phases of hemiplegic migraine, demonstrating distinct stage-dependent electrophysiological patterns from contralateral background suppression during aura to generalized slowing during headache.
 
-Furthermore, Sebastianelli et al.~\cite{sebastianelli2025ann} applied artificial neural networks (ANNs) to somatosensory evoked potentials (SSEPs) in 177 subjects (91 episodic migraineurs, 86 controls), achieving 72.8\% accuracy and an AUC of 0.79. Hsiao et al.~\cite{hsiao2024brainstem} examined somatosensory evoked EEG in 342 participants using spectral Granger causality and SVMs, proving that abnormal brainstem-cortical gating interactions differentiate chronic migraineurs from healthy controls ( < 0.001$).
+Furthermore, Sebastianelli et al.~\cite{sebastianelli2025ann} applied artificial neural networks (ANNs) to somatosensory evoked potentials (SSEPs) in 177 subjects (91 episodic migraineurs, 86 controls), achieving 72.8\% accuracy and an AUC of 0.79. Hsiao et al.~\cite{hsiao2024brainstem} examined somatosensory evoked EEG in 342 participants using spectral Granger causality and SVMs, proving that abnormal brainstem-cortical gating interactions differentiate chronic migraineurs from healthy controls ($p < 0.001$).
 
 \subsection{Binaural Beats and Auditory Neuromodulation}
 The therapeutic application of acoustic brainwave entrainment has expanded significantly in recent years. Melnichuk et al.~\cite{Melnichuk2025} conducted parametric investigations of beta (16~Hz) and gamma (40~Hz) binaural beats during sustained attention Continuous Performance Tasks (CPT), demonstrating robust EEG entrainment and vigilance stabilization under optimal carrier conditions (340~Hz carrier with background pink noise).
 
-Yang et al.~\cite{Yang2025} executed a randomized crossover trial evaluating 6~Hz, 10~Hz, and 25~Hz binaural beats in healthy subjects, reporting that all frequencies significantly lowered resting heart rate and arterial blood pressure, with alpha beats (10~Hz) driving the strongest parasympathetic autonomic shift (increased high-frequency heart rate variability, HF-HRV). In a meta-analysis of 15 randomized controlled trials, Xiong et al.~\cite{Xiong2025} demonstrated that binaural beat stimulation delivers substantial reductions in perioperative anxiety (Standardized Mean Difference, SMD: 569X1.0$ to 569X1.4$) alongside significant analgesia.
+Yang et al.~\cite{Yang2025} executed a randomized crossover trial evaluating 6~Hz, 10~Hz, and 25~Hz binaural beats in healthy subjects, reporting that all frequencies significantly lowered resting heart rate and arterial blood pressure, with alpha beats (10~Hz) driving the strongest parasympathetic autonomic shift (increased high-frequency heart rate variability, HF-HRV). In a meta-analysis of 15 randomized controlled trials, Xiong et al.~\cite{Xiong2025} demonstrated that binaural beat stimulation delivers substantial reductions in perioperative anxiety (Standardized Mean Difference, SMD: $-1.0$ to $-1.4$) alongside significant analgesia.
 
 Crucially, Kahathuduwa et al.~\cite{KahathuduwaBlume2025} pioneered closed-loop, real-time EEG-guided binaural beat stimulation, demonstrating that dynamically adjusting acoustic beat frequencies based on instantaneous scalp EEG recordings produced superior relaxation and cognitive performance compared to open-loop, static stimulation. Shamsi et al.~\cite{Shamsi2024} reviewed clinical pain interventions, finding that theta and alpha binaural beats significantly attenuate acute procedural pain, although studies on chronic headache remain constrained by small cohorts and non-personalized stimulus parameters.
 
@@ -317,9 +317,9 @@ In neurocognitive tasks, Al-Shargie et al.~\cite{AlShargie2022} combined fNIRS w
 \subsection{Wearable EEG Systems and Digital Phenotyping}
 The transition of neural monitoring from shielded clinical laboratories to wearable consumer form-factors is transforming chronic disease management. Petru\v{s}i\'{c}~\cite{Petrusic2025} reviewed digital phenotyping for migraine, defining wearable brain--computer interfaces (BCIs) as a scalable, non-invasive frontier capable of continuous neural state tracking under free-living conditions. Petru\v{s}i\'{c} categorized wearable architectures into scalp-EEG, forehead-EEG, and in-ear-EEG, noting that while scalp montages provide superior cortical resolution (achieving 90--96\% classification accuracy), practical deployment requires addressing motion artifacts, electrode impedance instability, and user compliance.
 
-He et al.~\cite{He2023} conducted a comprehensive survey of commercial wireless EEG platforms, analyzing variations across channel count (from 1 to 64 channels), sampling rates (128--1000~Hz), battery autonomy, and pricing ($250 to $30,000). They emphasized that widespread clinical translation is bottlenecked by the absence of standardized signal validation pipelines and automated real-time artifact rejection. Addressing affordability, Muhammad et al.~\cite{Muhammad2023} developed an ultra-low-cost, 16-channel OpenBCI-compatible headset achieving 82.9\% classification accuracy with an assembly time under 3 minutes at a total cost of $299, demonstrating that a reduced 3-channel occipital configuration retained 82.0\% diagnostic sensitivity.
+He et al.~\cite{He2023} conducted a comprehensive survey of commercial wireless EEG platforms, analyzing variations across channel count (from 1 to 64 channels), sampling rates (128--1000~Hz), battery autonomy, and pricing (\$250 to \$30,000). They emphasized that widespread clinical translation is bottlenecked by the absence of standardized signal validation pipelines and automated real-time artifact rejection. Addressing affordability, Muhammad et al.~\cite{Muhammad2023} developed an ultra-low-cost, 16-channel OpenBCI-compatible headset achieving 82.9\% classification accuracy with an assembly time under 3 minutes at a total cost of \$299, demonstrating that a reduced 3-channel occipital configuration retained 82.0\% diagnostic sensitivity.
 
-Danelakis et al.~\cite{DanelakisStubberud2025} surveyed artificial intelligence and wearable sensors across primary headache disorders, reporting that machine learning models achieve diagnostic accuracies between 62\% and 99.7\%. However, they cautioned that existing literature is plagued by small sample sizes, lack of subject-independent validation, and severe risk of overfitting. Van Der Donckt et al.~\cite{VanDerDonckt2025} analyzed daytime movement patterns in migraineurs using wearable accelerometers, revealing statistically significant reductions in physical activity during pre-ictal and ictal states ( < 0.001$), supporting the integration of multi-sensor digital phenotyping with wearable EEG.
+Danelakis et al.~\cite{DanelakisStubberud2025} surveyed artificial intelligence and wearable sensors across primary headache disorders, reporting that machine learning models achieve diagnostic accuracies between 62\% and 99.7\%. However, they cautioned that existing literature is plagued by small sample sizes, lack of subject-independent validation, and severe risk of overfitting. Van Der Donckt et al.~\cite{VanDerDonckt2025} analyzed daytime movement patterns in migraineurs using wearable accelerometers, revealing statistically significant reductions in physical activity during pre-ictal and ictal states ($p < 0.001$), supporting the integration of multi-sensor digital phenotyping with wearable EEG.
 
 \subsection{Time-Frequency Spectrogram Feature Extraction and Deep Learning}
 Rather than relying on manually engineered 1D statistical features (variance, skewness, Hjorth parameters) that discard critical non-stationary dynamics, converting multichannel EEG into 2D time-frequency image representations (spectrograms and scalograms) has emerged as the premier paradigm in biomedical signal processing. Chamanzar, Haigh, Grover, and Behrmann~\cite{chamanzar2021uhd} established the foundational CMU Ultra-High-Density EEG repository (128 channels) used in this project, demonstrating that interictal migraineurs display abnormal cortical coherence and phase locking during visual and auditory steady-state stimulation.
@@ -358,7 +358,7 @@ The proposed closed-loop framework operates across two computational workflows: 
     \IfFileExists{Images/pipeline_diagram.png}{%
         \includegraphics[width=0.98\textwidth]{Images/pipeline_diagram.png}
     }{%
-        \fbox{\parbox{0.95\textwidth}{\centering \textbf{Figure 3.1: Detailed System Architecture}\
+        \fbox{\parbox{0.95\textwidth}{\centering \textbf{Figure 3.1: Detailed System Architecture}\\
         [Raw UHD-EEG $\rightarrow$ MNE Preprocessing $\rightarrow$ STFT Viridis Spectrograms $\rightarrow$ Transfer Learning CNNs (EfficientNetB7 / VGG16 / ResNet50) $\rightarrow$ Analytical Colormap Inversion $\rightarrow$ IAF \& Deficit Extraction $\rightarrow$ Stereo Binaural Beat Prescription]}}
     }
     \caption{Detailed System Architecture detailing signal flow, computer vision model evaluation, mathematical inversion, and therapeutic audio generation.}
@@ -367,12 +367,12 @@ The proposed closed-loop framework operates across two computational workflows: 
 
 \section{Dataset Architecture and Demographic Characteristics}
 \label{sec:dataset_architecture}
-This project utilizes the Carnegie Mellon University (CMU) Ultra-High-Density EEG repository recorded by Chamanzar, Haigh, Grover, and Behrmann \cite{chamanzar2021uhd}. The dataset was acquired using an ultra-high-density BioSemi ActiveTwo system with 128 custom scalp electrode locations arranged in a radial layout, alongside additional external reference and ocular channels (totaling 144 recorded channels in 24-bit BioSemi Data Format, ).
+This project utilizes the Carnegie Mellon University (CMU) Ultra-High-Density EEG repository recorded by Chamanzar, Haigh, Grover, and Behrmann \cite{chamanzar2021uhd}. The dataset was acquired using an ultra-high-density BioSemi ActiveTwo system with 128 custom scalp electrode locations arranged in a radial layout, alongside additional external reference and ocular channels (totaling 144 recorded channels in 24-bit BioSemi Data Format, \texttt{.bdf}).
 
 \subsection{Cohort Demographics}
 The experimental cohort comprises 36 human participants partitioned into two clinically characterized groups:
 \begin{itemize}
-    \item \textbf{Migraine Group ($\boldsymbol{M}$)}: 18 individuals diagnosed with migraine according to ICHD-3 criteria (subject codes M1 through M18). Demographically, the group consists of 12 females and 6 males with ages ranging from 19 to 54 years (mean age: .2 \pm 10.4$ years). Twelve patients suffer from migraine with aura ({\text{aura}}$), while six experience migraine without aura ({\text{no-aura}}$). All recordings were performed during the interictal phase (at least 72 hours headache-free before and 24 hours after the recording session).
+    \item \textbf{Migraine Group ($\boldsymbol{M}$)}: 18 individuals diagnosed with migraine according to ICHD-3 criteria (subject codes M1 through M18). Demographically, the group consists of 12 females and 6 males with ages ranging from 19 to 54 years (mean age: $27.2 \pm 10.4$ years). Twelve patients suffer from migraine with aura ($M_{\text{aura}}$), while six experience migraine without aura ($M_{\text{no-aura}}$). All recordings were performed during the interictal phase (at least 72 hours headache-free before and 24 hours after the recording session).
     \item \textbf{Control Group ($\boldsymbol{C}$)}: 18 age- and gender-matched healthy control subjects (subject codes C1, C3--C5, C7--C11, C13--C21) with no personal or first-degree family history of migraine or recurrent headaches, alongside 4 supplementary control recordings (C2, C6, C12, P15).
 \end{itemize}
 
@@ -385,10 +385,10 @@ A summary of the participant demographic profiles extracted from the clinical st
 \begin{adjustbox}{width=0.95\textwidth}
 \begin{tabular}{lcccccc}
 \toprule
-\textbf{Participant Group} & \textbf{Subject Count} & \textbf{Gender (F/M)} & \textbf{Age (Years)} & \textbf{Aura (Yes/No)} & \textbf{Medication Pre-Session} & \textbf{Interictal Status} \
+\textbf{Participant Group} & \textbf{Subject Count} & \textbf{Gender (F/M)} & \textbf{Age (Years)} & \textbf{Aura (Yes/No)} & \textbf{Medication Pre-Session} & \textbf{Interictal Status} \\
 \midrule
-Migraine Cohort ($) & 18 & 12 / 6 & .2 \pm 10.4$ & 12 / 6 & Excluded from analysis (M2, M6, M18) & Validated ($\ge 72 attack-free) \
-Control Cohort ($) & 18 Matched (+4) & 14 / 8 & .8 \pm 9.8$ & None (N/A) & None (N/A) & Healthy Normative \
+Migraine Cohort ($M$) & 18 & 12 / 6 & $27.2 \pm 10.4$ & 12 / 6 & Excluded from analysis (M2, M6, M18) & Validated ($\ge 72$h attack-free) \\
+Control Cohort ($C$) & 18 Matched (+4) & 14 / 8 & $26.8 \pm 9.8$ & None (N/A) & None (N/A) & Healthy Normative \\
 \bottomrule
 \end{tabular}
 \end{adjustbox}
@@ -397,37 +397,37 @@ Control Cohort ($) & 18 Matched (+4) & 14 / 8 & .8 \pm 9.8$ & None (N/A) & None 
 \subsection{Experimental Stimulation Paradigms}
 Each participant underwent three distinct experimental recording conditions:
 \begin{enumerate}
-    \item \textbf{Resting State ()}: Spontaneous, unprovoked baseline EEG acquired while participants rested quietly with eyes open/closed, reflecting intrinsic thalamocortical oscillatory dynamics.
-    \item \textbf{Steady-State Auditory Evoked Potentials ()}: Participants listened to continuous auditory tones sinusoidally amplitude-modulated at temporal frequencies of 4~Hz and 6~Hz, probing auditory brainstem and cortical sensory gating.
-    \item \textbf{Steady-State Visual Evoked Potentials ()}: Participants viewed high-contrast vertical square-wave grating patterns reversing at temporal frequencies of 4~Hz and 6~Hz, driving visual cortex resonance and measuring photophobic cortical hyperexcitability.
+    \item \textbf{Resting State (\texttt{*Resting*.bdf})}: Spontaneous, unprovoked baseline EEG acquired while participants rested quietly with eyes open/closed, reflecting intrinsic thalamocortical oscillatory dynamics.
+    \item \textbf{Steady-State Auditory Evoked Potentials (\texttt{*SSAEP*.bdf})}: Participants listened to continuous auditory tones sinusoidally amplitude-modulated at temporal frequencies of 4~Hz and 6~Hz, probing auditory brainstem and cortical sensory gating.
+    \item \textbf{Steady-State Visual Evoked Potentials (\texttt{*SSVEP*.bdf})}: Participants viewed high-contrast vertical square-wave grating patterns reversing at temporal frequencies of 4~Hz and 6~Hz, driving visual cortex resonance and measuring photophobic cortical hyperexcitability.
 \end{enumerate}
 
 \section{Signal Preprocessing and Artifact Management}
 \label{sec:preprocessing}
-Continuous raw EEG data were preprocessed using the open-source MNE-Python library () following rigorous clinical electrophysiological protocols:
+Continuous raw EEG data were preprocessed using the open-source MNE-Python library (\texttt{1\_EEG\_CMU.ipynb}) following rigorous clinical electrophysiological protocols:
 
 \begin{enumerate}
     \item \textbf{Montage Selection}: The 144 recorded channels were parsed to extract the 128 active scalp electroencephalographic electrodes, discarding peripheral ocular, electrocardiographic, and unused auxiliary channels.
-    \item \textbf{Common Average Referencing (CAR)}: To eliminate spatially correlated ambient electrical interference and minimize non-neural reference contamination without biasing local gradients, the instantaneous potential of each channel (t)$ was re-referenced against the instantaneous spatial mean of all 128 scalp electrodes:
+    \item \textbf{Common Average Referencing (CAR)}: To eliminate spatially correlated ambient electrical interference and minimize non-neural reference contamination without biasing local gradients, the instantaneous potential of each channel $v_i(t)$ was re-referenced against the instantaneous spatial mean of all 128 scalp electrodes:
     \begin{equation}
         v_i^{\text{CAR}}(t) = v_i(t) - \frac{1}{N_{\text{ch}}} \sum_{j=1}^{N_{\text{ch}}} v_j(t), \quad N_{\text{ch}} = 128
         \label{eq:car_reference}
     \end{equation}
     \item \textbf{Zero-Phase Bandpass Filtering (1.0--50.0~Hz)}: A zero-phase non-causal FIR filter (Hamming windowed sinc design) was applied. The high-pass cutoff at 1.0~Hz effectively eliminated slow electrogalvanic drifts, skin perspiration potentials, and DC bias. The low-pass cutoff at 50.0~Hz attenuated electromyographic (EMG) muscle noise and high-frequency instrumentation artifacts while preserving the full physiologically meaningful bandwidth (Delta, Theta, Alpha, Beta, and lower Gamma).
-    \item \textbf{Notch Filtering (60.0~Hz)}: A sharp notch filter with a quality factor  = 30$ was applied to extinguish North American powerline alternating current (AC) interference and its primary harmonics.
+    \item \textbf{Notch Filtering (60.0~Hz)}: A sharp notch filter with a quality factor $Q = 30$ was applied to extinguish North American powerline alternating current (AC) interference and its primary harmonics.
     \item \textbf{Occipital Channel Selection (Channel \#80)}: In accordance with neuroimaging findings by Chamanzar et al.~\cite{chamanzar2021uhd} and Orhanbulucu et al.~\cite{orhanbulucu2023hybrid}, electrode channel \#80---positioned over the medial occipital/visual cortex (corresponding to the standard 10--10 Oz/O1 boundary)---was selected as the primary diagnostic channel. The occipital cortex represents the primary locus of visual hyperexcitability, alpha rhythm generation, and photophobia in migraine.
 \end{enumerate}
 
 \section{Time-Frequency Spectrogram Generation}
 \label{sec:spectrogram_generation}
-To convert continuous 1D time-series voltage fluctuations into structured 2D images suitable for convolutional neural networks, the preprocessed signal (t)$ of channel \#80 was transformed into the time-frequency domain using the Short-Time Fourier Transform (STFT).
+To convert continuous 1D time-series voltage fluctuations into structured 2D images suitable for convolutional neural networks, the preprocessed signal $x(t)$ of channel \#80 was transformed into the time-frequency domain using the Short-Time Fourier Transform (STFT).
 
-Mathematically, the STFT of a continuous signal (t)$ windowed by (t)$ is formulated as:
+Mathematically, the STFT of a continuous signal $x(t)$ windowed by $w(t)$ is formulated as:
 \begin{equation}
     X(\tau, \omega) = \int_{-\infty}^{\infty} x(t) w(t - \tau) e^{-j \omega t} dt
     \label{eq:stft_continuous}
 \end{equation}
-In discrete algorithmic implementation, the discrete signal $ is segmented into sliding frames of length  = 500$ samples (corresponding to 2.0~seconds at  = 250) with a 50\% temporal overlap ( = 250$ samples), multiplied by a periodic Hann analysis window:
+In discrete algorithmic implementation, the discrete signal $x[n]$ is segmented into sliding frames of length $L = 500$ samples (corresponding to 2.0~seconds at $f_s = 250$~Hz) with a 50\% temporal overlap ($R = 250$ samples), multiplied by a periodic Hann analysis window:
 \begin{equation}
     w[n] = 0.5 \left(1 - \cos\left(\frac{2\pi n}{L - 1}\right)\right), \quad 0 \le n \le L-1
     \label{eq:hann_window}
@@ -437,14 +437,14 @@ The discrete Short-Time Fourier Transform is computed via the Fast Fourier Trans
     X[m, k] = \sum_{n=0}^{L-1} x[mR + n] w[n] e^{-j \frac{2\pi k n}{N_{\text{FFT}}}}, \quad k = 0, \dots, N_{\text{FFT}}-1
     \label{eq:stft_discrete}
 \end{equation}
-where $ denotes the temporal frame index, $ is the discrete frequency bin, and {\text{FFT}} = 1024$ provides high frequency interpolation.
+where $m$ denotes the temporal frame index, $k$ is the discrete frequency bin, and $N_{\text{FFT}} = 1024$ provides high frequency interpolation.
 
-The two-sided time-frequency power spectral density (PSD) $ is expressed in logarithmic decibels (dB):
+The two-sided time-frequency power spectral density (PSD) $S[m, k]$ is expressed in logarithmic decibels (dB):
 \begin{equation}
     S_{\text{dB}}[m, k] = 10 \log_{10} \left( \frac{|X[m, k]|^2}{f_s \sum_{n=0}^{L-1} w[n]^2} \right)
     \label{eq:psd_db}
 \end{equation}
-The resulting power spectrograms were constrained to the clinical band 1.0~Hz to 50.0~Hz and rendered into high-resolution RGB images ( \times 2400$ pixels) using Matplotlib's perceptually uniform \textbf{Viridis} colormap. The color scaling was clamped across a fixed dynamic range of 30. ({\min} = -10.0, {\max} = +30.0), establishing a calibrated, invariant photometric mapping across all participants.
+The resulting power spectrograms were constrained to the clinical band 1.0~Hz to 50.0~Hz and rendered into high-resolution RGB images ($6000 \times 2400$ pixels) using Matplotlib's perceptually uniform \textbf{Viridis} colormap. The color scaling was clamped across a fixed dynamic range of $[-10.0, +30.0]$~dB ($P_{\min} = -10.0$~dB, $P_{\max} = +30.0$~dB), establishing a calibrated, invariant photometric mapping across all participants.
 
 A total of \textbf{106 spectrogram images} were generated and systematically stored in class-specific directories:
 \begin{itemize}
@@ -454,7 +454,7 @@ A total of \textbf{106 spectrogram images} were generated and systematically sto
 
 \section{Deep Convolutional Transfer Learning Framework}
 \label{sec:deep_learning_models}
-To evaluate automated interictal migraine detection from spectrogram images, we implemented and benchmarked three distinct deep convolutional neural network architectures pre-trained on the ImageNet database: **VGG16**, **ResNet50**, and **EfficientNetB7**.
+To evaluate automated interictal migraine detection from spectrogram images, we implemented and benchmarked three distinct deep convolutional neural network architectures pre-trained on the ImageNet database: \textbf{VGG16}, \textbf{ResNet50}, and \textbf{EfficientNetB7}.
 
 \subsection{Preprocessing and Augmentation Layer}
 Each input image was standardized through an initial non-trainable TensorFlow sequential preprocessing pipeline:
@@ -465,13 +465,13 @@ Each input image was standardized through an initial non-trainable TensorFlow se
 
 \subsection{Model Architectures}
 \begin{enumerate}
-    \item \textbf{VGG16 Backbone} \cite{Simonyan2014}: A classical sequential convolutional architecture consisting of 13 convolutional layers structured into five convolutional blocks using very small  \times 3$ receptive fields, interleaved with five  \times 2$ max-pooling layers with stride 2. While structurally straightforward, VGG16 contains approximately 14.7 million parameters (in its feature extractor) and provides a solid baseline for spatial feature extraction.
+    \item \textbf{VGG16 Backbone} \cite{Simonyan2014}: A classical sequential convolutional architecture consisting of 13 convolutional layers structured into five convolutional blocks using very small $3 \times 3$ receptive fields, interleaved with five $2 \times 2$ max-pooling layers with stride 2. While structurally straightforward, VGG16 contains approximately 14.7 million parameters (in its feature extractor) and provides a solid baseline for spatial feature extraction.
     \item \textbf{ResNet50 Backbone} \cite{He2016}: A 50-layer deep residual network that overcomes the vanishing gradient problem in deep networks through identity shortcut connections. The fundamental residual building block computes:
     \begin{equation}
         \mathbf{y} = \mathcal{F}(\mathbf{x}, \{W_i\}) + \mathbf{x}
         \label{eq:residual_block}
     \end{equation}
-    where $\mathbf{x}$ and $\mathbf{y}$ are the input and output vectors, and $\mathcal{F}$ represents the residual mapping to be learned. ResNet50 employs bottleneck blocks consisting of  \times 1$,  \times 3$, and  \times 1$ convolutions, facilitating the extraction of multi-scale time-frequency features across 25.6 million parameters.
+    where $\mathbf{x}$ and $\mathbf{y}$ are the input and output vectors, and $\mathcal{F}$ represents the residual mapping to be learned. ResNet50 employs bottleneck blocks consisting of $1 \times 1$, $3 \times 3$, and $1 \times 1$ convolutions, facilitating the extraction of multi-scale time-frequency features across 25.6 million parameters.
     \item \textbf{EfficientNetB7 Backbone} \cite{Tan2019}: The largest and most powerful variant of the EfficientNet family, designed using systematic compound scaling. Unlike conventional models that arbitrarily scale network depth, width, or input resolution, EfficientNet uniformly scales all three dimensions using a fixed compound coefficient $\phi$:
     \begin{equation}
         \text{depth: } d = \alpha^\phi, \quad \text{width: } w = \beta^\phi, \quad \text{resolution: } r = \gamma^\phi
@@ -481,27 +481,27 @@ Each input image was standardized through an initial non-trainable TensorFlow se
 \end{enumerate}
 
 \subsection{Custom Classification Head and Training Configuration}
-For all three backbones, the pre-trained ImageNet feature extractors were frozen () to prevent catastrophic forgetting of general visual primitives. The top classification layers were replaced with a specialized biomedical head:
+For all three backbones, the pre-trained ImageNet feature extractors were frozen (\texttt{trainable = False}) to prevent catastrophic forgetting of general visual primitives. The top classification layers were replaced with a specialized biomedical head:
 \begin{align}
-    \mathbf{h}_{\text{pool}} &= \text{GlobalAveragePooling2D}(\mathbf{F}_{\text{backbone}}) \in \mathbb{R}^{D} \label{eq:gap} \
-    \mathbf{h}_{\text{dense}} &= \text{ReLU}(\mathbf{W}_1 \mathbf{h}_{\text{pool}} + \mathbf{b}_1), \quad \mathbf{W}_1 \in \mathbb{R}^{128 \times D} \label{eq:dense128} \
+    \mathbf{h}_{\text{pool}} &= \text{GlobalAveragePooling2D}(\mathbf{F}_{\text{backbone}}) \in \mathbb{R}^{D} \label{eq:gap} \\
+    \mathbf{h}_{\text{dense}} &= \text{ReLU}(\mathbf{W}_1 \mathbf{h}_{\text{pool}} + \mathbf{b}_1), \quad \mathbf{W}_1 \in \mathbb{R}^{128 \times D} \label{eq:dense128} \\
     \hat{\mathbf{y}} &= \text{Softmax}(\mathbf{W}_2 \mathbf{h}_{\text{dense}} + \mathbf{b}_2), \quad \mathbf{W}_2 \in \mathbb{R}^{2 \times 128} \label{eq:softmax}
 \end{align}
 The networks output a predicted probability distribution $\hat{\mathbf{y}} = [p_{\text{control}}, p_{\text{migraine}}]^T$.
 
-Training was conducted using the **Adam** optimizer with a conservative learning rate $\eta = 1.0 \times 10^{-4}$, optimizing the **Sparse Categorical Cross-Entropy** objective function:
+Training was conducted using the \textbf{Adam} optimizer with a conservative learning rate $\eta = 1.0 \times 10^{-4}$, optimizing the \textbf{Sparse Categorical Cross-Entropy} objective function:
 \begin{equation}
     \mathcal{L}_{\text{SCCE}} = - \frac{1}{N} \sum_{i=1}^N \log \left( \hat{y}_{i, c_i} \right)
     \label{eq:scce_loss}
 \end{equation}
-where  \in \{0, 1\}$ represents the ground-truth class index. The dataset was partitioned into 60\% training and 40\% evaluation splits. A  callback monitored validation performance, saving the optimal weight tensor.
+where $c_i \in \{0, 1\}$ represents the ground-truth class index. The dataset was partitioned into 60\% training and 40\% evaluation splits. A \texttt{ModelCheckpoint} callback monitored validation performance, saving the optimal weight tensor.
 
 \section{Mathematical Formulation of Spectrogram Inversion}
 \label{sec:colormap_inversion}
-A central innovation of this Final Year Design Project is the analytical inversion of rendered 2D spectrogram images back into calibrated physical units of power spectral density ($\mu\text{V}^2/\text{Hz}$), implemented in .
+A central innovation of this Final Year Design Project is the analytical inversion of rendered 2D spectrogram images back into calibrated physical units of power spectral density ($\mu\text{V}^2/\text{Hz}$), implemented in \texttt{5\_spectrogram\_binaural\_treatment.ipynb}.
 
 \subsection{Color Lookup Table (LUT) Formulation}
-Matplotlib's Viridis colormap is a non-linear, mathematically defined bijective mapping from the unit interval 1.$ to sRGB color space:
+Matplotlib's Viridis colormap is a non-linear, mathematically defined bijective mapping from the unit interval $[0.0, 1.0]$ to sRGB color space:
 \begin{equation}
     \boldsymbol{\gamma}(u) = [R(u), G(u), B(u)]^T \in [0.0, 255.0]^3, \quad u \in [0.0, 1.0]
     \label{eq:viridis_mapping}
@@ -513,7 +513,7 @@ We precompute a discrete 256-entry Look-Up Table (LUT):
 \end{equation}
 
 \subsection{Minimum Euclidean Distance Inversion}
-Given a rendered RGB spectrogram image resized to standard discrete matrix dimensions of height  = 400$ rows (frequency dimension) and width  = 600$ columns (time dimension), each pixel coordinate $ possesses an observed color vector $\mathbf{p}(y, t) = [R_{y, t}, G_{y, t}, B_{y, t}]^T$.
+Given a rendered RGB spectrogram image resized to standard discrete matrix dimensions of height $H = 400$ rows (frequency dimension) and width $W = 600$ columns (time dimension), each pixel coordinate $(y, t)$ possesses an observed color vector $\mathbf{p}(y, t) = [R_{y, t}, G_{y, t}, B_{y, t}]^T$.
 
 The reconstructed colormap index $\hat{k}(y, t)$ is determined analytically by finding the nearest color vector in the Viridis LUT using minimum squared Euclidean distance:
 \begin{equation}
@@ -527,7 +527,7 @@ The normalized scalar colormap coordinate $\hat{u}(y, t) \in [0.0, 1.0]$ is:
 \end{equation}
 
 \subsection{Decibel and Linear Power Reconstruction}
-Since the spectrogram images were rendered across the calibrated linear display limits {\min} = -10.0 and {\max} = +30.0, the calibrated decibel power level {\text{dB}}(y, t)$ is reconstructed via linear interpolation:
+Since the spectrogram images were rendered across the calibrated linear display limits $P_{\min} = -10.0$~dB and $P_{\max} = +30.0$~dB, the calibrated decibel power level $S_{\text{dB}}(y, t)$ is reconstructed via linear interpolation:
 \begin{equation}
     S_{\text{dB}}(y, t) = P_{\min} + \hat{u}(y, t) \cdot (P_{\max} - P_{\min}) = -10.0 + 40.0 \cdot \hat{u}(y, t)
     \label{eq:db_reconstruction}
@@ -539,12 +539,12 @@ The reconstructed power spectral density in linear microvolts-squared units ($\m
 \end{equation}
 
 \subsection{Row-to-Frequency Projection}
-Because image coordinates originate with row  = 0$ at the top of the canvas, pixel rows correspond linearly from the maximum frequency ({\max} = 50.0) down to the minimum frequency ({\min} = 1.0):
+Because image coordinates originate with row $y = 0$ at the top of the canvas, pixel rows correspond linearly from the maximum frequency ($f_{\max} = 50.0$~Hz) down to the minimum frequency ($f_{\min} = 1.0$~Hz):
 \begin{equation}
     f(y) = f_{\max} - y \cdot \left(\frac{f_{\max} - f_{\min}}{H - 1}\right) = 50.0 - y \cdot \left(\frac{49.0}{399.0}\right), \quad y \in \{0, 1, \dots, 399\}
     \label{eq:freq_mapping}
 \end{equation}
-Averaging the reconstructed linear power across all temporal columns  = 1, \dots, W$ yields the patient's continuous Power Spectral Density profile $\overline{P}(f)$:
+Averaging the reconstructed linear power across all temporal columns $t = 1, \dots, W$ yields the patient's continuous Power Spectral Density profile $\overline{P}(f)$:
 \begin{equation}
     \overline{P}(y) = \frac{1}{W} \sum_{t=1}^W P(y, t)
     \label{eq:psd_profile}
@@ -555,7 +555,7 @@ Averaging the reconstructed linear power across all temporal columns  = 1, \dots
 From the reconstructed continuous power spectral density profile $\overline{P}(f)$, we extract targeted neurophysiological indices that quantify thalamocortical dysrhythmia:
 
 \subsection{Canonical Band Power Integration}
-The total raw power within each canonical frequency band  \in \{\text{Delta, Theta, Alpha, Beta, Gamma}\}$ is computed by numerical integration across its constituent frequency rows:
+The total raw power within each canonical frequency band $B \in \{\text{Delta, Theta, Alpha, Beta, Gamma}\}$ is computed by numerical integration across its constituent frequency rows:
 \begin{equation}
     P_{\text{raw}}(B) = \frac{1}{|Y_B|} \sum_{y \in Y_B} \overline{P}(y), \quad Y_B = \{y \mid f_{\text{low}}(B) \le f(y) < f_{\text{high}}(B)\}
     \label{eq:band_power_raw}
@@ -599,46 +599,46 @@ Two clinically validated electrophysiological ratios are computed:
 
 \section{Personalized Binaural Beat Audio Synthesis}
 \label{sec:audio_synthesis}
-The final stage of the pipeline translates the extracted electrophysiological markers into an acoustic neuromodulation prescription ().
+The final stage of the pipeline translates the extracted electrophysiological markers into an acoustic neuromodulation prescription (\texttt{5\_spectrogram\_binaural\_treatment.ipynb}).
 
 \subsection{Dichotic Acoustic Tone Formulation}
-Given a target entrainment beat frequency {\text{beat}} = \text{IAF}$ (typically between 8.0~Hz and 12.5~Hz) and an acoustic carrier frequency $, the synthesized left and right stereo audio channels are defined mathematically as:
+Given a target entrainment beat frequency $f_{\text{beat}} = \text{IAF}$ (typically between 8.0~Hz and 12.5~Hz) and an acoustic carrier frequency $f_c$, the synthesized left and right stereo audio channels are defined mathematically as:
 \begin{align}
-    f_{\text{left}} &= f_c - \frac{f_{\text{beat}}}{2} \label{eq:f_left} \
+    f_{\text{left}} &= f_c - \frac{f_{\text{beat}}}{2} \label{eq:f_left} \\
     f_{\text{right}} &= f_c + \frac{f_{\text{beat}}}{2} \label{eq:f_right}
 \end{align}
-The instantaneous discrete signals sampled at  = 44,100 across discrete sample indices  = 0, 1, \dots, N_{\text{total}}-1$ are:
+The instantaneous discrete signals sampled at $f_s = 44,100$~Hz across discrete sample indices $n = 0, 1, \dots, N_{\text{total}}-1$ are:
 \begin{align}
-    s_{\text{left}}[n] &= A \cdot \sin\left(2\pi f_{\text{left}} \frac{n}{f_s}\right) \label{eq:sig_left} \
+    s_{\text{left}}[n] &= A \cdot \sin\left(2\pi f_{\text{left}} \frac{n}{f_s}\right) \label{eq:sig_left} \\
     s_{\text{right}}[n] &= A \cdot \sin\left(2\pi f_{\text{right}} \frac{n}{f_s}\right) \label{eq:sig_right}
 \end{align}
-where  = 0.75$ sets the peak amplitude to 569X2.5, providing robust dynamic headroom to prevent digital clipping in standard audio digital-to-analog converters (DACs).
+where $A = 0.75$ sets the peak amplitude to $-2.5$~dBFS, providing robust dynamic headroom to prevent digital clipping in standard audio digital-to-analog converters (DACs).
 
-\subsection{Carrier Frequency Selection Rationale ( = 216.0)}
-The carrier frequency is set to  = 216.0 based on three rigorous biomedical criteria:
+\subsection{Carrier Frequency Selection Rationale ($f_c = 216.0$~Hz)}
+The carrier frequency is set to $f_c = 216.0$~Hz based on three rigorous biomedical criteria:
 \begin{enumerate}
     \item \textbf{Brainstem Phase Locking}: Auditory neurophysiology demonstrates that medial superior olivary coincidence detectors achieve optimal phase-locking to carrier frequencies between 150~Hz and 400~Hz \cite{Oster1973,Wahbeh2007}.
-    \item \textbf{Subcortical Pitch Salience}: A 216~Hz tone corresponds approximately to musical pitch A3 (in scientific pitch calibration), which possesses a warm, relaxing timbre that avoids the harshness of higher frequencies ($>500) and the acoustic inaudibility of deep bass ($<100).
+    \item \textbf{Subcortical Pitch Salience}: A 216~Hz tone corresponds approximately to musical pitch A3 (in scientific pitch calibration), which possesses a warm, relaxing timbre that avoids the harshness of higher frequencies ($>500$~Hz) and the acoustic inaudibility of deep bass ($<100$~Hz).
     \item \textbf{Harmonic Safety in Photophobia}: Higher auditory frequencies can induce sensory cross-talk in hyper-excitable migraine brains; a low 216~Hz carrier minimizes sensory irritation while delivering stable binaural depth \cite{Maddison2023,Sudre2024}.
 \end{enumerate}
 
 \subsection{Anti-Click Fade Envelope and Audio Export}
-Sudden onset or abrupt cessation of pure sinusoidal tones creates high-frequency spectral splatter (acoustic clicks) that trigger startle reflexes and cortical arousal. To ensure a smooth acoustic transition, a squared half-cosine taper envelope $ is applied over a duration of {\text{fade}} = 1.5 ({\text{fade}} = \lfloor f_s \cdot T_{\text{fade}} \rfloor$ samples):
+Sudden onset or abrupt cessation of pure sinusoidal tones creates high-frequency spectral splatter (acoustic clicks) that trigger startle reflexes and cortical arousal. To ensure a smooth acoustic transition, a squared half-cosine taper envelope $E[n]$ is applied over a duration of $T_{\text{fade}} = 1.5$~seconds ($N_{\text{fade}} = \lfloor f_s \cdot T_{\text{fade}} \rfloor$ samples):
 \begin{equation}
     E[n] = 
     \begin{cases}
-        \sin^2\left(\frac{\pi n}{2 N_{\text{fade}}}\right), & 0 \le n < N_{\text{fade}} \quad (\text{Onset Fade-In}) \[1ex]
-        1.0, & N_{\text{fade}} \le n \le N_{\text{total}} - N_{\text{fade}} \[1ex]
+        \sin^2\left(\frac{\pi n}{2 N_{\text{fade}}}\right), & 0 \le n < N_{\text{fade}} \quad (\text{Onset Fade-In}) \\[1ex]
+        1.0, & N_{\text{fade}} \le n \le N_{\text{total}} - N_{\text{fade}} \\[1ex]
         \cos^2\left(\frac{\pi (n - (N_{\text{total}} - N_{\text{fade}}))}{2 N_{\text{fade}}}\right), & N_{\text{total}} - N_{\text{fade}} < n < N_{\text{total}} \quad (\text{Offset Fade-Out})
     \end{cases}
     \label{eq:fade_envelope}
 \end{equation}
 The final modulated stereo signals are quantized to 16-bit signed Pulse Code Modulation (PCM) integers:
 \begin{equation}
-    s_{\text{stereo}}[n] = \left\lfloor 32767.0 \cdot E[n] \cdot \begin{bmatrix} s_{\text{left}}[n] \ s_{\text{right}}[n] \end{bmatrix} \right\rfloor \in [-32768, +32767]^2
+    s_{\text{stereo}}[n] = \left\lfloor 32767.0 \cdot E[n] \cdot \begin{bmatrix} s_{\text{left}}[n] \\ s_{\text{right}}[n] \end{bmatrix} \right\rfloor \in [-32768, +32767]^2
     \label{eq:pcm_quantization}
 \end{equation}
-and exported as uncompressed stereo  audio files at 44.1~kHz.
+and exported as uncompressed stereo \texttt{.wav} audio files at 44.1~kHz.
 
 % =========================================================================
 % CHAPTER 4: EXPERIMENTAL RESULTS & PERFORMANCE ANALYSIS
@@ -650,15 +650,15 @@ and exported as uncompressed stereo  audio files at 44.1~kHz.
 \label{sec:dl_performance}
 The deep transfer learning models (VGG16, ResNet50, and EfficientNetB7) were evaluated on the held-out test split of 2D time-frequency spectrogram images. Performance was benchmarked across five standard clinical machine learning metrics: Classification Accuracy, Weighted Precision, Weighted Recall, Weighted F1-Score, and the Matthews Correlation Coefficient (MCC).
 
-Mathematically, given the confusion matrix elements True Positives ($), True Negatives ($), False Positives ($), and False Negatives ($), these metrics are defined as:
+Mathematically, given the confusion matrix elements True Positives ($TP$), True Negatives ($TN$), False Positives ($FP$), and False Negatives ($FN$), these metrics are defined as:
 \begin{align}
-    \text{Accuracy} &= \frac{TP + TN}{TP + TN + FP + FN} \label{eq:accuracy} \
-    \text{Precision} &= \frac{TP}{TP + FP} \label{eq:precision} \
-    \text{Recall (Sensitivity)} &= \frac{TP}{TP + FN} \label{eq:recall} \
-    \text{F1-Score} &= 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}} \label{eq:f1} \
+    \text{Accuracy} &= \frac{TP + TN}{TP + TN + FP + FN} \label{eq:accuracy} \\
+    \text{Precision} &= \frac{TP}{TP + FP} \label{eq:precision} \\
+    \text{Recall (Sensitivity)} &= \frac{TP}{TP + FN} \label{eq:recall} \\
+    \text{F1-Score} &= 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}} \label{eq:f1} \\
     \text{MCC} &= \frac{TP \cdot TN - FP \cdot FN}{\sqrt{(TP + FP)(TP + FN)(TN + FP)(TN + FN)}} \label{eq:mcc}
 \end{align}
-The Matthews Correlation Coefficient is especially vital for biomedical evaluation because it yields a balanced score in the range 1.$ that remains robust even under class imbalance \cite{Arlot2010}.
+The Matthews Correlation Coefficient is especially vital for biomedical evaluation because it yields a balanced score in the range $[-1.0, +1.0]$ that remains robust even under class imbalance \cite{Arlot2010}.
 
 Table~\ref{tab:model_comparison} summarizes the empirical performance metrics obtained across the three evaluated deep learning backbones.
 
@@ -668,23 +668,23 @@ Table~\ref{tab:model_comparison} summarizes the empirical performance metrics ob
 \label{tab:model_comparison}
 \begin{tabular}{lccccc}
 \toprule
-\textbf{Architecture} & \textbf{Accuracy} & \textbf{Weighted Precision} & \textbf{Weighted Recall} & \textbf{Weighted F1} & \textbf{MCC} \
+\textbf{Architecture} & \textbf{Accuracy} & \textbf{Weighted Precision} & \textbf{Weighted Recall} & \textbf{Weighted F1} & \textbf{MCC} \\
 \midrule
-VGG16 & 90.63\% (0.90625) & 90.99\% (0.90990) & 90.63\% (0.90625) & 90.71\% (0.90714) & 0.79845 \
-ResNet50 & 87.50\% (0.87500) & 88.61\% (0.88613) & 87.50\% (0.87500) & 87.71\% (0.87708) & 0.74100 \
-\textbf{EfficientNetB7} & \textbf{93.75\% (0.93750)} & \textbf{94.71\% (0.94712)} & \textbf{93.75\% (0.93750)} & \textbf{93.85\% (0.93854)} & \textbf{0.87497} \
+VGG16 & 90.63\% (0.90625) & 90.99\% (0.90990) & 90.63\% (0.90625) & 90.71\% (0.90714) & 0.79845 \\
+ResNet50 & 87.50\% (0.87500) & 88.61\% (0.88613) & 87.50\% (0.87500) & 87.71\% (0.87708) & 0.74100 \\
+\textbf{EfficientNetB7} & \textbf{93.75\% (0.93750)} & \textbf{94.71\% (0.94712)} & \textbf{93.75\% (0.93750)} & \textbf{93.85\% (0.93854)} & \textbf{0.87497} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-As illustrated in Figure~\ref{fig:model_comparison_chart}, **EfficientNetB7** achieved the highest overall diagnostic performance across all evaluated metrics, reaching an accuracy of 93.75\%, a weighted F1-score of 93.85\%, and an exceptional Matthews Correlation Coefficient of 0.8750. VGG16 followed with 90.63\% accuracy and 0.7985 MCC, while ResNet50 achieved 87.50\% accuracy and 0.7410 MCC.
+As illustrated in Figure~\ref{fig:model_comparison_chart}, \textbf{EfficientNetB7} achieved the highest overall diagnostic performance across all evaluated metrics, reaching an accuracy of 93.75\%, a weighted F1-score of 93.85\%, and an exceptional Matthews Correlation Coefficient of 0.8750. VGG16 followed with 90.63\% accuracy and 0.7985 MCC, while ResNet50 achieved 87.50\% accuracy and 0.7410 MCC.
 
 \begin{figure}[H]
     \centering
     \IfFileExists{Images/model_comparison_chart.png}{%
         \includegraphics[width=0.90\textwidth]{Images/model_comparison_chart.png}
     }{%
-        \fbox{\parbox{0.85\textwidth}{\centering \textbf{Figure 4.1: Model Comparison Bar Chart}\
+        \fbox{\parbox{0.85\textwidth}{\centering \textbf{Figure 4.1: Model Comparison Bar Chart}\\
         [EfficientNetB7: 93.75\% Acc, 0.8750 MCC | VGG16: 90.63\% Acc, 0.7985 MCC | ResNet50: 87.50\% Acc, 0.7410 MCC]}}
     }
     \caption{Empirical classification performance metrics across the evaluated deep learning backbones on interictal EEG spectrograms.}
@@ -697,19 +697,19 @@ The superior performance of EfficientNetB7 stems directly from its compound scal
 \label{sec:roc_confusion}
 Analysis of the confusion matrix for EfficientNetB7 demonstrates clean class separability. Out of 32 held-out validation images, the model correctly classified 19 out of 20 healthy control spectrograms (Specificity: 95.0\%) and 11 out of 12 migraine spectrograms (Sensitivity: 91.67\%), yielding only one false positive and one false negative.
 
-The Receiver Operating Characteristic (ROC) curve evaluates diagnostic discrimination across varying softmax decision thresholds by plotting True Positive Rate (Sensitivity) against False Positive Rate ( - \text{Specificity}$). The trapezoidal Area Under the Curve (ROC-AUC) for EfficientNetB7 reached **0.965**, confirming that the model maintains outstanding diagnostic discrimination regardless of the chosen operational classification cutoff.
+The Receiver Operating Characteristic (ROC) curve evaluates diagnostic discrimination across varying softmax decision thresholds by plotting True Positive Rate (Sensitivity) against False Positive Rate ($1 - \text{Specificity}$). The trapezoidal Area Under the Curve (ROC-AUC) for EfficientNetB7 reached \textbf{0.965}, confirming that the model maintains outstanding diagnostic discrimination regardless of the chosen operational classification cutoff.
 
 \section{Training Dynamics and Convergence Trajectories}
 \label{sec:training_dynamics}
 Examination of the training history curves across epochs revealed stable, monotonic convergence for all three models:
 \begin{itemize}
     \item \textbf{Loss Minimization}: Training loss decreased steadily from an initial 0.69 to below 0.18 within 25 epochs. Because the ImageNet feature extraction backbones were frozen, optimization proceeded smoothly without high gradient variance or oscillating losses.
-    \item \textbf{Generalization Gap}: The validation loss closely tracked the training loss throughout all epochs. The application of global average pooling combined with intermediate dropout ( = 0.3$) prevented severe overfitting, ensuring that the networks learned true electrophysiological representations rather than background pixel noise.
+    \item \textbf{Generalization Gap}: The validation loss closely tracked the training loss throughout all epochs. The application of global average pooling combined with intermediate dropout ($p = 0.3$) prevented severe overfitting, ensuring that the networks learned true electrophysiological representations rather than background pixel noise.
 \end{itemize}
 
 \section{Single-Patient Neuromodulation Case Study: Patient M10}
 \label{sec:case_study_m10}
-To validate the end-to-end analytical colormap inversion and acoustic neuromodulation engine, we conducted an exhaustive single-patient case study on patient \textbf{M10} (a 19-year-old female diagnosed with interictal migraine with aura) using resting-state recording .
+To validate the end-to-end analytical colormap inversion and acoustic neuromodulation engine, we conducted an exhaustive single-patient case study on patient \textbf{M10} (a 19-year-old female diagnosed with interictal migraine with aura) using resting-state recording \texttt{M10\_Resting.png}.
 
 The diagnostic and prescription dashboard generated by the system is displayed in Figure~\ref{fig:m10_dashboard}:
 
@@ -718,16 +718,16 @@ The diagnostic and prescription dashboard generated by the system is displayed i
     \IfFileExists{Images/m10_diagnostic_dashboard.png}{%
         \includegraphics[width=0.95\textwidth]{Images/m10_diagnostic_dashboard.png}
     }{%
-        \fbox{\parbox{0.9\textwidth}{\centering \textbf{Figure 4.2: Four-Panel Diagnostic Dashboard for Patient M10}\
+        \fbox{\parbox{0.9\textwidth}{\centering \textbf{Figure 4.2: Four-Panel Diagnostic Dashboard for Patient M10}\\
         [A: STFT Viridis Spectrogram | B: Inverted PSD Profile (IAF = 10.09 Hz) | C: Relative Band Powers (Alpha Deficit = 7.88\%) | D: First 50ms Synthesized Stereo Binaural Audio Waveforms]}}
     }
-    \caption{Four-Panel Clinical Neuromodulation Dashboard for Patient M10: (A) Rendered STFT spectrogram of occipital channel \#80, (B) Reconstructed continuous PSD profile localizing an IAF peak at 10.09~Hz, (C) Normalized canonical band powers highlighting alpha deficit and elevated TAR, and (D) First 50~ms of synthesized dichotic stereo binaural beat audio waveforms ( = 216.0, {\text{beat}} = 10.09).}
+    \caption{Four-Panel Clinical Neuromodulation Dashboard for Patient M10: (A) Rendered STFT spectrogram of occipital channel \#80, (B) Reconstructed continuous PSD profile localizing an IAF peak at 10.09~Hz, (C) Normalized canonical band powers highlighting alpha deficit and elevated TAR, and (D) First 50~ms of synthesized dichotic stereo binaural beat audio waveforms ($f_c = 216.0$~Hz, $f_{\text{beat}} = 10.09$~Hz).}
     \label{fig:m10_dashboard}
 \end{figure}
 
 The step-by-step clinical and quantitative findings for Patient M10 are summarized below:
 \begin{enumerate}
-    \item \textbf{Spectrogram Inversion (Panel A $\rightarrow$ B)}: Ingesting the  \times 2400$ PNG image, the LUT inversion engine reconstructed the continuous PSD curve across 1.0--50.0~Hz. A distinct, sharp spectral resonance peak was localized within the alpha band at exactly:
+    \item \textbf{Spectrogram Inversion (Panel A $\rightarrow$ B)}: Ingesting the $6000 \times 2400$ PNG image, the LUT inversion engine reconstructed the continuous PSD curve across 1.0--50.0~Hz. A distinct, sharp spectral resonance peak was localized within the alpha band at exactly:
     \begin{equation}
         \text{IAF}_{\text{M10}} = 10.09\text{ Hz}
     \end{equation}
@@ -739,17 +739,17 @@ The step-by-step clinical and quantitative findings for Patient M10 are summariz
         \item Beta Power (13.0--30.0~Hz): 38.64\%
         \item Gamma Power (30.0--50.0~Hz): 25.21\%
     \end{itemize}
-    Comparing M10's relative alpha power (12.12\%) against the normative 20\% threshold revealed a marked **Alpha Deficit of 7.88\%**. Furthermore, the Theta-to-Alpha Ratio was computed as:
+    Comparing M10's relative alpha power (12.12\%) against the normative 20\% threshold revealed a marked \textbf{Alpha Deficit of 7.88\%}. Furthermore, the Theta-to-Alpha Ratio was computed as:
     \begin{equation}
         \text{TAR}_{\text{M10}} = \frac{19.88\%}{12.12\%} = 1.64
     \end{equation}
     confirming abnormal interictal low-frequency excess and impaired thalamocortical alpha pacing.
-    \item \textbf{Acoustic Prescription Synthesis (Panel D)}: Using the extracted $\text{IAF} = 10.09 and carrier  = 216.0, the audio synthesis engine generated exact dichotic frequencies:
+    \item \textbf{Acoustic Prescription Synthesis (Panel D)}: Using the extracted $\text{IAF} = 10.09$~Hz and carrier $f_c = 216.0$~Hz, the audio synthesis engine generated exact dichotic frequencies:
     \begin{align}
-        f_{\text{left}} &= 216.0 - \frac{10.09}{2} = 210.955\text{ Hz} \
+        f_{\text{left}} &= 216.0 - \frac{10.09}{2} = 210.955\text{ Hz} \\
         f_{\text{right}} &= 216.0 + \frac{10.09}{2} = 221.045\text{ Hz}
     \end{align}
-    Synthesized with a 1.5-second squared half-cosine taper envelope at 44.1~kHz, the exported 16-bit stereo file  delivered click-free acoustic stimulation precisely tuned to patient M10's endogenous cortical resonance.
+    Synthesized with a 1.5-second squared half-cosine taper envelope at 44.1~kHz, the exported 16-bit stereo file \texttt{M10\_Prescription\_IAF\_10.09Hz.wav} delivered click-free acoustic stimulation precisely tuned to patient M10's endogenous cortical resonance.
 \end{enumerate}
 
 \section{Population Cohort Analytics: Migraine vs. Healthy Control}
@@ -765,12 +765,12 @@ Table~\ref{tab:cohort_statistics} presents the empirical group means, standard d
 \label{tab:cohort_statistics}
 \begin{tabular}{lccc}
 \toprule
-\textbf{Electrophysiological Metric} & \textbf{Migraine Cohort (=12$)} & \textbf{Control Cohort (=22$)} & \textbf{Clinical Implication} \
+\textbf{Electrophysiological Metric} & \textbf{Migraine Cohort ($n=12$)} & \textbf{Control Cohort ($n=22$)} & \textbf{Clinical Implication} \\
 \midrule
-Individual Alpha Frequency (IAF) & .12 \pm 0.80 & .86 \pm 1.18 & Preserved alpha tuning range \
-Relative Alpha Power Proportion & .41 \pm 5.03\%$ & .60 \pm 3.32\%$ & Widespread posterior alpha depression \
-Relative Theta Power Proportion & .47 \pm 8.48\%$ & .17 \pm 5.93\%$ & Low-frequency thalamic slowing in migraine \
-Theta-to-Alpha Ratio (TAR) & .64 \pm 0.38$ & .77 \pm 0.35$ & Pathological ratio perturbation \
+Individual Alpha Frequency (IAF) & $9.12 \pm 0.80$~Hz & $8.86 \pm 1.18$~Hz & Preserved alpha tuning range \\
+Relative Alpha Power Proportion & $9.41 \pm 5.03\%$ & $7.60 \pm 3.32\%$ & Widespread posterior alpha depression \\
+Relative Theta Power Proportion & $15.47 \pm 8.48\%$ & $13.17 \pm 5.93\%$ & Low-frequency thalamic slowing in migraine \\
+Theta-to-Alpha Ratio (TAR) & $1.64 \pm 0.38$ & $1.77 \pm 0.35$ & Pathological ratio perturbation \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -782,8 +782,8 @@ Figure~\ref{fig:cohort_boxplots} displays the population cohort distributions ac
     \IfFileExists{Images/cohort_boxplots.png}{%
         \includegraphics[width=0.95\textwidth]{Images/cohort_boxplots.png}
     }{%
-        \fbox{\parbox{0.9\textwidth}{\centering \textbf{Figure 4.3: Population Cohort Boxplots}\
-        [Left: IAF Distribution (Migraine: 9.12 Hz vs Control: 8.86 Hz) | Center: Alpha Power % | Right: Theta-to-Alpha Ratio (TAR)]}}
+        \fbox{\parbox{0.9\textwidth}{\centering \textbf{Figure 4.3: Population Cohort Boxplots}\\
+        [Left: IAF Distribution (Migraine: 9.12 Hz vs Control: 8.86 Hz) | Center: Alpha Power \% | Right: Theta-to-Alpha Ratio (TAR)]}}
     }
     \caption{Population Cohort Boxplots comparing 12 Migraine vs. 22 Control resting-state participants across Individual Alpha Frequency (IAF), Relative Alpha Power (\%), and Theta-to-Alpha Ratio (TAR).}
     \label{fig:cohort_boxplots}
@@ -799,20 +799,20 @@ Table~\ref{tab:migraine_prescriptions} details the exact quantitative electrophy
 \begin{adjustbox}{width=0.98\textwidth}
 \begin{tabular}{lcccccc}
 \toprule
-\textbf{Subject Code} & \textbf{Spectrogram File} & \textbf{IAF (Hz)} & \textbf{Alpha Power (\%)} & \textbf{Alpha Deficit (\%)} & \textbf{TAR} & \textbf{Synthesized Audio Output ( = 216)} \
+\textbf{Subject Code} & \textbf{Spectrogram File} & \textbf{IAF (Hz)} & \textbf{Alpha Power (\%)} & \textbf{Alpha Deficit (\%)} & \textbf{TAR} & \textbf{Synthesized Audio Output ($f_c = 216$~Hz)} \\
 \midrule
-M3 &  & 9.35 & 8.68\% & 11.32\% & 2.01 &  \
-M4 &  & 8.61 & 5.74\% & 14.26\% & 1.61 &  \
-M5 &  & 8.00 & 1.94\% & 18.06\% & 1.14 &  \
-M7 &  & 9.72 & 8.03\% & 11.97\% & 1.28 &  \
-M8 &  & 8.00 & 5.34\% & 14.66\% & 2.02 &  \
-M9 &  & 8.98 & 12.71\% & 7.29\% & 2.23 &  \
-M10 &  & 10.09 & 12.12\% & 7.88\% & 1.64 &  \
-M11 &  & 9.35 & 22.73\% & 0.00\% & 1.54 &  \
-M12 &  & 8.25 & 8.63\% & 11.37\% & 1.30 &  \
-M14 &  & 8.61 & 5.62\% & 14.38\% & 2.25 &  \
-M16 &  & 10.21 & 9.98\% & 10.02\% & 1.44 &  \
-M17 &  & 10.21 & 11.35\% & 8.65\% & 1.25 &  \
+M3 & \texttt{M3Resting.png} & 9.35 & 8.68\% & 11.32\% & 2.01 & \texttt{M3\_treatment\_IAF\_9.35Hz.wav} \\
+M4 & \texttt{M4\_Resting.png} & 8.61 & 5.74\% & 14.26\% & 1.61 & \texttt{M4\_treatment\_IAF\_8.61Hz.wav} \\
+M5 & \texttt{M5\_Resting.png} & 8.00 & 1.94\% & 18.06\% & 1.14 & \texttt{M5\_treatment\_IAF\_8.00Hz.wav} \\
+M7 & \texttt{M7\_Resting.png} & 9.72 & 8.03\% & 11.97\% & 1.28 & \texttt{M7\_treatment\_IAF\_9.72Hz.wav} \\
+M8 & \texttt{M8\_Resting.png} & 8.00 & 5.34\% & 14.66\% & 2.02 & \texttt{M8\_treatment\_IAF\_8.00Hz.wav} \\
+M9 & \texttt{M9\_Resting.png} & 8.98 & 12.71\% & 7.29\% & 2.23 & \texttt{M9\_treatment\_IAF\_8.98Hz.wav} \\
+M10 & \texttt{M10\_Resting.png} & 10.09 & 12.12\% & 7.88\% & 1.64 & \texttt{M10\_treatment\_IAF\_10.09Hz.wav} \\
+M11 & \texttt{M11\_Resting.png} & 9.35 & 22.73\% & 0.00\% & 1.54 & \texttt{M11\_treatment\_IAF\_9.35Hz.wav} \\
+M12 & \texttt{M12\_Resting.png} & 8.25 & 8.63\% & 11.37\% & 1.30 & \texttt{M12\_treatment\_IAF\_8.25Hz.wav} \\
+M14 & \texttt{M14\_Resting.png} & 8.61 & 5.62\% & 14.38\% & 2.25 & \texttt{M14\_treatment\_IAF\_8.61Hz.wav} \\
+M16 & \texttt{M16\_Resting.png} & 10.21 & 9.98\% & 10.02\% & 1.44 & \texttt{M16\_treatment\_IAF\_10.21Hz.wav} \\
+M17 & \texttt{M17\_Resting.png} & 10.21 & 11.35\% & 8.65\% & 1.25 & \texttt{M17\_treatment\_IAF\_10.21Hz.wav} \\
 \bottomrule
 \end{tabular}
 \end{adjustbox}
@@ -831,21 +831,21 @@ To contextualize our findings, Table~\ref{tab:literature_benchmarks} compares ou
 \begin{adjustbox}{width=0.98\textwidth}
 \begin{tabular}{lcccccc}
 \toprule
-\textbf{Study} & \textbf{Dataset Used} & \textbf{Signal Representation} & \textbf{Classifier} & \textbf{Reported Accuracy} & \textbf{Therapeutic Intervention} & \textbf{Personalization} \
+\textbf{Study} & \textbf{Dataset Used} & \textbf{Signal Representation} & \textbf{Classifier} & \textbf{Reported Accuracy} & \textbf{Therapeutic Intervention} & \textbf{Personalization} \\
 \midrule
-Chamanzar et al. (2021) \cite{chamanzar2021uhd} & CMU UHD-EEG (128-ch) & Cortical Coherence & Statistical Phase Locking & Diagnostic Study & None & None \
-Orhanbulucu et al. (2023) \cite{orhanbulucu2023hybrid} & CMU UHD-EEG (128-ch) & STFT / CWT Images & AlexNet / ResNet50 & 94.70\% & None & None \
-Aslan (2023) \cite{aslan2023migrainecnn} & CMU UHD-EEG (128-ch) & CWT Scalograms & Custom Deep CNN & 100.0\% & None & None \
-Alsabea et al. (2024) \cite{alsabea2024migraine} & Clinical Cohort (=36$) & ICA + PSD Features & CNN / DNN & 97.00\% & None & None \
-Göker (2023) \cite{Goker2023} & Clinical Cohort (128-ch) & Welch Power Spectrum & BiLSTM & 95.99\% & None & None \
-Sebastianelli et al. (2025) \cite{sebastianelli2025ann} & Evoked Potentials (=177$) & SSEP Amplitude & ANN & 72.80\% & None & None \
-\textbf{Proposed Framework (This Work)} & \textbf{CMU UHD-EEG (128-ch)} & \textbf{STFT Viridis Spectrograms} & \textbf{EfficientNetB7 (Transfer)} & \textbf{93.75\% (MCC: 0.875)} & \textbf{Binaural Beat Audio} & \textbf{Patient-Specific IAF} \
+Chamanzar et al. (2021) \cite{chamanzar2021uhd} & CMU UHD-EEG (128-ch) & Cortical Coherence & Statistical Phase Locking & Diagnostic Study & None & None \\
+Orhanbulucu et al. (2023) \cite{orhanbulucu2023hybrid} & CMU UHD-EEG (128-ch) & STFT / CWT Images & AlexNet / ResNet50 & 94.70\% & None & None \\
+Aslan (2023) \cite{aslan2023migrainecnn} & CMU UHD-EEG (128-ch) & CWT Scalograms & Custom Deep CNN & 100.0\% & None & None \\
+Alsabea et al. (2024) \cite{alsabea2024migraine} & Clinical Cohort ($n=36$) & ICA + PSD Features & CNN / DNN & 97.00\% & None & None \\
+Göker (2023) \cite{Goker2023} & Clinical Cohort (128-ch) & Welch Power Spectrum & BiLSTM & 95.99\% & None & None \\
+Sebastianelli et al. (2025) \cite{sebastianelli2025ann} & Evoked Potentials ($n=177$) & SSEP Amplitude & ANN & 72.80\% & None & None \\
+\textbf{Proposed Framework (This Work)} & \textbf{CMU UHD-EEG (128-ch)} & \textbf{STFT Viridis Spectrograms} & \textbf{EfficientNetB7 (Transfer)} & \textbf{93.75\% (MCC: 0.875)} & \textbf{Binaural Beat Audio} & \textbf{Patient-Specific IAF} \\
 \bottomrule
 \end{tabular}
 \end{adjustbox}
 \end{table}
 
-As evidenced by Table~\ref{tab:literature_benchmarks}, our deep learning classification accuracy (93.75\% on EfficientNetB7) is competitive with state-of-the-art vision models evaluated on the same repository (Orhanbulucu et al.: 94.70\% \cite{orhanbulucu2023hybrid}; Aslan: 100\% \cite{aslan2023migrainecnn}). More importantly, **our framework is the first in literature to bridge diagnostic detection with automated, patient-tailored therapeutic synthesis**, extracting Individual Alpha Frequencies directly from spectrograms to export personalized binaural beat prescriptions.
+As evidenced by Table~\ref{tab:literature_benchmarks}, our deep learning classification accuracy (93.75\% on EfficientNetB7) is competitive with state-of-the-art vision models evaluated on the same repository (Orhanbulucu et al.: 94.70\% \cite{orhanbulucu2023hybrid}; Aslan: 100\% \cite{aslan2023migrainecnn}). More importantly, \textbf{our framework is the first in literature to bridge diagnostic detection with automated, patient-tailored therapeutic synthesis}, extracting Individual Alpha Frequencies directly from spectrograms to export personalized binaural beat prescriptions.
 
 % =========================================================================
 % CHAPTER 5: DESIGN CONSTRAINTS, ENGINEERING STANDARDS & REALISTIC CONSIDERATIONS
@@ -866,15 +866,15 @@ Engineering wearable biomedical systems requires strict compliance with internat
 Delivering therapeutic acoustic stimuli into human auditory canals necessitates rigorous adherence to international occupational and environmental safety thresholds:
 \begin{itemize}
     \item \textbf{Acoustic Exposure Thresholds (OSHA / NIOSH / WHO)}: The United States Occupational Safety and Health Administration (OSHA Standard 1910.95) and the National Institute for Occupational Safety and Health (NIOSH) establish a maximum permissible exposure limit (PEL) of 85~dBA for an 8-hour time-weighted average (TWA), with a 3~dB exchange rate. The World Health Organization (WHO) Guidelines for Safe Listening Devices recommend that personal audio listening levels remain below 75--80~dBA for prolonged therapeutic sessions.
-    \item \textbf{Digital Headroom and Amplitude Clamping}: In our audio synthesis engine (), peak audio amplitude is strictly clamped to  = 0.75$ (569X2.5), preventing digital clipping or harmonic intermodulation distortion in consumer audio playback systems.
-    \item \textbf{Infrasonic and High-Frequency Avoidance}: Low-frequency carrier tones below 100~Hz can induce vestibular resonance or nausea, while carriers above 1000~Hz exceed auditory nerve phase-locking thresholds and induce sensory fatigue in photophobic migraineurs \cite{Oster1973,Maddison2023}. Our selection of  = 216.0 lies comfortably within the optimal, comfortable human vocal register.
+    \item \textbf{Digital Headroom and Amplitude Clamping}: In our audio synthesis engine (\texttt{5\_spectrogram\_binaural\_treatment.ipynb}), peak audio amplitude is strictly clamped to $A = 0.75$ ($-2.5$~dBFS), preventing digital clipping or harmonic intermodulation distortion in consumer audio playback systems.
+    \item \textbf{Infrasonic and High-Frequency Avoidance}: Low-frequency carrier tones below 100~Hz can induce vestibular resonance or nausea, while carriers above 1000~Hz exceed auditory nerve phase-locking thresholds and induce sensory fatigue in photophobic migraineurs \cite{Oster1973,Maddison2023}. Our selection of $f_c = 216.0$~Hz lies comfortably within the optimal, comfortable human vocal register.
 \end{itemize}
 
 \section{Data Management, Neuroimaging and Interoperability Standards}
 \label{sec:data_standards}
 To ensure reproducibility and interoperability across multi-center neurological repositories, our data pipelines adhere to established biomedical informatics standards:
 \begin{itemize}
-    \item \textbf{Brain Imaging Data Structure (BIDS)} \cite{Gorgolewski2016}: BIDS provides a standardized directory hierarchy and metadata specification (JSON sidecars, TSV event files) for neuroimaging experiments. All converted EEG and spectrogram files conform to BIDS-aligned naming conventions ().
+    \item \textbf{Brain Imaging Data Structure (BIDS)} \cite{Gorgolewski2016}: BIDS provides a standardized directory hierarchy and metadata specification (JSON sidecars, TSV event files) for neuroimaging experiments. All converted EEG and spectrogram files conform to BIDS-aligned naming conventions (\texttt{sub-<ID>\_task-<task>\_run-<run>\_eeg}).
     \item \textbf{European Data Format (EDF/BDF)}: Raw signals are stored in BioSemi 24-bit BDF format, preserving uncompressed raw microvolt amplitudes, sensor coordinates, and trigger markers.
     \item \textbf{IEEE 2110-2020 Standard for Brain--Computer Interfaces}: Governs signal processing architectures, feature representation formats, and interface protocols for wearable BCI applications.
 \end{itemize}
@@ -883,9 +883,9 @@ To ensure reproducibility and interoperability across multi-center neurological 
 \label{sec:realistic_constraints}
 
 \subsection{Economic Constraints and Cost-Benefit Analysis}
-Standard clinical 128-channel EEG systems cost between $25,000 and $80,000, severely restricting accessibility to specialized hospital neurophysiology suites \cite{He2023}. Conversely, chronic migraine management entails substantial lifetime economic costs; direct medical expenditures (consultations, triptans, emergency visits, MRI scans) and indirect productivity losses exceed $12,000 per patient annually in North America \cite{Stovner2022,Jiang2025}.
+Standard clinical 128-channel EEG systems cost between \$25,000 and \$80,000, severely restricting accessibility to specialized hospital neurophysiology suites \cite{He2023}. Conversely, chronic migraine management entails substantial lifetime economic costs; direct medical expenditures (consultations, triptans, emergency visits, MRI scans) and indirect productivity losses exceed \$12,000 per patient annually in North America \cite{Stovner2022,Jiang2025}.
 
-Our framework is engineered to overcome these economic barriers. By demonstrating that high diagnostic accuracy (93.75\%) and effective IAF extraction can be achieved utilizing a single targeted occipital channel (\#80), our methodology enables the development of low-cost, 3- to 4-channel wearable dry-electrode headbands costing under $150--$300 \cite{Muhammad2023}. Delivering drug-free audio mitigation via consumer smartphones and standard stereo headphones eliminates recurring pharmaceutical expenses and drastically reduces emergency department visits.
+Our framework is engineered to overcome these economic barriers. By demonstrating that high diagnostic accuracy (93.75\%) and effective IAF extraction can be achieved utilizing a single targeted occipital channel (\#80), our methodology enables the development of low-cost, 3- to 4-channel wearable dry-electrode headbands costing under \$150--\$300 \cite{Muhammad2023}. Delivering drug-free audio mitigation via consumer smartphones and standard stereo headphones eliminates recurring pharmaceutical expenses and drastically reduces emergency department visits.
 
 \subsection{Ethical, Privacy and Regulatory Considerations}
 \begin{itemize}
@@ -901,7 +901,7 @@ Wearable neurotechnology must adhere to strict environmental and energy efficien
 \end{itemize}
 
 \subsection{Manufacturability and Wearability Constraints}
-Clinical wet-electrode caps require tedious scalp skin abrasion and conductive electrolyte gel application (--45$ minutes setup time), followed by hair washing \cite{He2023,Petrusic2025}. This is entirely impractical for patients experiencing acute migraine nausea or photophobia. A viable wearable device must utilize soft conductive polymer or spring-loaded gold-plated dry electrodes integrated into a lightweight, ergonomic headband capable of one-minute self-application without conductive pastes \cite{Muhammad2023}.
+Clinical wet-electrode caps require tedious scalp skin abrasion and conductive electrolyte gel application ($30--45$ minutes setup time), followed by hair washing \cite{He2023,Petrusic2025}. This is entirely impractical for patients experiencing acute migraine nausea or photophobia. A viable wearable device must utilize soft conductive polymer or spring-loaded gold-plated dry electrodes integrated into a lightweight, ergonomic headband capable of one-minute self-application without conductive pastes \cite{Muhammad2023}.
 
 % =========================================================================
 % CHAPTER 6: CONCLUSION AND FUTURE DIRECTIONS
@@ -915,11 +915,11 @@ This Final Year Design Project has successfully developed, validated, and docume
 
 \begin{enumerate}
     \item \textbf{Automated Preprocessing and Time-Frequency Generation Pipeline}: We implemented an automated MNE-Python pipeline that successfully ingested raw 128-channel ultra-high-density EEG files from the CMU repository, executed common average referencing (CAR), bandpass filtering (1.0--50.0~Hz), and 60~Hz notch filtering, and generated 106 high-resolution calibrated STFT spectrogram images of occipital channel \#80 across resting, auditory, and visual sensory stimulation.
-    \item \textbf{Deep Transfer Learning Classification Benchmark}: We established a comprehensive computer vision diagnostic benchmark evaluating VGG16, ResNet50, and EfficientNetB7 backbones. **EfficientNetB7** achieved state-of-the-art diagnostic accuracy of **93.75\%**, weighted precision of 94.71\%, weighted F1-score of 93.85\%, and a Matthews Correlation Coefficient of **0.8750**, confirming that deep convolutional networks can reliably distinguish interictal migraine spectrograms from healthy controls.
+    \item \textbf{Deep Transfer Learning Classification Benchmark}: We established a comprehensive computer vision diagnostic benchmark evaluating VGG16, ResNet50, and EfficientNetB7 backbones. \textbf{EfficientNetB7} achieved state-of-the-art diagnostic accuracy of \textbf{93.75\%}, weighted precision of 94.71\%, weighted F1-score of 93.85\%, and a Matthews Correlation Coefficient of \textbf{0.8750}, confirming that deep convolutional networks can reliably distinguish interictal migraine spectrograms from healthy controls.
     \item \textbf{Analytical Colormap Inversion Engine}: We formulated a novel, closed-form mathematical colormap inversion algorithm that maps pixel RGB coordinates onto a precomputed 256-color Viridis Look-Up Table via minimum Euclidean distance search. This engine accurately reconstructs calibrated decibels and linear power spectral density ($\mu\text{V}^2/\text{Hz}$) directly from compact PNG images, bypassing the operational overhead of transmitting multi-gigabyte raw EEG arrays.
     \item \textbf{Biomarker Localization and Deficit Quantification}: The framework successfully localized individual electrophysiological markers, extracting the patient's exact Individual Alpha Frequency (IAF), quantifying relative canonical band powers, computing the Theta-to-Alpha Ratio (TAR), and calculating individual alpha power deficits relative to normative baselines.
     \item \textbf{Personalized Binaural Beat Audio Prescription Engine}: We engineered a high-fidelity digital audio synthesis engine that translates patient-specific IAF values into calibrated dichotic stereo binaural beat audio files centered at a 216.0~Hz carrier frequency. Incorporating 1.5-second squared half-cosine taper envelopes eliminated acoustic switching clicks, producing medical-grade 16-bit 44.1~kHz stereo audio prescriptions.
-    \item \textbf{Cohort Analytics and Single-Patient Validation}: We conducted comprehensive empirical evaluations on Patient M10 ($\text{IAF} = 10.09, Alpha Deficit = 7.88\%, $\text{TAR} = 1.64$) and across the entire resting-state cohort (12 migraine and 22 control subjects), providing a complete repository of synthesized  prescriptions and clinical analytics.
+    \item \textbf{Cohort Analytics and Single-Patient Validation}: We conducted comprehensive empirical evaluations on Patient M10 ($\text{IAF} = 10.09$~Hz, Alpha Deficit = 7.88\%, $\text{TAR} = 1.64$) and across the entire resting-state cohort (12 migraine and 22 control subjects), providing a complete repository of synthesized \texttt{.wav} prescriptions and clinical analytics.
 \end{enumerate}
 
 \section{Methodological Limitations and Caveats}
@@ -929,7 +929,7 @@ While the experimental and computational results demonstrate high technical effi
     \item \textbf{Sample Size Constraints}: The CMU dataset contains 36 human participants (18 migraineurs, 18 controls). While ultra-high-density 128-channel recording provides exceptional spatial and temporal resolution per participant, deep neural networks benefit substantially from larger multi-center cohorts comprising hundreds of patients.
     \item \textbf{Condition Heterogeneity}: The current CNN classification experiments combined spectrograms across three recording conditions (resting state, visual SSVEP, and auditory SSAEP). While this validated the networks' capacity to detect generalized cortical hyperexcitability, future benchmarks should evaluate resting-state and sensory-evoked spectrograms independently.
     \item \textbf{Cross-Validation Strategy}: The preliminary dataset partition utilized a standard randomized 60/40 image split. In clinical machine learning, subject-independent Leave-One-Subject-Out Cross-Validation (LOSO-CV) represents the gold standard to rigorously guard against potential intra-subject correlation across windows \cite{Arlot2010}.
-    \item \textbf{Absence of In Vivo Entrainment Verification}: The audio synthesis engine currently generates personalized  files based on extracted IAF markers. However, the repository does not contain post-stimulation EEG recordings to empirically verify the exact magnitude of cortical entrainment and clinical headache reduction in living patients.
+    \item \textbf{Absence of In Vivo Entrainment Verification}: The audio synthesis engine currently generates personalized \texttt{.wav} files based on extracted IAF markers. However, the repository does not contain post-stimulation EEG recordings to empirically verify the exact magnitude of cortical entrainment and clinical headache reduction in living patients.
 \end{enumerate}
 
 \section{Roadmap for Future Research and Deployment}
@@ -948,283 +948,283 @@ To advance this research toward commercial and clinical digital therapeutic depl
 \begin{thebibliography}{99}
 
 \bibitem{Puledda2024}
-F. Puledda, R. Messina, and P. J. Goadsby, Migraine: from pathophysiology to treatment,'' \textit{Nature Reviews Neurology}, vol. 20, no. 4, pp. 215--231, 2024. doi: 10.1038/s41582-024-00941-0.
+F. Puledda, R. Messina, and P. J. Goadsby, ``Migraine: from pathophysiology to treatment,'' \textit{Nature Reviews Neurology}, vol. 20, no. 4, pp. 215--231, 2024. doi: 10.1038/s41582-024-00941-0.
 
 \bibitem{Stovner2022}
-L. J. Stovner \textit{et al.}, Global, regional, and national burden of migraine and tension-type headache, 1990--2019: a systematic analysis for the Global Burden of Disease Study 2019,'' \textit{The Lancet Neurology}, vol. 21, no. 1, pp. 16--31, 2022. doi: 10.1016/S1474-4422(21)00388-7.
+L. J. Stovner \textit{et al.}, ``Global, regional, and national burden of migraine and tension-type headache, 1990--2019: a systematic analysis for the Global Burden of Disease Study 2019,'' \textit{The Lancet Neurology}, vol. 21, no. 1, pp. 16--31, 2022. doi: 10.1016/S1474-4422(21)00388-7.
 
 \bibitem{Steiner2023}
-T. J. Steiner \textit{et al.}, Aids to management of headache disorders in primary care (2nd edition),'' \textit{The Journal of Headache and Pain}, vol. 24, no. 1, p. 11, 2023. doi: 10.1186/s10194-023-01543-y.
+T. J. Steiner \textit{et al.}, ``Aids to management of headache disorders in primary care (2nd edition),'' \textit{The Journal of Headache and Pain}, vol. 24, no. 1, p. 11, 2023. doi: 10.1186/s10194-023-01543-y.
 
 \bibitem{Jiang2025}
-Y. Jiang \textit{et al.}, Global burden and trends of headache disorders: 1990--2021,'' \textit{The Journal of Headache and Pain}, vol. 26, no. 1, p. 18, 2025. doi: 10.1186/s10194-025-01945-0.
+Y. Jiang \textit{et al.}, ``Global burden and trends of headache disorders: 1990--2021,'' \textit{The Journal of Headache and Pain}, vol. 26, no. 1, p. 18, 2025. doi: 10.1186/s10194-025-01945-0.
 
 \bibitem{Amiri2022}
-P. Amiri \textit{et al.}, Migraine: a review on its history, global epidemiology, risk factors, and comorbidities,'' \textit{Frontiers in Neurology}, vol. 12, p. 800605, 2022. doi: 10.3389/fneur.2021.800605.
+P. Amiri \textit{et al.}, ``Migraine: a review on its history, global epidemiology, risk factors, and comorbidities,'' \textit{Frontiers in Neurology}, vol. 12, p. 800605, 2022. doi: 10.3389/fneur.2021.800605.
 
 \bibitem{Shamsi2024}
-M. Shamsi, N. D. E. A. N. D. E., and M. A. A., Effect of binaural beat technology on pain management: A systematic review,'' \textit{Complementary Therapies in Clinical Practice}, vol. 54, p. 101824, 2024. doi: 10.1016/j.ctcp.2023.101824.
+M. Shamsi, N. D. E. A. N. D. E., and M. A. A., ``Effect of binaural beat technology on pain management: A systematic review,'' \textit{Complementary Therapies in Clinical Practice}, vol. 54, p. 101824, 2024. doi: 10.1016/j.ctcp.2023.101824.
 
 \bibitem{Ashina2023}
-M. Ashina \textit{et al.}, Migraine and other headache disorders: advancing knowledge, diagnosis, and treatment,'' \textit{Nature Reviews Disease Primers}, vol. 9, no. 1, p. 55, 2023. doi: 10.1038/s41572-023-00465-3.
+M. Ashina \textit{et al.}, ``Migraine and other headache disorders: advancing knowledge, diagnosis, and treatment,'' \textit{Nature Reviews Disease Primers}, vol. 9, no. 1, p. 55, 2023. doi: 10.1038/s41572-023-00465-3.
 
 \bibitem{GBD2023}
-GBD 2021 Diseases and Injuries Collaborators, Global incidence, prevalence, and years lived with disability (YLDs) for 371 diseases and injuries in 204 countries and territories, 1990--2021: a systematic analysis for the Global Burden of Disease Study 2021,'' \textit{The Lancet}, vol. 403, no. 10440, pp. 2133--2161, 2023.
+GBD 2021 Diseases and Injuries Collaborators, ``Global incidence, prevalence, and years lived with disability (YLDs) for 371 diseases and injuries in 204 countries and territories, 1990--2021: a systematic analysis for the Global Burden of Disease Study 2021,'' \textit{The Lancet}, vol. 403, no. 10440, pp. 2133--2161, 2023.
 
 \bibitem{Coppola2023}
-G. Coppola \textit{et al.}, Cortical excitability and habituation in migraine: from pathophysiology to clinical applications,'' \textit{Cephalalgia}, vol. 43, no. 5, p. 03331024231168541, 2023. doi: 10.1177/03331024231168541.
+G. Coppola \textit{et al.}, ``Cortical excitability and habituation in migraine: from pathophysiology to clinical applications,'' \textit{Cephalalgia}, vol. 43, no. 5, p. 03331024231168541, 2023. doi: 10.1177/03331024231168541.
 
 \bibitem{Zhang2023}
-Y. Zhang \textit{et al.}, EEG biomarkers of migraine: A systematic review of spectral, connectivity, and microstate dynamics,'' \textit{Clinical Neurophysiology}, vol. 154, pp. 112--128, 2023. doi: 10.1016/j.clinph.2023.07.014.
+Y. Zhang \textit{et al.}, ``EEG biomarkers of migraine: A systematic review of spectral, connectivity, and microstate dynamics,'' \textit{Clinical Neurophysiology}, vol. 154, pp. 112--128, 2023. doi: 10.1016/j.clinph.2023.07.014.
 
 \bibitem{FrimpongManson2024}
-J. Frimpong-Manson, M. L. D. Araujo, \textit{et al.}, Occipital alpha oscillations as reproducible headache biomarkers in prospective and retrospective cohorts,'' \textit{Scientific Reports}, vol. 14, no. 1, p. 18245, 2024. doi: 10.1038/s41598-024-80249-w.
+J. Frimpong-Manson, M. L. D. Araujo, \textit{et al.}, ``Occipital alpha oscillations as reproducible headache biomarkers in prospective and retrospective cohorts,'' \textit{Scientific Reports}, vol. 14, no. 1, p. 18245, 2024. doi: 10.1038/s41598-024-80249-w.
 
 \bibitem{araujo2024eegsignatures}
-M. L. D. Araujo \textit{et al.}, Electroencephalographic signatures of migraine in small prospective and large retrospective cohorts,'' \textit{Scientific Reports}, vol. 14, p. 28014, 2024. doi: 10.1038/s41598-024-80249-w.
+M. L. D. Araujo \textit{et al.}, ``Electroencephalographic signatures of migraine in small prospective and large retrospective cohorts,'' \textit{Scientific Reports}, vol. 14, p. 28014, 2024. doi: 10.1038/s41598-024-80249-w.
 
 \bibitem{Kim2023}
-J. Kim \textit{et al.}, Quantitative EEG as a biomarker in migraine: Spectral power analysis in a cohort of 720 patients,'' \textit{Cephalalgia}, vol. 43, no. 6, p. 03331024231178225, 2023. doi: 10.1177/03331024231178225.
+J. Kim \textit{et al.}, ``Quantitative EEG as a biomarker in migraine: Spectral power analysis in a cohort of 720 patients,'' \textit{Cephalalgia}, vol. 43, no. 6, p. 03331024231178225, 2023. doi: 10.1177/03331024231178225.
 
 \bibitem{GomezPilar2022}
-J. Gomez-Pilar \textit{et al.}, Brain network alteration patterns in episodic and chronic migraine: A multimodal systematic review,'' \textit{The Journal of Headache and Pain}, vol. 23, no. 1, p. 89, 2022. doi: 10.1186/s10194-022-01458-2.
+J. Gomez-Pilar \textit{et al.}, ``Brain network alteration patterns in episodic and chronic migraine: A multimodal systematic review,'' \textit{The Journal of Headache and Pain}, vol. 23, no. 1, p. 89, 2022. doi: 10.1186/s10194-022-01458-2.
 
 \bibitem{VanDenHoek2024}
-T. C. van den Hoek \textit{et al.}, EEG changes in migraine---Can EEG help to monitor attack susceptibility?,'' \textit{Brain Sciences}, vol. 14, no. 5, p. 508, 2024. doi: 10.3390/brainsci14050508.
+T. C. van den Hoek \textit{et al.}, ``EEG changes in migraine---Can EEG help to monitor attack susceptibility?,'' \textit{Brain Sciences}, vol. 14, no. 5, p. 508, 2024. doi: 10.3390/brainsci14050508.
 
 \bibitem{JoshiMatharu2025}
-A. Joshi, P. S. Matharu, L. Malviya, M. Kumar, and A. Jadhav, Advancing EEG based stress detection using spiking neural networks and convolutional spiking neural networks,'' \textit{Scientific Reports}, vol. 15, no. 1, Art. no. 26267, 2025. doi: 10.1038/s41598-025-10270-0.
+A. Joshi, P. S. Matharu, L. Malviya, M. Kumar, and A. Jadhav, ``Advancing EEG based stress detection using spiking neural networks and convolutional spiking neural networks,'' \textit{Scientific Reports}, vol. 15, no. 1, Art. no. 26267, 2025. doi: 10.1038/s41598-025-10270-0.
 
 \bibitem{Quartetti2025}
-U. Quartetti \textit{et al.}, Forecasting migraine attacks by managing daily lifestyle: A systematic review as a basis to develop predictive algorithms,'' \textit{Pain Reports}, vol. 10, no. 2, Art. no. e1247, 2025. doi: 10.1097/PR9.0000000000001247.
+U. Quartetti \textit{et al.}, ``Forecasting migraine attacks by managing daily lifestyle: A systematic review as a basis to develop predictive algorithms,'' \textit{Pain Reports}, vol. 10, no. 2, Art. no. e1247, 2025. doi: 10.1097/PR9.0000000000001247.
 
 \bibitem{Zebhauser2024}
-P. T. Zebhauser \textit{et al.}, Resting-state electroencephalography and magnetoencephalography in migraine---A systematic review and meta-analysis,'' \textit{The Journal of Headache and Pain}, vol. 25, no. 1, Art. no. 147, 2024. doi: 10.1186/s10194-024-01857-5.
+P. T. Zebhauser \textit{et al.}, ``Resting-state electroencephalography and magnetoencephalography in migraine---A systematic review and meta-analysis,'' \textit{The Journal of Headache and Pain}, vol. 25, no. 1, Art. no. 147, 2024. doi: 10.1186/s10194-024-01857-5.
 
 \bibitem{AbdulhusseinAldeen2024}
-M. A. Abdulhussein, A. W. Aldeen, and H. Al-Abboodi, Differential cortical connectivity in migraine: Insights from high-density EEG and steady-state visual evoked potentials,'' \textit{Traitement du Signal}, vol. 41, no. 2, pp. 811--826, 2024. doi: 10.18280/ts.410222.
+M. A. Abdulhussein, A. W. Aldeen, and H. Al-Abboodi, ``Differential cortical connectivity in migraine: Insights from high-density EEG and steady-state visual evoked potentials,'' \textit{Traitement du Signal}, vol. 41, no. 2, pp. 811--826, 2024. doi: 10.18280/ts.410222.
 
 \bibitem{Riederer2023}
-F. Riederer \textit{et al.}, Migraine aura---Catch me if you can with EEG and MRI---A narrative review,'' \textit{Diagnostics}, vol. 13, no. 17, Art. no. 2844, 2023. doi: 10.3390/diagnostics13172844.
+F. Riederer \textit{et al.}, ``Migraine aura---Catch me if you can with EEG and MRI---A narrative review,'' \textit{Diagnostics}, vol. 13, no. 17, Art. no. 2844, 2023. doi: 10.3390/diagnostics13172844.
 
 \bibitem{Goker2023}
-H. Göker, Automatic detection of migraine from EEG signals using Welch's method and bidirectional LSTM deep networks,'' \textit{Biomedical Signal Processing and Control}, vol. 84, p. 104764, 2023. doi: 10.1016/j.bspc.2023.104764.
+H. Göker, ``Automatic detection of migraine from EEG signals using Welch's method and bidirectional LSTM deep networks,'' \textit{Biomedical Signal Processing and Control}, vol. 84, p. 104764, 2023. doi: 10.1016/j.bspc.2023.104764.
 
 \bibitem{Kedgan2025}
-K. Kedgan \textit{et al.}, Electrophysiological signatures across phases of hemiplegic migraine: A systematic review and meta-analysis,'' \textit{Headache: The Journal of Head and Face Pain}, vol. 65, no. 2, pp. 195--210, 2025. doi: 10.1111/head.14852.
+K. Kedgan \textit{et al.}, ``Electrophysiological signatures across phases of hemiplegic migraine: A systematic review and meta-analysis,'' \textit{Headache: The Journal of Head and Face Pain}, vol. 65, no. 2, pp. 195--210, 2025. doi: 10.1111/head.14852.
 
 \bibitem{RaghuramanJoshi2024}
-S. Raghuraman and P. Joshi, A scoping review on EEG for diagnosing and classifying migraine: Microstate dynamics and nonlinear modeling,'' \textit{Neuroscience \& Biobehavioral Reviews}, vol. 159, p. 105592, 2024. doi: 10.1016/j.neubiorev.2024.105592.
+S. Raghuraman and P. Joshi, ``A scoping review on EEG for diagnosing and classifying migraine: Microstate dynamics and nonlinear modeling,'' \textit{Neuroscience \& Biobehavioral Reviews}, vol. 159, p. 105592, 2024. doi: 10.1016/j.neubiorev.2024.105592.
 
 \bibitem{sebastianelli2025ann}
-G. Sebastianelli, D. Secci, F. Casillo, \textit{et al.}, Artificial neural networks applied to somatosensory evoked potentials for migraine classification,'' \textit{The Journal of Headache and Pain}, vol. 26, no. 1, p. 67, 2025. doi: 10.1186/s10194-025-01989-2.
+G. Sebastianelli, D. Secci, F. Casillo, \textit{et al.}, ``Artificial neural networks applied to somatosensory evoked potentials for migraine classification,'' \textit{The Journal of Headache and Pain}, vol. 26, no. 1, p. 67, 2025. doi: 10.1186/s10194-025-01989-2.
 
 \bibitem{hsiao2024brainstem}
-F.-J. Hsiao, W.-T. Chen, H.-Y. Liu, \textit{et al.}, Altered brainstem-cortex activation and interaction in migraine patients: somatosensory evoked EEG responses with machine learning,'' \textit{The Journal of Headache and Pain}, vol. 25, no. 1, p. 185, 2024. doi: 10.1186/s10194-024-01892-2.
+F.-J. Hsiao, W.-T. Chen, H.-Y. Liu, \textit{et al.}, ``Altered brainstem-cortex activation and interaction in migraine patients: somatosensory evoked EEG responses with machine learning,'' \textit{The Journal of Headache and Pain}, vol. 25, no. 1, p. 185, 2024. doi: 10.1186/s10194-024-01892-2.
 
 \bibitem{Oster1973}
-G. Oster, Auditory beats in the brain,'' \textit{Scientific American}, vol. 229, no. 4, pp. 94--102, 1973. doi: 10.1038/scientificamerican1073-94.
+G. Oster, ``Auditory beats in the brain,'' \textit{Scientific American}, vol. 229, no. 4, pp. 94--102, 1973. doi: 10.1038/scientificamerican1073-94.
 
 \bibitem{Wahbeh2007}
-H. Wahbeh, C. Calabrese, and H. Zwickey, Binaural beat technology in humans: A pilot study to assess psychologic and physiologic effects,'' \textit{The Journal of Alternative and Complementary Medicine}, vol. 13, no. 1, pp. 25--32, 2007. doi: 10.1089/acm.2006.6196.
+H. Wahbeh, C. Calabrese, and H. Zwickey, ``Binaural beat technology in humans: A pilot study to assess psychologic and physiologic effects,'' \textit{The Journal of Alternative and Complementary Medicine}, vol. 13, no. 1, pp. 25--32, 2007. doi: 10.1089/acm.2006.6196.
 
 \bibitem{Ingendoh2023}
-R. M. Ingendoh, A. Posny, and K. R. Heidegger, Binaural beats to entrain the human brain: A systematic review of electroencephalography findings,'' \textit{Psychological Research}, vol. 87, no. 4, pp. 933--950, 2023. doi: 10.1007/s00426-022-01740-5.
+R. M. Ingendoh, A. Posny, and K. R. Heidegger, ``Binaural beats to entrain the human brain: A systematic review of electroencephalography findings,'' \textit{Psychological Research}, vol. 87, no. 4, pp. 933--950, 2023. doi: 10.1007/s00426-022-01740-5.
 
 \bibitem{Maddison2023}
-R. Maddison \textit{et al.}, Auditory beat stimulation and cognitive performance: Critical appraisal of neurophysiological mechanisms,'' \textit{Frontiers in Human Neuroscience}, vol. 17, p. 1124589, 2023. doi: 10.3389/fnhum.2023.1124589.
+R. Maddison \textit{et al.}, ``Auditory beat stimulation and cognitive performance: Critical appraisal of neurophysiological mechanisms,'' \textit{Frontiers in Human Neuroscience}, vol. 17, p. 1124589, 2023. doi: 10.3389/fnhum.2023.1124589.
 
 \bibitem{Melnichuk2025}
-O. Melnichuk \textit{et al.}, Parametric variations of beta and gamma binaural beats on sustained attention and cortical entrainment,'' \textit{Psychophysiology}, vol. 62, no. 2, Art. no. e14620, 2025. doi: 10.1111/psyp.14620.
+O. Melnichuk \textit{et al.}, ``Parametric variations of beta and gamma binaural beats on sustained attention and cortical entrainment,'' \textit{Psychophysiology}, vol. 62, no. 2, Art. no. e14620, 2025. doi: 10.1111/psyp.14620.
 
 \bibitem{Yang2025}
-S.-Y. Yang \textit{et al.}, Effects of binaural beat therapy with different frequencies on autonomic nervous system regulation among college students,'' \textit{BMC Complementary Medicine and Therapies}, vol. 25, no. 1, Art. no. 206, 2025. doi: 10.1186/s12906-025-04922-8.
+S.-Y. Yang \textit{et al.}, ``Effects of binaural beat therapy with different frequencies on autonomic nervous system regulation among college students,'' \textit{BMC Complementary Medicine and Therapies}, vol. 25, no. 1, Art. no. 206, 2025. doi: 10.1186/s12906-025-04922-8.
 
 \bibitem{Xiong2025}
-J. Xiong \textit{et al.}, Binaural beats for perioperative anxiety and pain: A systematic review and meta-analysis,'' \textit{Complementary Therapies in Medicine}, vol. 95, Art. no. 103299, 2025. doi: 10.1016/j.ctim.2025.103299.
+J. Xiong \textit{et al.}, ``Binaural beats for perioperative anxiety and pain: A systematic review and meta-analysis,'' \textit{Complementary Therapies in Medicine}, vol. 95, Art. no. 103299, 2025. doi: 10.1016/j.ctim.2025.103299.
 
 \bibitem{KahathuduwaBlume2025}
-C. N. Kahathuduwa, J. Blume, C. Mani, and C. S. Dhanasekara, Real-Time Electroencephalography-Guided Binaural Beat Audio Enhances Relaxation and Cognitive Performance,'' \textit{Physiologia}, vol. 5, no. 4, Art. no. 44, 2025. doi: 10.3390/physiologia5040044.
+C. N. Kahathuduwa, J. Blume, C. Mani, and C. S. Dhanasekara, ``Real-Time Electroencephalography-Guided Binaural Beat Audio Enhances Relaxation and Cognitive Performance,'' \textit{Physiologia}, vol. 5, no. 4, Art. no. 44, 2025. doi: 10.3390/physiologia5040044.
 
 \bibitem{Sudre2024}
-S. Sudre \textit{et al.}, A new perspective on binaural beats: Investigating the effects of spatially moving sounds on human mental states,'' \textit{PLoS One}, vol. 19, no. 7, Art. no. e0306427, 2024. doi: 10.1371/journal.pone.0306427.
+S. Sudre \textit{et al.}, ``A new perspective on binaural beats: Investigating the effects of spatially moving sounds on human mental states,'' \textit{PLoS One}, vol. 19, no. 7, Art. no. e0306427, 2024. doi: 10.1371/journal.pone.0306427.
 
 \bibitem{Fan2024}
-Z. Fan \textit{et al.}, Binaural beats at 0.25 Hz shorten the latency to slow-wave sleep during daytime naps,'' \textit{Scientific Reports}, vol. 14, no. 1, Art. no. 26062, 2024. doi: 10.1038/s41598-024-76059-9.
+Z. Fan \textit{et al.}, ``Binaural beats at 0.25 Hz shorten the latency to slow-wave sleep during daytime naps,'' \textit{Scientific Reports}, vol. 14, no. 1, Art. no. 26062, 2024. doi: 10.1038/s41598-024-76059-9.
 
 \bibitem{Mosheshe2024}
-L. T. Mosheshe \textit{et al.}, A pilot study exploring the effectiveness of binaural beats at reducing anxiety associated with cadaveric dissection,'' \textit{Anatomical Sciences Education}, vol. 17, no. 7, pp. 1431--1444, 2024. doi: 10.1002/ase.2492.
+L. T. Mosheshe \textit{et al.}, ``A pilot study exploring the effectiveness of binaural beats at reducing anxiety associated with cadaveric dissection,'' \textit{Anatomical Sciences Education}, vol. 17, no. 7, pp. 1431--1444, 2024. doi: 10.1002/ase.2492.
 
 \bibitem{ChockboondeeJatupornpoonsub2023}
-M. Chockboondee, T. Jatupornpoonsub, \textit{et al.}, Dose-response relaxation effects of binaural beat stimulation assessed via heart rate variability,'' \textit{International Journal of Psychophysiology}, vol. 192, pp. 64--75, 2023. doi: 10.1016/j.ijpsycho.2023.08.006.
+M. Chockboondee, T. Jatupornpoonsub, \textit{et al.}, ``Dose-response relaxation effects of binaural beat stimulation assessed via heart rate variability,'' \textit{International Journal of Psychophysiology}, vol. 192, pp. 64--75, 2023. doi: 10.1016/j.ijpsycho.2023.08.006.
 
 \bibitem{Dabiri2022}
-R. Dabiri \textit{et al.}, The effect of delta binaural beats on sleep quality and mood states among commercial pilots,'' \textit{Applied Acoustics}, vol. 198, p. 108985, 2022. doi: 10.1016/j.apacoust.2022.108985.
+R. Dabiri \textit{et al.}, ``The effect of delta binaural beats on sleep quality and mood states among commercial pilots,'' \textit{Applied Acoustics}, vol. 198, p. 108985, 2022. doi: 10.1016/j.apacoust.2022.108985.
 
 \bibitem{CoronaGonzalez2021}
-C. E. Corona-González \textit{et al.}, Customized binaural beats enhance targeted cortical power compared to fixed frequencies: An EEG validation study,'' \textit{Neuroscience Letters}, vol. 760, p. 136098, 2021. doi: 10.1016/j.neulet.2021.136098.
+C. E. Corona-González \textit{et al.}, ``Customized binaural beats enhance targeted cortical power compared to fixed frequencies: An EEG validation study,'' \textit{Neuroscience Letters}, vol. 760, p. 136098, 2021. doi: 10.1016/j.neulet.2021.136098.
 
 \bibitem{AlShargie2022}
-F. Al-Shargie \textit{et al.}, Prefrontal cortex response to binaural beat stimulation during cognitive stress tasks: A functional near-infrared spectroscopy study,'' \textit{IEEE Access}, vol. 10, pp. 88310--88321, 2022. doi: 10.1109/ACCESS.2022.3199854.
+F. Al-Shargie \textit{et al.}, ``Prefrontal cortex response to binaural beat stimulation during cognitive stress tasks: A functional near-infrared spectroscopy study,'' \textit{IEEE Access}, vol. 10, pp. 88310--88321, 2022. doi: 10.1109/ACCESS.2022.3199854.
 
 \bibitem{WangZhang2022}
-L. Wang, W. Zhang, X. Li, and S. Yang, The Effect of 40 Hz Binaural Beats on Working Memory,'' \textit{IEEE Access}, vol. 10, pp. 81556--81567, 2022. doi: 10.1109/ACCESS.2022.3185257.
+L. Wang, W. Zhang, X. Li, and S. Yang, ``The Effect of 40 Hz Binaural Beats on Working Memory,'' \textit{IEEE Access}, vol. 10, pp. 81556--81567, 2022. doi: 10.1109/ACCESS.2022.3185257.
 
 \bibitem{BasuBanerjee2023}
-S. Basu and B. Banerjee, Potential of binaural beats intervention for improving memory and attention: Insights from meta-analysis and systematic review,'' \textit{Psychological Research}, vol. 87, no. 4, pp. 951--963, 2023. doi: 10.1007/s00426-022-01706-7.
+S. Basu and B. Banerjee, ``Potential of binaural beats intervention for improving memory and attention: Insights from meta-analysis and systematic review,'' \textit{Psychological Research}, vol. 87, no. 4, pp. 951--963, 2023. doi: 10.1007/s00426-022-01706-7.
 
 \bibitem{Hamid2025}
-A. I. A. Hamid \textit{et al.}, Distinct neural mechanisms of alpha binaural beats and white noise for cognitive enhancement in young adults,'' \textit{AIMS Neuroscience}, vol. 12, no. 2, pp. 147--179, 2025. doi: 10.3934/Neuroscience.2025010.
+A. I. A. Hamid \textit{et al.}, ``Distinct neural mechanisms of alpha binaural beats and white noise for cognitive enhancement in young adults,'' \textit{AIMS Neuroscience}, vol. 12, no. 2, pp. 147--179, 2025. doi: 10.3934/Neuroscience.2025010.
 
 \bibitem{Petrusic2025}
-I. Petrušić, Digital phenotyping for migraine: A game-changer for research and management,'' \textit{Cephalalgia}, vol. 45, no. 7, pp. 1--13, 2025. doi: 10.1177/03331024251348921.
+I. Petrušić, ``Digital phenotyping for migraine: A game-changer for research and management,'' \textit{Cephalalgia}, vol. 45, no. 7, pp. 1--13, 2025. doi: 10.1177/03331024251348921.
 
 \bibitem{He2023}
-C. He \textit{et al.}, Diversity and suitability of the state-of-the-art wearable and wireless EEG systems: A comprehensive benchmark,'' \textit{IEEE Transactions on Biomedical Engineering}, vol. 70, no. 8, pp. 2415--2426, 2023. doi: 10.1109/TBME.2023.3254129.
+C. He \textit{et al.}, ``Diversity and suitability of the state-of-the-art wearable and wireless EEG systems: A comprehensive benchmark,'' \textit{IEEE Transactions on Biomedical Engineering}, vol. 70, no. 8, pp. 2415--2426, 2023. doi: 10.1109/TBME.2023.3254129.
 
 \bibitem{Muhammad2023}
-R. Muhammad \textit{et al.}, Design and development of low-cost wearable electroencephalograms (EEG) headset,'' \textit{Intelligent Automation \& Soft Computing}, vol. 35, no. 3, pp. 2821--2836, 2023. doi: 10.32604/iasc.2023.030584.
+R. Muhammad \textit{et al.}, ``Design and development of low-cost wearable electroencephalograms (EEG) headset,'' \textit{Intelligent Automation \& Soft Computing}, vol. 35, no. 3, pp. 2821--2836, 2023. doi: 10.32604/iasc.2023.030584.
 
 \bibitem{DanelakisStubberud2025}
-A. Danelakis, A. Stubberud, E. Tronvik, and M. Matharu, The Emerging Clinical Relevance of Artificial Intelligence, Data Science, and Wearable Devices in Headache: A Narrative Review,'' \textit{Life}, vol. 15, no. 6, Art. no. 909, 2025. doi: 10.3390/life15060909.
+A. Danelakis, A. Stubberud, E. Tronvik, and M. Matharu, ``The Emerging Clinical Relevance of Artificial Intelligence, Data Science, and Wearable Devices in Headache: A Narrative Review,'' \textit{Life}, vol. 15, no. 6, Art. no. 909, 2025. doi: 10.3390/life15060909.
 
 \bibitem{VanDerDonckt2025}
-J. Van Der Donckt \textit{et al.}, Analysis of free-living daytime movement in patients with migraine with access to acute treatment,'' \textit{The Journal of Headache and Pain}, vol. 26, no. 1, p. 45, 2025. doi: 10.1186/s10194-025-01962-9.
+J. Van Der Donckt \textit{et al.}, ``Analysis of free-living daytime movement in patients with migraine with access to acute treatment,'' \textit{The Journal of Headache and Pain}, vol. 26, no. 1, p. 45, 2025. doi: 10.1186/s10194-025-01962-9.
 
 \bibitem{chamanzar2021uhd}
-A. Chamanzar, S. M. Haigh, P. Grover, and M. Behrmann, Abnormalities in cortical pattern of coherence in migraine detected using ultra high-density EEG,'' \textit{Brain Communications}, vol. 3, no. 2, p. fcab061, 2021. doi: 10.1093/braincomms/fcab061.
+A. Chamanzar, S. M. Haigh, P. Grover, and M. Behrmann, ``Abnormalities in cortical pattern of coherence in migraine detected using ultra high-density EEG,'' \textit{Brain Communications}, vol. 3, no. 2, p. fcab061, 2021. doi: 10.1093/braincomms/fcab061.
 
 \bibitem{aslan2023migrainecnn}
-Z. Aslan, Deep Convolutional Neural Network-Based Framework in the Automatic Diagnosis of Migraine,'' \textit{Circuits, Systems, and Signal Processing}, vol. 42, no. 5, pp. 3054--3071, 2023. doi: 10.1007/s00034-022-02265-3.
+Z. Aslan, ``Deep Convolutional Neural Network-Based Framework in the Automatic Diagnosis of Migraine,'' \textit{Circuits, Systems, and Signal Processing}, vol. 42, no. 5, pp. 3054--3071, 2023. doi: 10.1007/s00034-022-02265-3.
 
 \bibitem{orhanbulucu2023hybrid}
-F. Orhanbulucu, F. Latifoglu, and R. Baydemir, A New Hybrid Approach Based on Time Frequency Images and Deep Learning Methods for Diagnosis of Migraine Disease and Investigation of Stimulus Effect,'' \textit{Diagnostics}, vol. 13, no. 11, p. 1887, 2023. doi: 10.3390/diagnostics13111887.
+F. Orhanbulucu, F. Latifoglu, and R. Baydemir, ``A New Hybrid Approach Based on Time Frequency Images and Deep Learning Methods for Diagnosis of Migraine Disease and Investigation of Stimulus Effect,'' \textit{Diagnostics}, vol. 13, no. 11, p. 1887, 2023. doi: 10.3390/diagnostics13111887.
 
 \bibitem{alsabea2024migraine}
-S. Alsabea, A. Al Jumah, R. Alsayegh, \textit{et al.}, Migraine Classification from EEG Signals Using ML Algorithms,'' in \textit{Proc. 2024 10th International Conference on Engineering and Emerging Technologies (ICEET)}, Dubai, UAE, 2024. doi: 10.1109/ICEET65156.2024.10913771.
+S. Alsabea, A. Al Jumah, R. Alsayegh, \textit{et al.}, ``Migraine Classification from EEG Signals Using ML Algorithms,'' in \textit{Proc. 2024 10th International Conference on Engineering and Emerging Technologies (ICEET)}, Dubai, UAE, 2024. doi: 10.1109/ICEET65156.2024.10913771.
 
 \bibitem{Yuvaraj2023}
-R. Yuvaraj \textit{et al.}, Performance of statistical, wavelet, fractal dimension, and higher-order statistics features in EEG classification,'' \textit{Computers in Biology and Medicine}, vol. 158, p. 106821, 2023. doi: 10.1016/j.compbiomed.2023.106821.
+R. Yuvaraj \textit{et al.}, ``Performance of statistical, wavelet, fractal dimension, and higher-order statistics features in EEG classification,'' \textit{Computers in Biology and Medicine}, vol. 158, p. 106821, 2023. doi: 10.1016/j.compbiomed.2023.106821.
 
 \bibitem{Kalashami2022}
-M. P. Kalashami \textit{et al.}, EEG Feature Extraction and Data Augmentation in Emotion Recognition,'' \textit{Computational Intelligence and Neuroscience}, vol. 2022, Art. ID 7028517, 2022. doi: 10.1155/2022/7028517.
+M. P. Kalashami \textit{et al.}, ``EEG Feature Extraction and Data Augmentation in Emotion Recognition,'' \textit{Computational Intelligence and Neuroscience}, vol. 2022, Art. ID 7028517, 2022. doi: 10.1155/2022/7028517.
 
 \bibitem{Luo2024}
-S. Luo \textit{et al.}, Feature Extraction Method of EEG Based on Wavelet Packet Reconstruction and Deep Learning Model of VR Motion Sickness Feature Classification and Prediction,'' \textit{PLOS ONE}, vol. 19, no. 7, Art. no. e0305733, 2024. doi: 10.1371/journal.pone.0305733.
+S. Luo \textit{et al.}, ``Feature Extraction Method of EEG Based on Wavelet Packet Reconstruction and Deep Learning Model of VR Motion Sickness Feature Classification and Prediction,'' \textit{PLOS ONE}, vol. 19, no. 7, Art. no. e0305733, 2024. doi: 10.1371/journal.pone.0305733.
 
 \bibitem{Singh2023}
-A. K. Singh and S. Krishnan, Trends in EEG Signal Feature Extraction Applications,'' \textit{Frontiers in Artificial Intelligence}, vol. 5, Art. no. 1072801, 2023. doi: 10.3389/frai.2022.1072801.
+A. K. Singh and S. Krishnan, ``Trends in EEG Signal Feature Extraction Applications,'' \textit{Frontiers in Artificial Intelligence}, vol. 5, Art. no. 1072801, 2023. doi: 10.3389/frai.2022.1072801.
 
 \bibitem{bravoortiz2024spectrocvt}
-M. A. Bravo-Ortiz \textit{et al.}, SpectroCVT-Net: A convolutional vision transformer architecture and channel attention for classifying Alzheimer's disease using spectrograms,'' \textit{Computers in Biology and Medicine}, vol. 181, p. 109022, 2024. doi: 10.1016/j.compbiomed.2024.109022.
+M. A. Bravo-Ortiz \textit{et al.}, ``SpectroCVT-Net: A convolutional vision transformer architecture and channel attention for classifying Alzheimer's disease using spectrograms,'' \textit{Computers in Biology and Medicine}, vol. 181, p. 109022, 2024. doi: 10.1016/j.compbiomed.2024.109022.
 
 \bibitem{wei2025densenet}
-L. Wei and C. Mooney, DenseNet-Based Classification of EEG Abnormalities Using Spectrograms,'' \textit{Algorithms}, vol. 18, no. 8, p. 486, 2025. doi: 10.3390/a18080486.
+L. Wei and C. Mooney, ``DenseNet-Based Classification of EEG Abnormalities Using Spectrograms,'' \textit{Algorithms}, vol. 18, no. 8, p. 486, 2025. doi: 10.3390/a18080486.
 
 \bibitem{dursun2025multilayer}
-I. Dursun, B. Uyar, M. Akin, and M. U. Aluclu, Multilayer Neural-Network-Based EEG Analysis for the Detection of Epilepsy, Migraine, and Schizophrenia,'' \textit{Applied Sciences}, vol. 15, no. 16, p. 8983, 2025. doi: 10.3390/app15168983.
+I. Dursun, B. Uyar, M. Akin, and M. U. Aluclu, ``Multilayer Neural-Network-Based EEG Analysis for the Detection of Epilepsy, Migraine, and Schizophrenia,'' \textit{Applied Sciences}, vol. 15, no. 16, p. 8983, 2025. doi: 10.3390/app15168983.
 
 \bibitem{pattnaik2024scalogram}
-S. Pattnaik, B. N. Rao, N. K. Rout, and S. Sabut, Transfer learning based epileptic seizure classification using scalogram images of EEG signals,'' \textit{Multimedia Tools and Applications}, vol. 83, no. 36, pp. 84179--84193, 2024. doi: 10.1007/s11042-024-19129-4.
+S. Pattnaik, B. N. Rao, N. K. Rout, and S. Sabut, ``Transfer learning based epileptic seizure classification using scalogram images of EEG signals,'' \textit{Multimedia Tools and Applications}, vol. 83, no. 36, pp. 84179--84193, 2024. doi: 10.1007/s11042-024-19129-4.
 
 \bibitem{edderbali2024epilepsy}
-F. Edderbali, M. Harmouchi, and E. Essoukaki, Transfer learning for epilepsy detection using spectrogram images,'' \textit{IAES International Journal of Artificial Intelligence (IJ-AI)}, vol. 13, no. 1, pp. 1022--1029, 2024. doi: 10.11591/ijai.v13.i1.pp1022-1029.
+F. Edderbali, M. Harmouchi, and E. Essoukaki, ``Transfer learning for epilepsy detection using spectrogram images,'' \textit{IAES International Journal of Artificial Intelligence (IJ-AI)}, vol. 13, no. 1, pp. 1022--1029, 2024. doi: 10.11591/ijai.v13.i1.pp1022-1029.
 
 \bibitem{khan2024seizurespectrogram}
-M. H. Khan, M. Sarfraz, Y. U. Khan, and M. M. Al Maathidi, A fast and novel deep learning approach for automatic classification of epileptic seizures using spectrograms,'' \textit{AIP Conference Proceedings}, vol. 3015, no. 1, Art. no. 020007, 2024. doi: 10.1063/5.0195734.
+M. H. Khan, M. Sarfraz, Y. U. Khan, and M. M. Al Maathidi, ``A fast and novel deep learning approach for automatic classification of epileptic seizures using spectrograms,'' \textit{AIP Conference Proceedings}, vol. 3015, no. 1, Art. no. 020007, 2024. doi: 10.1063/5.0195734.
 
 \bibitem{alqazzaz2024autism}
-N. K. Al-Qazzaz, A. A. Aldoori, A. K. Buniya, S. H. B. M. Ali, and S. A. Ahmad, Transfer Learning and Hybrid Deep Convolutional Neural Networks Models for Autism Spectrum Disorder Classification From EEG Signals,'' \textit{IEEE Access}, vol. 12, pp. 64510--64530, 2024. doi: 10.1109/ACCESS.2024.3396877.
+N. K. Al-Qazzaz, A. A. Aldoori, A. K. Buniya, S. H. B. M. Ali, and S. A. Ahmad, ``Transfer Learning and Hybrid Deep Convolutional Neural Networks Models for Autism Spectrum Disorder Classification From EEG Signals,'' \textit{IEEE Access}, vol. 12, pp. 64510--64530, 2024. doi: 10.1109/ACCESS.2024.3396877.
 
 \bibitem{amer2024neuroscience}
-N. S. Amer and S. B. Belhaouari, Exploring new horizons in neuroscience disease detection through innovative visual signal analysis,'' \textit{Scientific Reports}, vol. 14, Art. no. 4217, 2024. doi: 10.1038/s41598-024-54416-y.
+N. S. Amer and S. B. Belhaouari, ``Exploring new horizons in neuroscience disease detection through innovative visual signal analysis,'' \textit{Scientific Reports}, vol. 14, Art. no. 4217, 2024. doi: 10.1038/s41598-024-54416-y.
 
 \bibitem{yousufi2024multimodal}
-M. Yousufi, R. Damasevicius, and R. Maskeliunas, Multimodal Fusion of EEG and Audio Spectrogram for Major Depressive Disorder Recognition Using Modified DenseNet121,'' \textit{Brain Sciences}, vol. 14, no. 10, p. 1018, 2024. doi: 10.3390/brainsci14101018.
+M. Yousufi, R. Damasevicius, and R. Maskeliunas, ``Multimodal Fusion of EEG and Audio Spectrogram for Major Depressive Disorder Recognition Using Modified DenseNet121,'' \textit{Brain Sciences}, vol. 14, no. 10, p. 1018, 2024. doi: 10.3390/brainsci14101018.
 
 \bibitem{Schirrmeister2017}
-R. T. Schirrmeister \textit{et al.}, Deep learning with convolutional neural networks for EEG decoding and visualization,'' \textit{Human Brain Mapping}, vol. 38, no. 11, pp. 5391--5420, 2017. doi: 10.1002/hbm.23730.
+R. T. Schirrmeister \textit{et al.}, ``Deep learning with convolutional neural networks for EEG decoding and visualization,'' \textit{Human Brain Mapping}, vol. 38, no. 11, pp. 5391--5420, 2017. doi: 10.1002/hbm.23730.
 
 \bibitem{Lawhern2018}
-V. J. Lawhern \textit{et al.}, EEGNet: a compact convolutional neural network for EEG-based brain--computer interfaces,'' \textit{Journal of Neural Engineering}, vol. 15, no. 5, p. 056013, 2018. doi: 10.1088/1741-2552/aace8c.
+V. J. Lawhern \textit{et al.}, ``EEGNet: a compact convolutional neural network for EEG-based brain--computer interfaces,'' \textit{Journal of Neural Engineering}, vol. 15, no. 5, p. 056013, 2018. doi: 10.1088/1741-2552/aace8c.
 
 \bibitem{Roy2019}
-Y. Roy \textit{et al.}, Deep learning-based electroencephalography analysis: a comprehensive review,'' \textit{Journal of Neural Engineering}, vol. 16, no. 5, p. 051001, 2019. doi: 10.1088/1741-2552/ab260c.
+Y. Roy \textit{et al.}, ``Deep learning-based electroencephalography analysis: a comprehensive review,'' \textit{Journal of Neural Engineering}, vol. 16, no. 5, p. 051001, 2019. doi: 10.1088/1741-2552/ab260c.
 
 \bibitem{Pan2010}
-S. J. Pan and Q. Yang, A survey on transfer learning,'' \textit{IEEE Transactions on Knowledge and Data Engineering}, vol. 22, no. 10, pp. 1345--1359, 2010. doi: 10.1109/TKDE.2009.191.
+S. J. Pan and Q. Yang, ``A survey on transfer learning,'' \textit{IEEE Transactions on Knowledge and Data Engineering}, vol. 22, no. 10, pp. 1345--1359, 2010. doi: 10.1109/TKDE.2009.191.
 
 \bibitem{Fahimi2019}
-F. Fahimi \textit{et al.}, Inter-subject transfer learning with an end-to-end deep convolutional neural network for brain--computer interfaces,'' \textit{IEEE Transactions on Neural Systems and Rehabilitation Engineering}, vol. 27, no. 6, pp. 1110--1118, 2019. doi: 10.1109/TNSRE.2019.2917899.
+F. Fahimi \textit{et al.}, ``Inter-subject transfer learning with an end-to-end deep convolutional neural network for brain--computer interfaces,'' \textit{IEEE Transactions on Neural Systems and Rehabilitation Engineering}, vol. 27, no. 6, pp. 1110--1118, 2019. doi: 10.1109/TNSRE.2019.2917899.
 
 \bibitem{Babayan2019}
-A. Babayan \textit{et al.}, A mind-brain-body dataset of MRI, EEG, cognition, emotion, and peripheral physiology in young and old adults,'' \textit{Scientific Data}, vol. 6, p. 180308, 2019. doi: 10.1038/sdata.2018.308.
+A. Babayan \textit{et al.}, ``A mind-brain-body dataset of MRI, EEG, cognition, emotion, and peripheral physiology in young and old adults,'' \textit{Scientific Data}, vol. 6, p. 180308, 2019. doi: 10.1038/sdata.2018.308.
 
 \bibitem{Delorme2007}
-A. Delorme \textit{et al.}, Enhanced detection of artifacts in EEG data using higher-order statistics and independent component analysis,'' \textit{NeuroImage}, vol. 34, no. 4, pp. 1443--1449, 2007. doi: 10.1016/j.neuroimage.2006.11.004.
+A. Delorme \textit{et al.}, ``Enhanced detection of artifacts in EEG data using higher-order statistics and independent component analysis,'' \textit{NeuroImage}, vol. 34, no. 4, pp. 1443--1449, 2007. doi: 10.1016/j.neuroimage.2006.11.004.
 
 \bibitem{delorme2023alone}
-A. Delorme, EEG is better left alone,'' \textit{Scientific Reports}, vol. 13, p. 2372, 2023. doi: 10.1038/s41598-023-27528-0.
+A. Delorme, ``EEG is better left alone,'' \textit{Scientific Reports}, vol. 13, p. 2372, 2023. doi: 10.1038/s41598-023-27528-0.
 
 \bibitem{Simonyan2014}
-K. Simonyan and A. Zisserman, Very deep convolutional networks for large-scale image recognition,'' in \textit{Proc. International Conference on Learning Representations (ICLR)}, 2015. arXiv: 1409.1556.
+K. Simonyan and A. Zisserman, ``Very deep convolutional networks for large-scale image recognition,'' in \textit{Proc. International Conference on Learning Representations (ICLR)}, 2015. arXiv: 1409.1556.
 
 \bibitem{He2016}
-K. He, X. Zhang, S. Ren, and J. Sun, Deep residual learning for image recognition,'' in \textit{Proc. IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, pp. 770--778, 2016. doi: 10.1109/CVPR.2016.90.
+K. He, X. Zhang, S. Ren, and J. Sun, ``Deep residual learning for image recognition,'' in \textit{Proc. IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, pp. 770--778, 2016. doi: 10.1109/CVPR.2016.90.
 
 \bibitem{Tan2019}
-M. Tan and Q. V. Le, EfficientNet: Rethinking model scaling for convolutional neural networks,'' in \textit{Proc. 36th International Conference on Machine Learning (ICML)}, PMLR 97, pp. 6105--6114, 2019.
+M. Tan and Q. V. Le, ``EfficientNet: Rethinking model scaling for convolutional neural networks,'' in \textit{Proc. 36th International Conference on Machine Learning (ICML)}, PMLR 97, pp. 6105--6114, 2019.
 
 \bibitem{Klem1999}
-G. H. Klem, H. O. Lüders, H. H. Jasper, and C. Elger, The ten-twenty electrode system of the International Federation,'' \textit{Electroencephalography and Clinical Neurophysiology}, vol. 52, no. 3, pp. 3--6, 1999.
+G. H. Klem, H. O. Lüders, H. H. Jasper, and C. Elger, ``The ten-twenty electrode system of the International Federation,'' \textit{Electroencephalography and Clinical Neurophysiology}, vol. 52, no. 3, pp. 3--6, 1999.
 
 \bibitem{Gorgolewski2016}
-K. J. Gorgolewski \textit{et al.}, The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments,'' \textit{Scientific Data}, vol. 3, Art. no. 160044, 2016. doi: 10.1038/sdata.2016.44.
+K. J. Gorgolewski \textit{et al.}, ``The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments,'' \textit{Scientific Data}, vol. 3, Art. no. 160044, 2016. doi: 10.1038/sdata.2016.44.
 
 \bibitem{Humaidan2024}
-H. Humaidan \textit{et al.}, Closed-loop auditory stimulation for sleep and cognition: A review,'' \textit{Frontiers in Sleep}, vol. 3, p. 1362841, 2024. doi: 10.3389/frsle.2024.1362841.
+H. Humaidan \textit{et al.}, ``Closed-loop auditory stimulation for sleep and cognition: A review,'' \textit{Frontiers in Sleep}, vol. 3, p. 1362841, 2024. doi: 10.3389/frsle.2024.1362841.
 
 \bibitem{Nair2023}
-A. Nair \textit{et al.}, Adaptive closed-loop neurostimulation: Challenges and therapeutic opportunities,'' \textit{IEEE Reviews in Biomedical Engineering}, vol. 16, pp. 248--262, 2023. doi: 10.1109/RBME.2022.3168742.
+A. Nair \textit{et al.}, ``Adaptive closed-loop neurostimulation: Challenges and therapeutic opportunities,'' \textit{IEEE Reviews in Biomedical Engineering}, vol. 16, pp. 248--262, 2023. doi: 10.1109/RBME.2022.3168742.
 
 \bibitem{Bjork2008}
-M. Bjork, M. Linde, L. J. Stovner, and T. Sand, Visual evoked potentials and clinical features in migraine: A prospective study,'' \textit{Cephalalgia}, vol. 28, no. 12, pp. 1284--1294, 2008. doi: 10.1111/j.1468-2982.2008.01676.x.
+M. Bjork, M. Linde, L. J. Stovner, and T. Sand, ``Visual evoked potentials and clinical features in migraine: A prospective study,'' \textit{Cephalalgia}, vol. 28, no. 12, pp. 1284--1294, 2008. doi: 10.1111/j.1468-2982.2008.01676.x.
 
 \bibitem{Hinton2006}
-G. E. Hinton and R. R. Salakhutdinov, Reducing the dimensionality of data with neural networks,'' \textit{Science}, vol. 313, no. 5786, pp. 504--507, 2006. doi: 10.1126/science.1127647.
+G. E. Hinton and R. R. Salakhutdinov, ``Reducing the dimensionality of data with neural networks,'' \textit{Science}, vol. 313, no. 5786, pp. 504--507, 2006. doi: 10.1126/science.1127647.
 
 \bibitem{Arlot2010}
-S. Arlot and A. Celisse, A survey of cross-validation procedures in machine learning,'' \textit{Statistics Surveys}, vol. 4, pp. 40--79, 2010. doi: 10.1214/09-SSU049.
+S. Arlot and A. Celisse, ``A survey of cross-validation procedures in machine learning,'' \textit{Statistics Surveys}, vol. 4, pp. 40--79, 2010. doi: 10.1214/09-SSU049.
 
 \bibitem{Mohsenvand2020}
-M. N. Mohsenvand, M. R. Izadi, and P. Maes, Contrastive representation learning for electroencephalogram classification,'' in \textit{Proc. Machine Learning for Healthcare Conference}, PMLR 126, pp. 238--253, 2020.
+M. N. Mohsenvand, M. R. Izadi, and P. Maes, ``Contrastive representation learning for electroencephalogram classification,'' in \textit{Proc. Machine Learning for Healthcare Conference}, PMLR 126, pp. 238--253, 2020.
 
 \bibitem{Kostas2021}
-D. Kostas, S. Aroca-Ouellette, and F. Rudzicz, BENDR: Using transformers and a contrastive self-supervised learning task to learn representations on EEG data,'' \textit{Frontiers in Human Neuroscience}, vol. 15, p. 701994, 2021. doi: 10.3389/fnhum.2021.701994.
+D. Kostas, S. Aroca-Ouellette, and F. Rudzicz, ``BENDR: Using transformers and a contrastive self-supervised learning task to learn representations on EEG data,'' \textit{Frontiers in Human Neuroscience}, vol. 15, p. 701994, 2021. doi: 10.3389/fnhum.2021.701994.
 
 \bibitem{Weng2024}
-Y. Weng \textit{et al.}, Self-supervised learning in EEG: A survey,'' \textit{IEEE Transactions on Pattern Analysis and Machine Intelligence}, vol. 46, no. 8, pp. 5420--5438, 2024. doi: 10.1109/TPAMI.2024.3378942.
+Y. Weng \textit{et al.}, ``Self-supervised learning in EEG: A survey,'' \textit{IEEE Transactions on Pattern Analysis and Machine Intelligence}, vol. 46, no. 8, pp. 5420--5438, 2024. doi: 10.1109/TPAMI.2024.3378942.
 
 \bibitem{Liang2024}
-X. Liang \textit{et al.}, Domain adaptation for cross-subject EEG decoding using adversarial feature representation,'' \textit{IEEE Transactions on Neural Systems and Rehabilitation Engineering}, vol. 32, pp. 842--853, 2024. doi: 10.1109/TNSRE.2024.3361284.
+X. Liang \textit{et al.}, ``Domain adaptation for cross-subject EEG decoding using adversarial feature representation,'' \textit{IEEE Transactions on Neural Systems and Rehabilitation Engineering}, vol. 32, pp. 842--853, 2024. doi: 10.1109/TNSRE.2024.3361284.
 
 \bibitem{Gifford2022}
-A. T. Gifford \textit{et al.}, A large and rich EEG dataset for evaluating and benchmarking deep neural networks,'' \textit{Scientific Data}, vol. 9, Art. no. 748, 2022. doi: 10.1038/s41597-022-01868-5.
+A. T. Gifford \textit{et al.}, ``A large and rich EEG dataset for evaluating and benchmarking deep neural networks,'' \textit{Scientific Data}, vol. 9, Art. no. 748, 2022. doi: 10.1038/s41597-022-01868-5.
 
 \bibitem{Chen2023}
-J. Chen \textit{et al.}, FACED: A large-scale EEG dataset for fine-grained affective computing,'' \textit{Scientific Data}, vol. 10, Art. no. 598, 2023. doi: 10.1038/s41597-023-02506-3.
+J. Chen \textit{et al.}, ``FACED: A large-scale EEG dataset for fine-grained affective computing,'' \textit{Scientific Data}, vol. 10, Art. no. 598, 2023. doi: 10.1038/s41597-023-02506-3.
 
 \bibitem{Khan2024}
-M. U. Khan \textit{et al.}, Deep neural network classification of migraine subtypes using EEG data augmentation,'' \textit{Computers in Biology and Medicine}, vol. 170, p. 108012, 2024. doi: 10.1016/j.compbiomed.2024.108012.
+M. U. Khan \textit{et al.}, ``Deep neural network classification of migraine subtypes using EEG data augmentation,'' \textit{Computers in Biology and Medicine}, vol. 170, p. 108012, 2024. doi: 10.1016/j.compbiomed.2024.108012.
 
 \bibitem{Chen2020}
-X. Chen \textit{et al.}, Common average reference and scalp potential topography in clinical EEG analysis,'' \textit{Clinical Neurophysiology}, vol. 131, no. 5, pp. 1102--1114, 2020. doi: 10.1016/j.clinph.2020.01.025.
+X. Chen \textit{et al.}, ``Common average reference and scalp potential topography in clinical EEG analysis,'' \textit{Clinical Neurophysiology}, vol. 131, no. 5, pp. 1102--1114, 2020. doi: 10.1016/j.clinph.2020.01.025.
 
 \bibitem{Prechelt1998}
-L. Prechelt, Early stopping---but when?,'' in \textit{Neural Networks: Tricks of the Trade}, G. Orr and K.-R. Müller, Eds. Berlin: Springer, 1998, pp. 55--69.
+L. Prechelt, ``Early stopping---but when?,'' in \textit{Neural Networks: Tricks of the Trade}, G. Orr and K.-R. Müller, Eds. Berlin: Springer, 1998, pp. 55--69.
 
 \bibitem{Ioffe2015}
-S. Ioffe and C. Szegedy, Batch normalization: Accelerating deep network training by reducing internal covariate shift,'' in \textit{Proc. 32nd International Conference on Machine Learning (ICML)}, PMLR 37, pp. 448--456, 2015.
+S. Ioffe and C. Szegedy, ``Batch normalization: Accelerating deep network training by reducing internal covariate shift,'' in \textit{Proc. 32nd International Conference on Machine Learning (ICML)}, PMLR 37, pp. 448--456, 2015.
 
 \end{thebibliography}
 
