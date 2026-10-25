@@ -1,0 +1,83 @@
+<USER_REQUEST>
+we want to detect migrain patient interactul detection and we generate spectogram of migraint patient from that we generate power spectrum based on this we gave binaural beats to the migrain patients
+@[/Users/mahmudulmashrafe/Programming/FYDP/FULL_PROJECT_TECHNICAL_DOCUMENTATION.docx] 
+our previous part of this we did little different 
+@[/Users/mahmudulmashrafe/Programming/FYDP/(Previous Version) A_Closed_Loop_Wearable_EEG_Framework_for_Real_Time_Migraine_Mitigation_via_Binaural__Beat_Entrainment___V3_____UIU___FYDP_.tex] 
+but we changed our method and tech @[/Users/mahmudulmashrafe/Programming/FYDP/Dataset/Migraine_Control_Demographics.xlsx] @[/Users/mahmudulmashrafe/Programming/FYDP/Dataset/DatasetPaper.pdf] @[/Users/mahmudulmashrafe/Programming/FYDP/Dataset/EEG experiment protocol_Migraine_Brain_KiltHub_vF.pdf] @[/Users/mahmudulmashrafe/Programming/FYDP/Dataset/README.txt] 
+
+
+and here is our new updated literature review
+@[/Users/mahmudulmashrafe/Programming/FYDP/Literature Review/Updated-version-of-LitRev-FYDP3.pdf] 
+
+and @[/Users/mahmudulmashrafe/Programming/FYDP/spectrograms/spectrograms] folder we keep the spectogram from our raw data
+here is our all ipynb where we did all the things and explanation
+@[/Users/mahmudulmashrafe/Programming/FYDP/1_EEG_CMU.ipynb] @[/Users/mahmudulmashrafe/Programming/FYDP/2_Migraine_VGG16_Spectrogram.ipynb] @[/Users/mahmudulmashrafe/Programming/FYDP/3_Migraine_EfficientNetB7_Spectrogram.ipynb] @[/Users/mahmudulmashrafe/Programming/FYDP/4_Migraine_ResNet50_Spectrogram.ipynb] @[/Users/mahmudulmashrafe/Programming/FYDP/5_spectrogram_binaural_treatment.ipynb] @[/Users/mahmudulmashrafe/Programming/FYDP/EEG_CMU_Explanation.docx] 
+@[/Users/mahmudulmashrafe/Programming/FYDP/EEG_Spectrogram_Literature_Review.docx] @[/Users/mahmudulmashrafe/Programming/FYDP/EEG_Spectrogram_References.bib] @[/Users/mahmudulmashrafe/Programming/FYDP/FULL_PROJECT_TECHNICAL_DOCUMENTATION.docx] @[/Users/mahmudulmashrafe/Programming/FYDP/Migraine_Detection_Project_Summary.docx] @[/Users/mahmudulmashrafe/Programming/FYDP/Spectrogram_Binaural_Treatment_Notebook_Explanation.docx] @[/Users/mahmudulmashrafe/Programming/FYDP/Spectrogram_To_Binaural_Treatment_Documentation.docx] 
+
+
+
+now properly understand the project and create a memory to understand and it would be easy for you to understand in future
+
+and create a proper paper (structure must be like our previous paper where we did 70% but now we want 100% of that structure and in latex with proper reference 
+@[/Users/mahmudulmashrafe/Programming/FYDP/(Previous Version) A_Closed_Loop_Wearable_EEG_Framework_for_Real_Time_Migraine_Mitigation_via_Binaural__Beat_Entrainment___V3_____UIU___FYDP_.tex] 
+
+
+last time you messed up with reference but now we want properly and i want all in one tex file
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-10-25T23:06:44+06:00.
+
+The user's current state is as follows:
+Active Document: /Users/mahmudulmashrafe/Programming/FYDP/(Previous Version) A_Closed_Loop_Wearable_EEG_Framework_for_Real_Time_Migraine_Mitigation_via_Binaural__Beat_Entrainment___V3_____UIU___FYDP_.tex (LANGUAGE_LATEX)
+Cursor is on line: 1654
+Other open documents:
+- /Users/mahmudulmashrafe/Programming/FYDP/(Previous Version) A_Closed_Loop_Wearable_EEG_Framework_for_Real_Time_Migraine_Mitigation_via_Binaural__Beat_Entrainment___V3_____UIU___FYDP_.tex (LANGUAGE_LATEX)
+
+The user has mentioned some items in the form @[ITEM]. Here is extra information about the items that were mentioned by the user, in the order that they appear:
+
+@[/Users/mahmudulmashrafe/Programming/FYDP/FULL_PROJECT_TECHNICAL_DOCUMENTATION.docx] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/FULL_PROJECT_TECHNICAL_DOCUMENTATION.docx
+@[/Users/mahmudulmashrafe/Programming/FYDP/(Previous Version) A_Closed_Loop_Wearable_EEG_Framework_for_Real_Time_Migraine_Mitigation_via_Binaural__Beat_Entrainment___V3_____UIU___FYDP_.tex] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/(Previous Version) A_Closed_Loop_Wearable_EEG_Framework_for_Real_Time_Migraine_Mitigation_via_Binaural__Beat_Entrainment___V3_____UIU___FYDP_.tex
+@[/Users/mahmudulmashrafe/Programming/FYDP/Dataset/Migraine_Control_Demographics.xlsx] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/Dataset/Migraine_Control_Demographics.xlsx
+@[/Users/mahmudulmashrafe/Programming/FYDP/Dataset/DatasetPaper.pdf] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/Dataset/DatasetPaper.pdf
+@[/Users/mahmudulmashrafe/Programming/FYDP/Dataset/EEG experiment protocol_Migraine_Brain_KiltHub_vF.pdf] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/Dataset/EEG experiment protocol_Migraine_Brain_KiltHub_vF.pdf
+@[/Users/mahmudulmashrafe/Programming/FYDP/Dataset/README.txt] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/Dataset/README.txt
+@[/Users/mahmudulmashrafe/Programming/FYDP/Literature Review/Updated-version-of-LitRev-FYDP3.pdf] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/Literature Review/Updated-version-of-LitRev-FYDP3.pdf
+@[/Users/mahmudulmashrafe/Programming/FYDP/spectrograms/spectrograms] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/spectrograms/spectrograms
+@[/Users/mahmudulmashrafe/Programming/FYDP/1_EEG_CMU.ipynb] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/1_EEG_CMU.ipynb
+@[/Users/mahmudulmashrafe/Programming/FYDP/2_Migraine_VGG16_Spectrogram.ipynb] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/2_Migraine_VGG16_Spectrogram.ipynb
+@[/Users/mahmudulmashrafe/Programming/FYDP/3_Migraine_EfficientNetB7_Spectrogram.ipynb] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/3_Migraine_EfficientNetB7_Spectrogram.ipynb
+@[/Users/mahmudulmashrafe/Programming/FYDP/4_Migraine_ResNet50_Spectrogram.ipynb] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/4_Migraine_ResNet50_Spectrogram.ipynb
+@[/Users/mahmudulmashrafe/Programming/FYDP/5_spectrogram_binaural_treatment.ipynb] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/5_spectrogram_binaural_treatment.ipynb
+@[/Users/mahmudulmashrafe/Programming/FYDP/EEG_CMU_Explanation.docx] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/EEG_CMU_Explanation.docx
+@[/Users/mahmudulmashrafe/Programming/FYDP/EEG_Spectrogram_Literature_Review.docx] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/EEG_Spectrogram_Literature_Review.docx
+@[/Users/mahmudulmashrafe/Programming/FYDP/EEG_Spectrogram_References.bib] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/EEG_Spectrogram_References.bib
+@[/Users/mahmudulmashrafe/Programming/FYDP/FULL_PROJECT_TECHNICAL_DOCUMENTATION.docx] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/FULL_PROJECT_TECHNICAL_DOCUMENTATION.docx
+@[/Users/mahmudulmashrafe/Programming/FYDP/Migraine_Detection_Project_Summary.docx] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/Migraine_Detection_Project_Summary.docx
+@[/Users/mahmudulmashrafe/Programming/FYDP/Spectrogram_Binaural_Treatment_Notebook_Explanation.docx] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/Spectrogram_Binaural_Treatment_Notebook_Explanation.docx
+@[/Users/mahmudulmashrafe/Programming/FYDP/Spectrogram_To_Binaural_Treatment_Documentation.docx] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/Spectrogram_To_Binaural_Treatment_Documentation.docx
+@[/Users/mahmudulmashrafe/Programming/FYDP/(Previous Version) A_Closed_Loop_Wearable_EEG_Framework_for_Real_Time_Migraine_Mitigation_via_Binaural__Beat_Entrainment___V3_____UIU___FYDP_.tex] is a [File]:
+/Users/mahmudulmashrafe/Programming/FYDP/(Previous Version) A_Closed_Loop_Wearable_EEG_Framework_for_Real_Time_Migraine_Mitigation_via_Binaural__Beat_Entrainment___V3_____UIU___FYDP_.tex
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from None to Gemini 3.8 Flash (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
