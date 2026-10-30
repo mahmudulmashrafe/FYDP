@@ -1,0 +1,528 @@
+There are total 4 parts (related research and gap analysis)
+1) EEG and Biomarker related
+2) Binural beats
+3) Wearable
+4) Feature Extraction related
+Related Research
+1) EEG and Biomaker related:
+For the past several decades, researchers have studied the role of EEG as a biomarker for
+migraine disease. Initial studies demonstrated that delta/theta activity was higher during migraine
+attacks and beta was higher between attacks. Newer studies that have used the quantitative EEG
+method confirm evidence of cortical hyperexcitability among people who suffer from migraines,
+including decreased alpha activity, high-frequency oscillations, and interhemispheric coherence
+abnormalities \cite{VanDenHoek2024}. MEG Studies localized the areas of cortical
+hyperexcitability to occipital, parietal, and prefrontal cortices, which are related to sensory
+perception and pain processing. Notably, investigators determined that quantitative EEG occurred
+up to 36 hours pre-migraine and could thus be used as a prodromal biomarker \cite{Kim2023}.
+The study conducted by Joshi et al. \cite{JoshiMatharu2025} used EEG to create spiking and
+convolutional spiking neural networks to detect stress with an emphasis on developing temporal
+models that would provide accurate predictions while minimizing energy consumption; their
+convolutional spiking neural network achieved 98.61\% accuracy, 100\% sensitivity, and 98.60\%
+F1-score, demonstrating rapid processing speed and compactness for use with wearable devices.
+Van den Hoek et al. \cite{VanDenHoek2024} offered an overview of spontaneous EEG, evoked
+potentials, and treatment-related alterations throughout the migraine cycle to assess EEG as a
+marker of susceptibility, wherein preictal alterations in theta/alpha power, slowing, and
+connectivity were found to be consistently present, but no one secure marker was discovered; it
+was determined that future duties will include using home-based wearable EEG devices and
+implementing conventional protocols to study biomarker susceptibility to migraine. Zhang and
+colleagues evaluated EEG use in migraine (i.e., resting and stimulus-evoked spectral
+characteristics; connectivity; microstates; ML/DL) -- reporting previously seen changes (i.e.,
+greater alpha slow; elevated delta/theta; modified networks; and the presence of useful ML
+classifiers) and logistical challenges (i.e., individual variance; small participant numbers) when
+defining reliable biomarkers. Analyzing EEG data, Bie et al. \cite{FrimpongManson2024} used
+both prospective and retrospective data from large sized cohorts to identify objective migraine
+signatures and described interictal (period of no migraine) increased occipital 12-13 Hz power as
+reproducible headache biomarkers. They demonstrated their KNN and SVM machine learning
+algorithms classified migraines and controls with 87.2\% accuracy supporting the use of occipital
+alpha as a headache biomarker candidate. Quartetti et al. \cite{Quartetti2025} conducted a
+systematic review of 36 studies identifying lifestyle factors incident to episodic migraines to
+develop forecasting algorithms. They concluded that ketogenic diets, supplements, and physical
+activity are evidence-based strategies to reduce the number of attacks and could be used to
+generate predictive models; however, no EEG headache biomarkers or machine learning models
+have been directly tested. Additionally, Zebhauser et al. \cite{Zebhauser2024}, in their
+meta-analysis of 27 studies using EEG/MEG techniques of individuals without migraine limits,
+found a candidate EEG signature for migraine based upon increased theta power, reduced alpha to
+beta connectivity between brain regions to measure presymptomatic migraine; and noted these
+findings had significant methodological limitations including: presence of comorbidities, small
+sample sizes, and differential methodologies. Abdulhussein et al. Findings on SSVEPs are
+consistent with those of Smith et al. \cite{AbdulhusseinAldeen2024}, which suggest that
+rhythmic stimulation can act as a pacemaker for thalamocortical dysrhythmias in migraine. In
+their systematic review, Gomez-Pilar et al. \cite{GomezPilar2022} also found that EEG, MRI
+and/or PET imaging studies provide evidence of different brain network activity patterns between
+individuals with chronic and episodic migraine. Consistent differences in fast EEG/MEG bands
+and in networks involved in pain processing and emotional responses were identified, suggesting
+that functional multimodal biomarkers may provide objective markers for determining whether an
+individual is at higher risk for developing chronic migraine. Riederer et al. \cite{Riederer2023}
+published a narrative review of the EEG and MRI characteristics of migraine aura, in order to
+assist neurologists in diagnosis of migraines with aura versus other types of headache: typically,
+uncomplicated visual auras (e.g., scotomas) show normal scalp EEG, whereas complex auras
+(e.g., olfacto-gustatory hallucinations) typically show focal slowing or suppression of the acute
+phase EEG, and review various MRI "index veins,
+" perfusion oligemia, and reversible lesions or
+morphology (ML) as possible differentiators between migraine aura and stroke or epileptic
+seizures. Göker \cite{Goker2023} proposed a novel automated migraine detection system using
+Welch's method (1-49Hz) and submitted that a 128 channel BiLSTM achieved an overall
+accuracy of 95.99\%, with a sensitivity of 0.96, a specificity of 0.95, and an F1 score of 0.96,
+resulting in significantly better performance than RF, SVM and LDA classifiers trained on the
+same EEG dataset. Kedgan et al. A systematic review and pooled prevalence meta-analysis of
+EEG patterns was conducted by \cite{Kedgan2025} at the different phases of aura, headache,
+post-headache, and inter-ictal for hemiplegic migraine. They found low amplitude, contralateral
+background activity during the aura phase, followed by focal slowing of the EEG during the
+headache phase. There was evidence of largely normal EEG during the interictal phase along with
+evidence of genotype-related differences. Their work provides phase-specific electrophysiological
+evidence for differentiating between hemiplegic migraine and stroke/epilepsy. A scoping review
+on EEG for diagnosing and classifying migraines was presented by Raghuraman and Joshi
+\cite{RaghuramanJoshi2024}, who found evidence of cortical hyperexcitability, deficits in
+habituation, abnormal microstates (decreased class C microstates, increased class B/D
+microstates), and automated AR-Burg models (up to 88.7\% accuracy); however, they concluded
+that methodological heterogeneity and a current focus on migraine without aura prevents the
+establishment of a reliable automated etiology-based diagnostic system for migraine. An
+evaluation of QEEG as a potential biomarker of migraine was performed by Kim et al.
+\cite{Kim2023}, who evaluated 720 subjects using z-score maps and found that individuals with
+migraines demonstrated an elevated level of overall absolute power compared to the individuals
+without migraines, with particularly high levels of absolute power in the beta frequency range
+(25-30 Hz) and these high beta frequencies predicts diagnosis and correlates with improvement,
+supporting the role of QEEG for migraine headaches: "Migraine patients had elevated absolute
+power across all.
+2) Binaural Beats:
+Melnichuk et al. \cite{Melnichuk2025} employed a sustained attention CPT with parametric
+variations of beta (16 Hz) and gamma (40 Hz) binaural beats. EEG entrainment was reliable,
+especially for gamma binaural beats, and a small improvement in hit rate was seen with optimal
+conditions (40 Hz, 340 Hz carrier, white noise, task-onset). However, vigilance decrement still
+occurs. Yang et al. \cite{Yang2025} employed a randomized crossover study of 6, 10, and 25 Hz
+binaural beats in college students. All binaural beats reduced heart rate/blood pressure, while 25
+Hz had the strongest parasympathetic shift (nLF↓, nHF↑) but had no EEG measurement. Xiong et
+al. \cite{Xiong2025} performed a meta-analysis of 15 RCTs of binaural beats in the perioperative
+period. Anxiety reduction was substantial (SMD -1.0 to -1.4) along with moderate pain relief and
+hemodynamic effects compared to silence/non-BB audio. However, evidence certainty is
+moderate.Kahathuduwa et al. \cite{KahathuduwaBlume2025} created real-time EEG-guided
+binaural beats and showed an enhancement of relaxation/cognition compared to controls. They
+also showed the validity of adaptive entrainment of binaural beats. Shamsi et al.
+\cite{Shamsi2024} performed a systematic review of binaural beats in pain management.
+Alpha/delta-alpha binaural beats are effective in acute procedural pain but show inconsistent
+results in chronic pain,with low evidence quality because of bias and heterogeneity. By using
+wearable EEG to compare stationary binaural beats, panning sounds, and beeps, Sudre et al.
+\cite{Sudre2024} demonstrated that spatial motion produced stronger relaxation/EEG effects than
+beat illusion alone.Ingendoh et al. \cite{Ingendoh2023} examined 14 EEG studies and concluded
+that only 5 of them demonstrated entrainment (none of them convincingly in beta),
+recommending that standardized procedures be used before making generalizations. In their study
+of 0.25/1 Hz beats during naps, Fan et al. \cite{Fan2024} found that 0.25 Hz shortens N2/N3
+onset without strong entrainment, indicating behavioral slow-wave facilitation. Beats were tested
+during dissection by Mosheshe et al. \cite{Mosheshe2024}, who found that they helped BBs cope
+with acute stress in the absence of an EEG and decreased student anxiety in comparison to
+controls. Longer beat sessions significantly reduced HR/LF-HF and improved mood via
+HRV/BRUMS, suggesting dose-response relaxation effects, according to Chockboondee et al.
+\cite{ChockboondeeJatupornpoonsub2023}. Dabiri et al. \cite{Dabiri2022} demonstrated that
+delta beats enhanced the mood and quality of sleep of pilot subjects, supporting BB sleep aids
+pending EEG validation. According to Corona-González et al. \cite{CoronaGonzalez2021},
+customized theta/beta beats increased target power more than fixed via EEG, favoring individual
+tuning.Al-Shargie et al. \cite{AlShargie2022} used fNIRS/16 Hz beats in Stroop tasks to decrease
+stress (44\% less alpha amylase) and increase accuracy and speed through prefrontal networks. 40
+Hz beats increased gamma/alpha and reduced delta activity, improving working memory
+compared to controls, according to Wang et al. \cite{WangZhang2022}. A meta-analysis of BBs
+in cognition by Basu and Banerjee \cite{BasuBanerjee2023} showed small improvements in
+memory and attention, although results are suspect due to bias, heterogeneity, and lack of
+evidence of entrainment. Alpha beats specifically activated EEG/cognition compared to white
+noise, according to Hamid et al. \cite{Hamid2025}.
+3) Wearable:
+Petru\v{s}i\'{c} et al. \cite{Petrusic2025} have characterized EEG-based brain--computer
+interface (BCI) technology as an
+``
+emerging and scalable solution for brain monitoring,
+rehabilitation, and assistive technologies,
+'' with the significant benefit of ``
+enabling real-world
+neural signal acquisition without the associated risks of invasive systems.
+'' They have also
+categorized wearable EEG systems as scalp-EEG, forehead-EEG, and ear-EEG systems, with
+scalp-EEG systems offering higher cortical resolution and motor imagery/assistive control
+classification accuracy of 90--96\%. However, they also note key limitations, including
+susceptibility to artifacts, inter-subject variability, electrode impedance instability, and the
+absence of standardized benchmarking frameworks \cite{Petrusic2025}.
+He et al. \cite{He2023} show that commercial wireless EEG systems remain highly
+heterogeneous with respect to EEG channel count, sampling rate, battery life, and price, ranging
+from \$240 to \$30{,}000. While this diversity reflects rapid innovation in hardware, He et al.
+also emphasize the lack of standardization in signal validation methods and real-world artifact
+handling, which can constrain reliable application of these systems \cite{He2023}. In parallel,
+Muhammad et al. \cite{Muhammad2023} introduce a cost-effective OpenBCI-based headset with
+a 16-channel configuration, achieving 82.9\% performance with a rapid setup time of 2 ± 0. 5
+minutes at an estimated cost of \$299. A reduced 3-channel version achieves comparable
+performance of 82.0\%. Nevertheless, the evidence base for wearable EEG systems remains
+limited by small-scale validation and evaluation, particularly with respect to performance
+consistency across heterogeneous users \cite{Muhammad2023}.
+Danelakis et al. \cite{Petrusic2025} extend the wearable concept beyond EEG devices through
+digital phenotyping, which integrates wearable technology, smartphone-based monitoring, and
+AI-based analytics to monitor neurological disorders such as migraine under free-living
+conditions. The forecasting performance reported by Danelakis et al. ranges from 62\% to 84\%,
+and the associated behavioral signatures of ictal states are supported by observational findings
+showing significant reductions in physical activity during migraine episodes, with statistical
+significance ranging from to \cite{Petrusic2025,VanDerDonckt2025}.
+𝑝 < 0. 01 𝑝 < 0. 001
+Furthermore, Danelakis et al. \cite{DanelakisStubberud2025} report that AI-supported diagnostic
+models in headache studies demonstrate accuracies between 62\% and 99.7\%, while also
+highlighting practical limitations including small sample sizes, overfitting risk, wearable signal
+noise, limited interpretability, and inconsistent validation procedures
+\cite{DanelakisStubberud2025}.
+Taken together, these findings suggest strong potential for integrating wearable EEG platforms
+and digital phenotyping with AI-based analysis for cost-effective and personalized neurological
+monitoring. However, successful clinical translation will likely require larger multicenter datasets,
+standardized benchmarking and validation frameworks, robust signal quality evaluation methods,
+and interpretable machine learning models \cite{Petrusic2025,DanelakisStubberud2025,He2023}.
+4) Feature Extraction related:
+Yuvaraj et al.\cite{Yuvaraj2023} investigated the performance of statistical, wavelet, fractal
+dimension, Hjorth and higher-order statistics features in the recognition of emotions in EEG data.
+Their analysis showed that the combination of fractal dimension and CART algorithm provided a
+high classification accuracy ( 85\%) for valence/arousal; thus, allowing for the creation of an
+≈
+EEG-based emotion recognition algorithm suitable for classification in real-time. Kalashami et al.
+\cite{Kalashami2022} extracted 344 handcrafted EEG features (frequency band powers,
+asymmetry, time domain) from the DEAP database and employed conditional Wasserstein
+Generative Adversarial Networks (CWGAN) to augment their dataset with 5000 new samples.
+The deep neural network was able to classify valence with a classification accuracy of 67.4\% and
+arousal with an accuracy of 71.9\%. Luo et al. \cite{Luo2024} reconstructed 8-level wavelet
+packets (db4) from EEG data collected during virtual reality-induced motion sickness, and used
+these feature sets as input to a gated recurrent unit (GRU) model. The resulting classification
+accuracy was 84.9\%, and achieved a Pearson linear correlation coefficient (PLCC) of
+approximately 0.90 and a Spearman rank-order correlation coefficient (SROCC) of approximately
+0.92 for regression.Rakhmatulin et al. \cite{Rakhmatulin2024}: explored CNN architectures
+(EEGNet, cascaded TS-SEFFNet) on EEG extraction with ICA/PCA/CSP preprocessing
+achieving greater than 90\% motor imagery / P300 task. Chaddad et al. \cite{Chaddad2023} from
+assessment of EEG pipelines(denoising,time-frequency,HOS,nonlinear features), that were
+processed showed SVM/CNNs achieved over 90–99\% accuracy across epilepsy, depression, and
+sleep with appropriate extraction. Singh and Krishnan \cite{Singh2023} reviewed trends in EEG
+feature datasets, noting that top-performing spatial extractors were variants of CSP methods with
+an accuracy range of 80–95\% BCI versus a time/frequency only results give 70–80\%.
+Gap Analysis:
+1)EEG and Biomarkers and beats gaps:
+EEG methods show real promise as biomarkers for migraines and for brainwave entrainment, but there
+are still some big gaps holding things back from actual clinical use. Take Joshi et al., for example. They
+based their work on the PhysioNet database, which just doesn't cover enough diverse populations. Plus,
+they used new neuromorphic hardware that isn't ready for the clinic yet. These two factors really get in
+the way of putting their findings into practice. Then there's the study by van den Hoek et al.As a narrative
+review, \cite{VanDenHoek2024} is devoid of quantitative meta-analysis, gamma band exploration,
+empirical data, wearable evaluations, and a suggested standardization protocol.
+Zhang et al. \cite{Zhang2023} and Raghuraman and Joshi \cite{RaghuramanJoshi2024} both ran into
+trouble with inconsistent EEG methods, small sample sizes, and visual bias—all of which make it tough
+for others to repeat their work or agree on reliable biomarkers. Bie et al. \cite{FrimpongManson2024}
+had issues too: their cohort was small, participants were still on medication, the timing between attacks
+wasn't precise, and they didn't separate migraine subtypes, so it's hard to apply their findings more
+broadly.
+Quartetti et al. \cite{Quartetti2025} faced a mix of problems—different study designs, confounding
+factors like COVID they didn't account for, and no integration of EEG or detailed machine learning
+datasets. All of that gets in the way of building solid forecasting models. Zebhauser et al.
+\cite{Zebhauser2024} didn't control well for comorbidities, their studies were underpowered (average
+sample size was just 62), their methods varied a lot, and they didn't use blinding. With all this, it's tough
+to pin down migraine-specific M/EEG changes.
+Abdulhussein et al. \cite{AbdulhusseinAldeen2024} run into trouble with volume conduction
+artifacts—they make it hard to know if deep brain structures are actually being modulated or if it just
+looks that way. They need more than just detection of dysfunction; they have to show real therapeutic
+changes. Gomez-Pilar et al. \cite{GomezPilar2022} face a bunch of obstacles too: their small sample
+sizes, changing methods, and cross-sectional approach make it tough to say anything solid about what
+causes migraine chronification. Plus, they don't have clear topographical hypotheses or use EEG and
+fMRI together, which would really help.
+Riederer et al. \cite{Riederer2023} struggle to capture short auras as they happen. Since they mostly
+study tricky or unusual cases, it's hard to apply their findings to the average migraine patient. Goker
+\cite{Goker2023} deals with lots of high-dimensional data, so BiLSTM models work better, but
+old-school machine learning just can't keep up. Their use of holdout splits also risks overfitting.
+Kedgan et al. \cite{Kedgan2025} mostly rely on case reports and series, which come with high bias and
+weak evidence—so their results don't really apply to migraines outside hemiplegic cases. Kim et al.
+\cite{Kim2023} only use data from one center, and they don't fully account for medication effects or
+whether people are in the middle of a migraine or not, making it hard to trust QEEG as a diagnostic tool
+on its own.
+As for brainwave entrainment and binaural beats
+\cite{Melnichuk2025,Yang2025,Xiong2025,KahathuduwaBlume2025,Shamsi2024,Sudre2024,Ingendoh2
+023,Fan2024,Mosheshe2024,ChockboondeeJatupornpoonsub2023,Dabiri2022,CoronaGonzalez2021,AlS
+hargie2022,WangZhang2022,BasuBanerjee2023,Hamid2025}, these studies all run into similar problems.
+There's no consistent evidence that entrainment actually happens, protocols are all over the place
+(different frequencies, durations, and whether noise is mixed in), and they usually use small groups of
+young adults. Controls and blinding are often weak, and most only rely on self-reports without real EEG
+validation. Without standardized randomized trials or personalized closed-loop methods, you just can't
+generalize these results to treating clinical pain like migraine.
+2)Wearable:
+Despite the rapid advancements made in wearable EEG technology and digital phenotyping
+methodologies, from the existing body of literature, there are significant gaps identified in the
+methodologies. Petru\v{s}i\'{c} \cite{Petrusic2025} has emphasized that there is a significant gap that
+needs to be filled in the existing methodologies, and despite the tremendous potential of digital
+phenotyping technology for the continuous monitoring and prediction of migraines, it still suffers from
+heterogeneous methodologies, non-diverse sample populations, and no external validation. The absence
+of standardized methodologies for data acquisition, processing, and validation of multimodal data is one
+of the significant gaps identified in the existing methodologies. Similarly, Danelakis et al.
+\cite{DanelakisStubberud2025} have identified that despite the high performance of AI-based diagnostic
+systems, they still suffer from non-validation and overfitting due to non-diverse sample populations.
+From the hardware perspective, He \cite{He2023} identified that there are significant gaps identified in
+the existing methodologies of wearable EEG technology. The existing methodologies of wearable EEG
+technology suffer from heterogeneous channel configuration, sampling rate, battery capacity, and quality
+assessment methodologies. The absence of standardized benchmarking methodologies for the assessment
+of artifacts and signal quality is one of the significant gaps identified in the existing methodologies.
+However, the lack of standard methods for benchmarking artifacts, especially when it comes to handling
+and evaluation of fidelity signals, poses a question of reliability, especially when it comes to
+consumer-grade solutions for such handling and evaluation scenarios \cite{He2023}. In the case of the
+use of wearable devices for the handling and evaluation of behavioral aspects, Van Der Donckt, in his
+work, presents the possibilities of using wearable devices like actigraphy for the objective identification
+of significant reductions in physical activities that occur during the ictal migraine phases. However, the
+results are based only on small-scale experiments, without any comparison to healthy subjects or
+predictive modeling for early intervention/detection \cite{VanDerDonckt2025}. In the case of the use of
+digital phenotyping for the handling and evaluation of migraines, as presented by Danelakis et al.
+\cite{Petrusic2025}, it is clear that digital phenotyping is the way forward for the handling and evaluation
+of migraines, which is a paradigm shift in the handling and evaluation of migraines. However, the fact
+that most of the applications of digital phenotyping, as presented, remain conceptual is also
+acknowledged.
+Taken together, the literature suggests that there are four key gaps: (1) the lack of standardized signal
+validation and benchmarking tools for wearable EEG technology, (2) the lack of large-scale, multi-center
+clinical data sets that include multimodal physiological and behavioral signals, (3) the lack of
+development of interpretable and externally validated AI models for migraine prediction and treatment,
+and (4) the lack of closed-loop systems that combine continuous monitoring and adaptive therapeutic
+approaches. Closing these gaps will require a focus on methodological standardization, real-world
+validation, multimodal wearable data integration, and the development of transparent and trustworthy
+machine learning architectures.
+4)Feature Extraction related:
+Even with all the progress in EEG feature extraction, big problems stick around. Yuvaraj et al.
+\cite{Yuvaraj2023} ran into trouble with subject-dependent validation and skipped deep learning
+tests altogether, so their results don’t really generalize. Kalashami et al. \cite{Kalashami2022}
+had issues with fuzzy labels and their GAN models turned out to be pretty sensitive. Luo et al.
+\cite{Luo2024} worked with tiny samples, and their results got skewed by subjective SSQ bias.
+Rakhmatulin et al. \cite{Rakhmatulin2024} struggled to handle dataset differences and couldn’t
+get things running in real time. Chaddad et al. \cite{Chaddad2023} didn’t really solve the core
+noise and variability headaches. And Singh and Krishnan \cite{Singh2023} just pointed out the
+obvious accuracy is still lacking, and there’s no real standard for any of this.
+Summary:
+To guide the theoretical and technical underpinnings for our proposed EEG-based intelligent
+migraine management system we conducted a systematic review of four significant areas of
+research: (1) EEG as a migraine biomarker, (2) Brainwave entrainment and binaural beats, (3)
+Wearable devices, (4) Feature extraction methods and approaches. The presented domains were
+chosen carefully because they cover the key elements of our project—biomarker discovery, signal
+processing, intelligent modeling and real-world implementation.
+First, we cover the literature on EEG as a migraine biomarker that details how EEG signals can
+be used to identify cortical hyperexcitability and other neural patterns associated with migraines.
+Knowledge of these neurological signatures is key to rationalizing EEG as the primary source of
+data within our system.
+Second the studies on brainwave entrainment and binaural beats, lend perspective to how specific
+frequency stimulations can affect our brain. Rather than focusing solely on the specific data we
+plan to acquire, our project also considers potential intervention strategies so a review of this
+domain can inform us as to how controlled auditory stimulation may affect the migraine
+brainwave abnormalities we hope to observe.
+Third, studies of wearable devices could inform the feasibility of continuous, non-invasive EEG
+monitoring in naturalistic environments. Given that our system targets practical, portable
+implementation, knowledge of hardware constraints (e.g. sensor placement, signal quality) and
+user comfort is paramount for the development of a performant hybrid interaction paradigm.
+Fourth, it is scientifically needed to revise the best approaches for extracting features because
+model performance directly depends on meaningful features (the time domain and
+frequency-domain as well as the time–frequency features). The key is using proper feature
+generation to extract the relevant signal characteristics from a migraine perspective.
+These four domains were systematically chosen, however, due to how closely they aligned with
+the scientific, technical and practical aspirations for our project. Combined, they enable an
+integrative conception of neural implementational substrates, signal processing techniques,
+intelligent modeling frameworks and real-world implementation approaches. By carefully
+studying these domains we ensure that the framework we propose is scientifically justified,
+technically robust and practically feasible.
+Reference
+Papers:
+[6] F. Shamsi, F. Azadinia, and M. Shaygan,
+“Does brain entrainment using binaural
+auditory beats affect pain perception in acute and chronic pain? A systematic re-
+view,
+” BMC Complement. Med. Ther., vol. 24, p. 34, 2024. doi: 10.1186/s12906-
+024-04339-y.
+[7] N. Zhang, Y. Pan, J. Chen,et al.,
+“Application of EEG in migraine,
+” Front. Hum.
+Neurosci., vol. 17, p. 1082317, 2023. doi: 10.3389/fnhum.2023.1082317IF: 3.6 Q1
+[8] K. Frimpong-Manson et al.,
+“Electroencephalographic signatures of migraine in
+small prospective and large retrospective cohorts,
+” Sci. Rep., vol. 14, p. 28673,
+2024. doi: 10.1038/s41598-024-80249-w
+[9] S. J. Kim, K. Yang, and D. Kim,
+“Quantitative electroencephalography as a po-
+tential biomarker in migraine,
+” Brain Behav., vol. 13, no. 12, Art. no. e3282,
+2023. doi: 10.1002/brb3.3282.
+[10] J. Gomez-Pilar, D. Garcia-Azorin, et al.,
+“Headache-related circuits and high
+frequencies evaluated by EEG, MRI, PET as potential biomarkers to differentiate
+chronic and episodic migraine: Evidence from a systematic review,
+” J. Headache
+Pain, vol. 23, no. 1, Art. no. 95, Aug. 2022. doi: 10.1186/s10194-022-01465-1IF: 8.7 Q1
+[11] R. M. Ingendoh, E. S. Posny, and A. Heine,
+“Binaural beats to entrain the brain?
+A systematic review of the effects of binaural beat stimulation on brain oscil-
+latory activity,
+” PLOS ONE, vol. 18, no. 5, Art. no. e0286023, May 2023. doi:
+10.1371/journal.pone.0286023IF: 2.8
+[56] A. Joshi, P. S. Matharu, L. Malviya, M. Kumar, and A. Jadhav,
+“Advancing EEG
+based stress detection using spiking neural networks and convolutional spiking
+neural networks,
+” Scientific Reports, vol. 15, no. 1, Art. no. 26267, Jul. 2025.
+doi: 10.1038/s41598-025-10270-0
+[57] T. C. van den Hoek et al.,
+“EEG changes in migraine—Can EEG help to monitor
+attack susceptibility?,
+” Brain Sciences, vol. 14, no. 5, Art. no. 508, May 2024.
+doi: 10.3390/brainsci1405050
+[58] U. Quartetti et al.,
+“Forecasting migraine attacks by managing daily lifestyle: A
+systematic review as a basis to develop predictive algorithms,
+” Pain Reports, vol.
+10, no. 2, Art. no. e1247, Feb. 2025. doi: 10.1097/PR9.0000000000001247.
+[59] P. T. Zebhauser et al.,
+“Resting-state electroencephalography and magnetoen-
+cephalography in migraine—A systematic review and meta-analysis,
+” The Jour-
+nal of Headache and Pain, vol. 25, no. 1, Art. no. 147, Sep. 2024. doi:
+10.1186/s10194-024-01857-5
+[60] M. A. Abdulhussein, A. W. Aldeen, and H. Al-Abboodi,
+“Differential cortical
+connectivity in migraine: Insights from high-density EEG and steady-state visual
+evoked potentials,
+” Traitement du Signal, vol. 41, no. 2, pp. 811–826, 2024. doi:
+10.18280/ts.410222.
+[61] F. Riederer et al.,
+“Migraine aura—Catch me if you can with EEG and MRI—A
+narrative review,
+” Diagnostics, vol. 13, no. 17, Art. no. 2844, Sep. 2023. doi:
+10.3390/diagnostics13172844.
+[62] H. Göker,
+“Automatic detection of migraine disease from EEG signals using bidi-
+rectional long-short term memory deep learning model,
+” Signal, Image and Video
+Processing, vol. 17, pp. 1255–1263, 2023. doi: 10.1007/s11760-022-02333-w.
+[63] P. Kedgan et al.,
+“EEG patterns in each phase of hemiplegic migraine: A system-
+atic review and pooled prevalence meta-analysis,
+” The Journal of Headache and
+Pain, vol. 26, no. 1, Art. no. 213, Oct. 2025. doi: 10.1186/s10194-025-02150-9.
+[64] L. Raghuraman and S. H. Joshi,
+“Application of EEG in the diagnosis and classi-
+fication of migraine: A scoping review,
+” Cureus, vol. 16, no. 7, Art. no. e64961,
+Jul. 2024. doi: 10.7759/cureus.64961.
+[65] A. Melnichuk et al.,
+“A parametric investigation of binaural beats for brain en-
+trainment and enhancing sustained attention,
+” Scientific Reports, vol. 15, no. 1,
+Art. no. 4308, Feb. 2025. doi: 10.1038/s41598-025-88517-z.
+[66] S.
+-Y. Yang et al.,
+“Effects of binaural beat therapy with different frequencies on
+autonomic nervous system regulation among college students,
+” BMC Comple-
+mentary Medicine and Therapies, vol. 25, no. 1, Art. no. 206, Jun. 2025. doi:
+10.1186/s12906-025-04922
+[67] J. Xiong et al.,
+“Binaural beats for perioperative anxiety and pain: A systematic
+review and meta-analysis,
+” Complementary Therapies in Medicine, vol. 95, Art.
+no. 103299, 2025. doi: 10.1016/j.ctim.2025.103299IF: 4.0 Q1 .
+[68] C. N. Kahathuduwa, J. Blume, C. Mani, and C. S. Dhanasekara,
+“Real-Time
+Electroencephalography-Guided Binaural Beat Audio Enhances Relaxation and
+Cognitive Performance,
+” Physiologia, vol. 5, no. 4, Art. no. 44, 2025. doi:
+10.3390/physiologia5040044IF: 2.1 Q3 .
+[69] S. Sudre et al.,
+“A new perspective on binaural beats: Investigating the effects of
+spatially moving sounds on human mental states,
+” PLoS One, vol. 19, no. 7, Art.
+no. e0306427, Jul. 2024. doi: 10.1371/journal.pone.0306427IF: 2.8
+[70] Z. Fan et al.,
+“Binaural beats at 0.25 Hz shorten the latency to slow-wave sleep
+during daytime naps,
+” Scientific Reports, vol. 14, no. 1, Art. no. 26062, Oct.
+2024. doi: 10.1038/s41598-024-76059-9.
+[71] L. T. Mosheshe et al.,
+“A pilot study exploring the effectiveness of binaural beats
+at reducing anxiety associated with cadaveric dissection,
+” Anatomical Sciences
+Education, vol. 17, no. 7, pp. 1431–1444, 2024. doi: 10.1002/ase.2492.
+[72] M. Chockboondee, T. Jatupornpoonsub, K. Lertsukprasert, and Y. Wongsawat,
+“Long and Short Durations of Binaural Beats Differently Affect Relaxation: A
+Study of HRV and BRUMS,
+” IEEE Access, vol. 11, pp. 84842–84851, 2023. doi:
+10.1109/ACCESS.2023.3303183.
+[73] R. Dabiri et al.,
+“The effect of auditory stimulation using delta binaural beat for
+a better sleep and post-sleep mood: A pilot study,
+” Digital Health, vol. 8, Art.
+no. 20552076221102243, 2022. doi: 10.1177/20552076221102243.
+[74] C. E. Corona-González et al.,
+“Personalized Theta and Beta Binaural Beats for
+Brain Entrainment: An Electroencephalographic Analysis,
+” Frontiers in Psy-
+chology, vol. 12, Art. no. 764068, 2021. doi: 10.3389/fpsyg.2021.764068.
+[75] F. Al-Shargie et al.,
+“Stress management using fNIRS and binaural beats stim-
+ulation,
+” Biomedical Optics Express, vol. 13, no. 6, pp. 3552–3575, 2022. doi:
+10.1364/BOE.455097.
+[76] L. Wang, W. Zhang, X. Li, and S. Yang,
+“The Effect of 40 Hz Binaural Beats
+on Working Memory,
+” IEEE Access, vol. 10, pp. 81556–81567, 2022. doi:
+10.1109/ACCESS.2022.3185257
+.
+[77] S. Basu and B. Banerjee,
+“Potential of binaural beats intervention for improv-
+ing memory and attention: Insights from meta-analysis and systematic review,
+”
+Psychological Research, vol. 87, no. 4, pp. 951–963, 2023. doi: 10.1007/s00426-
+022-01706-7.
+[78] A. I. A. Hamid et al.,
+“Distinct neural mechanisms of alpha binaural beats and
+white noise for cognitive enhancement in young adults,
+” AIMS Neuroscience,
+vol. 12, no. 2, pp. 147–179, 2025. doi: 10.3934/Neuroscience.2025010
+.
+[79] I. Petruši´
+c,
+“Digital phenotyping for migraine: A game-changer for research and
+management,
+” Cephalalgia, vol. 45, no. 7, pp. 1–13, 2025.
+[80] R. Muhammad et al.,
+“Design and development of low-cost wearable electroen-
+cephalograms (EEG) headset,
+” Intelligent Automation & Soft Computing, vol.
+35, no. 3, pp. 2821–2836, 2023.
+[81] A. Danelakis, A. Stubberud, E. Tronvik, and M. Matharu,
+“The Emerging Clin-
+ical Relevance of Artificial Intelligence, Data Science, and Wearable Devices in
+Headache: A Narrative Review,
+” Life, vol. 15, no. 6, 909, Jun. 2025.
+[82] J. Van Der Donckt et al.,
+“Analysis of free-living daytime movement in patients
+with migraine with access to acute treatment,
+” The Journal of Headache and
+Pain, vol. 26, 2025.
+[83] C. He et al.,
+“Diversity and suitability of the state-of-the-art wearable and wire-
+less EEG systems review,
+” IEEE Journal of Biomedical and Health Informatics,
+vol. 27, no. 8, pp. 3830–3843, Aug. 2023.
+[90] R. Yuvaraj et al.,
+“Comprehensive Analysis of Feature Extraction Methods for
+Emotion Recognition from Multichannel EEG Recordings,
+” Sensors, vol. 23, no.
+2, p. 915, 2023
+[91] A. Chaddad et al.,
+“Electroencephalography Signal Processing: A Comprehen-
+sive Review and Analysis of Methods and Techniques,
+” Sensors, vol. 23, no. 14,
+p. 6434, 2023.
+[92] I. Rakhmatulin et al.,
+“Exploring Convolutional Neural Network Architectures
+for EEG Feature Extraction,
+” Sensors, vol. 24, no. 3, p. 877, 2024.
+[93] M. P. Kalashami et al.,
+“EEG Feature Extraction and Data Augmentation in Emo-
+tion Recognition,
+” Computational Intelligence and Neuroscience, vol. 2022, Ar-
+ticle ID 7028517, 2022.
+[94] S. Luo et al.,
+“Feature Extraction Method of EEG Based on Wavelet Packet Re-
+construction and Deep Learning Model of VR Motion Sickness Feature Classifi-
+cation and Prediction,
+” PLOS ONE, vol. 19, no. 7, e0305733, 2024.
+[95] A. K. Singh and S. Krishnan,
+“Trends in EEG Signal Feature Extraction Appli-
+cations,
+” Frontiers in Artificial Intelligence, vol. 5, 1072801, 2023.
