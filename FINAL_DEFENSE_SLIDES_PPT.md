@@ -18,7 +18,7 @@
 
 ---
 
-# SECTION 1: INTRODUCTION & NEUROPHYSIOLOGY (SPEAKER 1)
+# SECTION 1: INTRODUCTION, MOTIVATION & OBJECTIVES (SPEAKER 1)
 
 ---
 
@@ -36,45 +36,63 @@
 - **Visual Design Elements**:
   - Dark slate/navy blue background (`#0B132B`) with cyan/teal neuro-wave accents (`#48CAE4`)
   - United International University (UIU) Logo placed at the top-left or header
-  - Central Loop Iconography: `Scalp EEG` $\rightarrow$ `STFT Spectrogram` $\rightarrow$ `Deep Learning CNN` $\rightarrow$ `Colormap Inversion` $\rightarrow$ `Binaural Audio` $\rightarrow$ `Brainstem Entrainment`
+  - Central Closed-Loop Iconography: `Scalp EEG (Ch #80)` $\rightarrow$ `STFT Spectrogram` $\rightarrow$ `EfficientNetB7 (93.75%)` $\rightarrow$ `LUT Inversion (R²>0.998)` $\rightarrow$ `Personalized Audio (IAF)` $\rightarrow$ `Cortical Entrainment`
 
 ---
 
-### Slide 2: Clinical Motivation & Neurophysiological Foundations
-- **Slide Type**: Problem Statement & Medical Background
-- **Slide Title**: Clinical Motivation: Thalamocortical Dysrhythmia & The Alpha Deficit
-- **Layout**: 2-Column Comparative Layout
-  - **Left Card: The Pathology (Interictal Migraine Brain)**:
-    - **Global Prevalence**: Affects >1 Billion people; #2 global cause of years lived with disability (YLD).
-    - **Cortical Hyperexcitability**: Heightened sensory processing and failure of habituation during silent attack-free periods.
-    - **Thalamocortical Dysrhythmia (TCD)**: Desynchronization of thalamic pacemakers driving cortical rhythm collapse.
-    - **Alpha Deficit & High TAR**: Significant depression of inhibitory alpha oscillations (8.0–13.0 Hz); elevated Theta-to-Alpha Ratio (TAR).
-    - **Pharmaceutical Failure**: Medication Overuse Headaches (MOH), cardiovascular contraindications, and high attrition.
-  - **Right Card: The Bio-Acoustic Mechanism (Binaural Beats)**:
-    - **Dichotic Presentation**: Feeding frequency $f_1$ to the left ear and $f_2$ to the right ear via stereo earphones.
-    - **Superior Olivary Complex (SOC)**: Brainstem calculates the phase differential and perceives an illusory beat: $\Delta f = |f_1 - f_2|$.
-    - **Auditory Steady-State Response (ASSR)**: Neural phase-locking entrains cortical firing into rhythm $\Delta f$.
-    - **The Personalized Mandate**: Entrainment only works if $\Delta f$ matches the patient's exact Individual Alpha Frequency (IAF).
+### Slide 2: Clinical Background & Research Motivation
+- **Slide Type**: Clinical Motivation & Why This Project Exists
+- **Slide Title**: The Problem We Are Solving
+- **Layout**: Problem Statement Banner (top) + 2-Row Grid: Clinical Reality (top row) | Our 4 Motivations (bottom row)
+
+  **Top Banner — The Clinical Reality**
+  > Migraine affects **1.1 billion people** worldwide — the #2 cause of years lived with disability (YLD). Yet **>40% of patients** get no adequate relief from drugs, and long-term drug use causes *Medication Overuse Headaches (MOH)*. A technology-based, non-drug alternative is urgently needed.
+
+  ---
+
+  **The Neurological Basis (Why EEG?)**
+
+  | 🧬 What happens in the migraine brain | 🔬 What we measure |
+  |:---|:---|
+  | **Thalamocortical Dysrhythmia (TCD)** — thalamus loses its normal alpha-pacing rhythm | Suppressed **alpha waves (8–13 Hz)** in occipital EEG |
+  | Cortex becomes **hyperexcitable** — oversensitive to light, sound, touch | Elevated **Theta-to-Alpha Ratio (TAR > 1.2)** |
+  | Brain fails to habituate to repeated stimuli (unlike healthy brains) | **Alpha Deficit** vs. normative control baseline |
+
+  ---
+
+  **Our 4 Research Motivations (from Thesis Chapter 1)**
+
+  | 💊 Non-Pharmacological Therapy | 📊 Objective Biomarker Diagnostics | 🖼️ Computer Vision on Brainwaves | 🎵 Patient-Specific Entrainment |
+  |:---|:---|:---|:---|
+  | Engineer a drug-free digital alternative that restores brainwave balance | Replace subjective headache diaries with measurable qEEG brain signals | Use 2D spectrogram images + pretrained CNNs instead of fragile manual features | Tune binaural beats to each patient's own IAF — not a generic 10 Hz |
 
 ---
 
-### Slide 3: Project Scope & End-to-End System Architecture
-- **Slide Type**: Architecture & Engineering Objectives
-- **Slide Title**: Project Scope & End-to-End System Architecture
-- **Layout**: 5-Stage Horizontal Process Flowchart
-  - **Stage 1 (Acquisition & Preprocessing)**:
-    - 128-channel UHD-EEG ($f_s = 2048 \rightarrow 512$ Hz) $\rightarrow$ CAR Reference $\rightarrow$ Zero-Phase Butterworth (1–50 Hz) $\rightarrow$ 60 Hz Notch.
-  - **Stage 2 (Single-Channel Localization & STFT)**:
-    - Occipital Channel #80 (Oz/O1 boundary) $\rightarrow$ 256-pt Hamming window (50% overlap) $\rightarrow$ 2D Viridis Spectrogram ($224 \times 224 \times 3$).
-  - **Stage 3 (Deep Transfer Learning Diagnostic)**:
-    - Pre-trained CNNs (VGG16, ResNet50, EfficientNetB7) $\rightarrow$ Automated Interictal Migraine Detection.
-  - **Stage 4 (Mathematical Colormap Inversion)**:
-    - 256-bin Viridis LUT Euclidean distance minimization $\rightarrow$ Reconstruct continuous linear PSD ($\mu\text{V}^2/\text{Hz}$) without raw data.
-  - **Stage 5 (Closed-Loop Binaural Audio Synthesis)**:
-    - Extract patient IAF $\rightarrow$ Generate stereo sine tones ($f_c = 216$ Hz, $\Delta f = \text{IAF}$) with 1.5s anti-click fade $\rightarrow$ 16-bit WAV.
-- **Key Design Objective Banner**: *93.75% diagnostic accuracy on a single electrode, complete privacy preservation, and instant personalized non-invasive therapy.*
+### Slide 3: Research Questions & Objectives
+- **Slide Type**: Research Formulation & Scope
+- **Slide Title**: What We Set Out to Do — and Why
+- **Layout**: 4 Pillar Cards (matching the 4 ideas in the project title) + 3 Research Questions below
 
----
+  ---
+
+  **The Project Title in 4 Pillars:**
+  *"A **Closed-Loop** **Wearable EEG** Framework for **Migraine Mitigation** via **Binaural Beat Entrainment**"*
+
+  | 🔁 Closed-Loop | 📡 Wearable EEG | 🧠 Migraine Mitigation | 🎵 Binaural Beat Entrainment |
+  |:---:|:---:|:---:|:---:|
+  | Diagnosis automatically triggers therapy — no manual step | Replace 128-electrode lab cap with a single occipital channel (#80) | Go beyond detection — actually reduce migraine severity | Personalize acoustic therapy to each patient's own brain frequency |
+  | **Objective**: Connect all pipeline stages into one automated system | **Objective**: Prove single-channel EEG is clinically sufficient | **Objective**: Extract IAF, Alpha Deficit & TAR biomarkers from EEG | **Objective**: Synthesize safe, click-free binaural audio tuned to IAF |
+
+  ---
+
+  **6 Research Questions:**
+  - **RQ1**: Can a single EEG sensor replace an expensive 128-electrode lab cap to detect migraine?
+  - **RQ2**: Can a spectrogram image alone reveal what is happening in the brain — without storing or transmitting raw EEG data?
+  - **RQ3**: Can a software system listen to someone's brain and automatically prescribe the right sound therapy for them?
+  - **RQ4**: Does every migraine patient have a unique brain resonance frequency (IAF) — and can we extract it automatically from their scan?
+  - **RQ5**: Can we objectively measure how severe a patient's migraine brain state is — using only their EEG signal patterns?
+  - **RQ6**: Can the complete pipeline — from brain recording to personalized audio — work end-to-end on real patient data?
+
 
 # SECTION 2: LITERATURE REVIEW & SIGNAL PREPROCESSING (SPEAKER 2)
 

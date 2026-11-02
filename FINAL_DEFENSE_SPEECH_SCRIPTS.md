@@ -33,43 +33,47 @@
 
 I am **Abu Hurayra Mahbe**, and on behalf of our team, it is my privilege to present our Final Year Design Project: **A Closed-Loop Wearable EEG Framework for Real-Time Migraine Mitigation via Binaural Beat Entrainment**.
 
-Migraine is far more than an ordinary headache. It is an excruciating neurological disorder afflicting over one billion people worldwide, recognized by the World Health Organization as the second leading cause of years lived with disability globally. 
+Migraine is far more than an ordinary headache. It is an excruciating neurovascular disorder afflicting over 1.1 billion people worldwide, recognized by the World Health Organization as the second leading cause of years lived with disability globally. 
 
 Today, patients rely almost exclusively on pharmacological remedies such as triptans and NSAIDs. Yet, over 40% of patients report inadequate relief, severe cardiovascular contraindications, or secondary medication-overuse headaches, leading to chronic patient drop-out.
 
-Our goal in this project is to pioneer a non-pharmacological, closed-loop digital therapeutic: an integrated system capable of detecting migraine in its silent interictal state from a single wearable EEG electrode, mathematically decoding the patient’s exact neurological deficit, and immediately synthesizing an individualized acoustic sound track to restore brainwave equilibrium."
+Our goal in this project is to pioneer an accessible, non-pharmacological, closed-loop digital therapeutic: an integrated system capable of detecting migraine in its silent interictal state from a single wearable EEG electrode, mathematically decoding the patient’s exact neurological deficit, and immediately synthesizing an individualized acoustic sound track to restore brainwave equilibrium."
 
 ---
 
-### Slide 2: Neurophysiology & The Clinical Problem (Minute 1:00 – 2:00)
-> *(Action: Point to the contrast between the Left Pathology column and the Right Bio-Acoustic mechanism.)*
+### Slide 2: Clinical Background & Project Motivation (Minute 1:00 – 2:00)
+> *(Action: Point to the contrast between the Left Clinical Problem and the Right Research Motivations.)*
 
 "To build an effective engineering solution, we must examine the neurobiology of the migraine brain between attacks—the interictal phase.
 
-Clinically, migraine is driven by **Thalamocortical Dysrhythmia** and cortical hyperexcitability. In a healthy brain, alpha oscillations between 8 and 13 Hertz act as a sensory filter, inhibiting extraneous neural noise. In migraine patients, this protective alpha rhythm collapses, producing a distinct **Alpha Deficit** and an abnormally elevated Theta-to-Alpha Ratio.
+Clinically, migraine is driven by **Thalamocortical Dysrhythmia (TCD)** and cortical hyperexcitability. In a healthy brain, alpha oscillations between 8 and 13 Hertz act as a sensory filter, inhibiting extraneous neural noise. In migraineurs, this protective alpha rhythm collapses, producing a distinct **Alpha Deficit** and an abnormally elevated Theta-to-Alpha Ratio.
 
-This is where **acoustic neuromodulation** offers an elegant non-invasive pathway. When two pure sine tones with a slight frequency difference are delivered dichotically to each ear, the brainstem’s **Superior Olivary Complex** calculates the phase discrepancy and perceives a rhythmic third beat—a **Binaural Beat**. Through the **Auditory Steady-State Response**, cortical firing synchronizes with this beat frequency.
-
-However, existing commercial sound apps fail because they deliver generic 10 Hz tones to everyone. In reality, each individual has a unique, genetically determined alpha peak frequency. Our closed-loop system overcomes this limitation by calibrating the acoustic stimulus to each patient’s unique brainwave signature."
+This reality motivated our research along four core engineering dimensions:
+First, **Non-Pharmacological Therapy**: we need a safe, drug-free intervention that prevents migraine chronification without chemical side effects.
+Second, **Objective Biomarker Diagnostics**: we aim to replace subjective, recall-based headache diaries with quantitative electrophysiological markers like Individual Alpha Frequency (IAF) and TAR.
+Third, **Time-Frequency Computer Vision**: we apply deep transfer learning directly to 2D STFT spectrogram images, bypassing fragile, handcrafted feature engineering.
+Fourth, **Resonant Biological Entrainment**: instead of generic, one-size-fits-all 10 Hz commercial audio, we tailor acoustic binaural beats to each patient's endogenous resonant alpha peak."
 
 ---
 
-### Slide 3: Scope & End-to-End System Architecture (Minute 2:00 – 3:00)
-> *(Action: Trace the 5-stage flowchart across the slide.)*
+### Slide 3: Research Questions, Objectives & Architecture (Minute 2:00 – 3:00)
+> *(Action: Direct attention to the 3 Research Questions, the 5 clean objectives, and the simple loop.)*
 
-"To realize this closed loop, we architected a modular 5-stage engineering pipeline:
+"To structure our investigation, we defined three straightforward **Research Questions**:
+1. **Can a single EEG electrode (Channel #80) detect migraine as accurately as 128 channels?**
+2. **Can we mathematically recover real brainwave power spectra from 2D spectrogram images without needing heavy raw files?**
+3. **Can we automatically generate safe, click-free binaural beats tailored to the patient’s own brain rhythm?**
 
-First, we condition multi-channel EEG using Common Average Referencing, zero-phase Butterworth bandpass filtering, and 60 Hz notch filtering.
+To answer these questions, our project achieved five clear **Objectives**:
+- First, clean the 128-channel EEG signals using standard bandpass and notch filtering.
+- Second, convert single-channel signals from occipital Channel #80 into 2D STFT spectrogram images.
+- Third, train deep transfer learning models, where EfficientNetB7 achieved an outstanding 93.75% diagnostic accuracy.
+- Fourth, develop an analytical color-inversion algorithm that decodes the exact continuous power spectrum directly from spectrogram images with 99.8% precision.
+- Fifth, synthesize click-free binaural beats tuned to the patient’s exact Individual Alpha Frequency.
 
-Second, we isolate **occipital Channel #80** and compute Short-Time Fourier Transforms using a 256-point Hamming window to generate standardized 2D Viridis time-frequency spectrograms.
+This unites detection, decoding, and treatment into one seamless, automated loop. 
 
-Third, we pass these spectrograms into pre-trained deep convolutional neural networks to perform automated interictal migraine detection.
-
-Fourth, we introduce a novel mathematical colormap inversion algorithm that reverse-engineers continuous power spectral density curves directly from 2D RGB images without requiring raw voltage timeseries.
-
-Fifth, our audio engine extracts the patient's Individual Alpha Frequency and synthesizes a high-fidelity, click-free stereo binaural beat track calibrated for safe clinical listening.
-
-Now, I invite my teammate **Md. Shakibul Hassan Prince** to present our literature review, research gaps, and signal processing methodology."
+Now, I invite my teammate **Md. Shakibul Hassan Prince** to present our literature review and signal processing methodology."
 
 > *(Transition: Hand over the clicker to Shakibul, take a step back.)*
 
